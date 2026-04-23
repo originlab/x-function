@@ -1,0 +1,471 @@
+﻿<h1 class="firstHeading">Wtspivot</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">追加の情報</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#X-Function_Execution_Options"><span class="tocnumber">5</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Variables"><span class="tocnumber">6</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Description"><span class="tocnumber">7</span> <span class="toctext">説明</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p>データ整形：時系列ピボット
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>日付/時刻列に基づいてデータを集計する
+</p>
+<h2><a name="Additional_Information"></a><span class="mw-headline">追加の情報</span></h2>
+<p class="version" >必要なOriginのバージョン: Origin 2024以降 </p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>
+1. wtspivot -r 2 time:=[Book1]Sheet1!A&quot;DATE&quot; data:=[Book1]Sheet1!B&quot;PRCP&quot; rowsBucket:=&quot;3 Month: Quarter&quot; rowsPeriod:=Year colsBucket:=Month;
+</p><p>2. wtspivot -r 2 time:=[Book10]Sheet1!A data:=[Book10]Sheet1!B rowsBucket:=Month rowsPeriod:=Year rowsStart:=Apr rowsEnd:=Jun colsBucket:=Week colsPeriod:=Month colsStart:=6 colsEnd:=7 method:=custom custom:=&quot;sum max&quot;;
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクション実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />名
+</th>
+<th width="8%">変数<br />名
+</th>
+<th width="8%">I/O<br />と<br />データ型
+</th>
+<th width="8%">デフォルト<br />値
+</th>
+<th>説明
+</th></tr>
+<tr>
+<td>ソース時間
+</td>
+<td>time
+</td>
+<td>
+<p>入力
+</p><p>Range
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> ピボットテーブルの時間ソースとして使用される範囲を指定します。
+</td></tr>
+<tr>
+<td>ソースデータ
+</td>
+<td>data
+</td>
+<td>
+<p>入力
+</p><p>Range
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> 集計するデータ値の範囲を指定します。
+</td></tr>
+<tr>
+<td>集計間隔
+</td>
+<td>rowsBucket
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;none&gt;</center>
+</td>
+<td> ピボットテーブルの行の時間の集計間隔を指定します。この時間間隔は、ピボットテーブルの最初の列に表示されます。
+<p>オプションリスト: 
+</p>
+<table class="simple">
+
+<tr>
+<td width="20%"><i>&lt;none&gt;</i>
+</td>
+<td width="20%"><i>10 yr: Decade</i>
+</td>
+<td width="20%"><i>Year</i>
+</td>
+<td width="20%"><i>3 Month: Quarter</i>
+</td></tr>
+<tr>
+<td><i>Month</i>
+</td>
+<td><i>Week</i>
+</td>
+<td><i>Day</i>
+</td>
+<td><i>Hour</i>
+</td></tr>
+<tr>
+<td><i>30 min</i>
+</td>
+<td><i>15 min</i>
+</td>
+<td><i>Minute</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td>期間
+</td>
+<td>rowsPeriod
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;none&gt;</center>
+</td>
+<td> 集計間隔の時間グループを指定します。選択した集計間隔に従って、対応する期間を指定できます。
+</td></tr>
+<tr>
+<td>空を削除
+</td>
+<td>rowsRemoveEmpty
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td> 空の行を削除するかどうかを指定します。
+<p>オプションリスト:
+</p>
+<ul><li><i>0=偽</i></li>
+<li><i>1=真</i></li></ul>
+</td></tr>
+<tr>
+<td>開始
+</td>
+<td>rowsStart
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center> </center>
+</td>
+<td> ピボットテーブルの行の開始時間を入力します。
+<p>開始の時間形式は、指定した集計間隔に基づきます。 
+</p>
+</td></tr>
+<tr>
+<td>終了
+</td>
+<td>rowsEnd
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center> </center>
+</td>
+<td> ピボットテーブルの行の終了時間を入力します。
+<p>終了の時間形式は、指定した集計間隔に基づきます。 
+</p>
+</td></tr>
+<tr>
+<td>カスタムフォーマット
+</td>
+<td>rowsCustomFmt
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center> </center>
+</td>
+<td> 最初の列に表示される時間のフォーマットをカスタマイズします。
+</td></tr>
+<tr>
+<td>集計間隔
+</td>
+<td>colsBucket
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;none&gt;</center>
+</td>
+<td> ピボットテーブルの列の時間の集計間隔を指定します。この時間間隔は、ピボットテーブルのコメントラベル行に表示されます。
+<p>オプションリスト: 
+</p>
+<table class="simple">
+
+<tr>
+<td width="20%"><i>&lt;none&gt;</i>
+</td>
+<td width="20%"><i>10 yr: Decade</i>
+</td>
+<td width="20%"><i>Year</i>
+</td>
+<td width="20%"><i>3 Month: Quarter</i>
+</td></tr>
+<tr>
+<td><i>Month</i>
+</td>
+<td><i>Week</i>
+</td>
+<td><i>Day</i>
+</td>
+<td><i>Hour</i>
+</td></tr>
+<tr>
+<td><i>30 min</i>
+</td>
+<td><i>15 min</i>
+</td>
+<td><i>Minute</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td>期間
+</td>
+<td>colsPeriod
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;none&gt;</center>
+</td>
+<td> 集計間隔の時間グループを指定します。選択した集計間隔に従って、対応する期間を指定できます。
+</td></tr>
+<tr>
+<td>空を削除
+</td>
+<td>rowsRemoveEmpty
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td> 空の列を削除するかどうかを指定します。
+<p>オプションリスト:
+</p>
+<ul><li><i>0=偽</i></li>
+<li><i>1=真</i></li></ul>
+</td></tr>
+<tr>
+<td>行の開始/終了を共有
+</td>
+<td>share
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0 </center>
+</td>
+<td> 行の開始と終了行を列に共有するかどうかを指定します。
+</td></tr>
+<tr>
+<td>開始
+</td>
+<td>colsStart
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center> </center>
+</td>
+<td> ピボットテーブルの列の開始時間を入力します。
+<p>開始の時間形式は、指定した集計間隔に基づきます。 
+</p>
+</td></tr>
+<tr>
+<td>終了
+</td>
+<td>colsEnd
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center> </center>
+</td>
+<td> ピボットテーブルの列の終了時間を入力します。
+<p>終了の時間形式は、指定した集計間隔に基づきます。 
+</p>
+</td></tr>
+<tr>
+<td>カスタムフォーマット
+</td>
+<td>colsCustomFmt
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center> </center>
+</td>
+<td> コメントラベル行に表示される時間形式をカスタマイズします。
+</td></tr>
+<tr>
+<td>集計方法
+</td>
+<td>method
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td> <b>ソースデータ</b>の要約方法を指定します。
+<p>オプションリスト:
+</p>
+<table class="simple">
+<tr>
+<th width="25%"><i>count:カウント</i> {0}
+</th>
+<td>各行/列ペアのカウントを出力します。
+</td></tr>
+<tr>
+<th><i>sum:合計</i> {1}
+</th>
+<td>各行/列のペアの合計を出力します。
+</td></tr>
+<tr>
+<th><i>mean:平均</i> {2}
+</th>
+<td>各行/列ペアの平均を出力します。
+</td></tr>
+<tr>
+<th><i>min:最小</i> {3}
+</th>
+<td>各行/列ペアの最小値を出力します。
+</td></tr>
+<tr>
+<th><i>max:最大</i> {4}
+</th>
+<td>各行/列ペアの最大値を出力します。
+</td></tr>
+<tr>
+<th><i>median:中央値</i> {5}
+</th>
+<td>各行/列ペアの中央値を出力します。
+</td></tr>
+<tr>
+<th><i>sd:SD</i> {6}
+</th>
+<td>各行/列ペアの標準偏差を出力します。
+</td></tr>
+<tr>
+<th><i>se:SE</i> {7}
+</th>
+<td>各行/列ペアの標準誤差を出力します。
+</td></tr>
+<tr>
+<th><i>rms:RMS</i> {8}
+</th>
+<td>各行/列ペアの二乗平均平方根を出力します。
+</td></tr>
+<tr>
+<th><i>ci:信頼区間</i> {9}
+</th>
+<td>各行/列ペアの母集団平均の信頼区間を出力します（正規分布を使用）。
+</td></tr>
+<tr>
+<th><i>range:範囲 (最大 - 最小)</i> {10}
+</th>
+<td>各行/列ペアの最大値と最小値の範囲を出力します。
+</td></tr>
+<tr>
+<th><i>first:サブグループの最初</i> {11}
+</th>
+<td>各行/列ペアの最初の値を出力します。
+</td></tr>
+<tr>
+<th><i>last:サブグループの最後</i> {12}
+</th>
+<td>各行/列ペアの最後の値を出力します。
+</td></tr>
+<tr>
+<th><i>custom:カスタム</i> {13}
+</th>
+<td>このオプションを選択すると、下の<b>カスタム</b>編集ボックスで独自の要約メソッドを定義できます。
+</td></tr></table>
+</td></tr>
+<tr>
+<td>カスタム
+</td>
+<td>custom
+</td>
+<td>
+<p>入力
+</p><p>String
+</p>
+</td>
+<td> <center>mean sd</center>
+</td>
+<td><b>集計方法</b>が<b>カスタム</b>に設定されている場合のみ利用できます。それらを組み合わせて集計方法を自身で構築することができます。
+</td></tr>
+<tr>
+<td>空白時ゼロを表示
+</td>
+<td>zeros
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> ピボットテーブルの欠損値をゼロとして表示するかどうかを指定します。
+<p>オプションリスト:
+</p>
+<ul><li><i>0=偽</i></li>
+<li><i>1=真</i></li></ul>
+</td></tr>
+<tr>
+<td>ReportData
+</td>
+<td>rd
+</td>
+<td>
+<p>出力
+</p><p>ReportData
+</p>
+</td>
+<td> <center>[&lt;入力&gt;]&lt;新規&gt;</center>
+</td>
+<td>結果テーブルを出力する場所を指定します。
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">説明</span></h2>
+<p>このXファンクションを使用して、ピボットテーブルを作成し、日時列に基づいて(統計の)データ要約を視覚化できます。
+</p>
+
+
+
+
+
+
+    

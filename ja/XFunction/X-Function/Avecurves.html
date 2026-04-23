@@ -1,0 +1,377 @@
+﻿<h1 class="firstHeading">avecurves</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Command_Line_Usage"><span class="tocnumber">3</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#X-Function_Execution_Options"><span class="tocnumber">4</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Variables"><span class="tocnumber">5</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Examples"><span class="tocnumber">6</span> <span class="toctext">サンプル</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#More_Information"><span class="tocnumber">7</span> <span class="toctext">詳細な情報</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Related_X-Functions"><span class="tocnumber">8</span> <span class="toctext">関連するXファンクション</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p>解析: 数学: 複数曲線の平均
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>複数の曲線の平均化またはマージ
+</p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<pre>
+1. avecurves iy:=(Plot(1),Plot(2)) method:=concatenate; 
+2. avecurves iy:=((1,2),(3,4)) method:=ave avex:=common interp:=linear; 
+</pre>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクションの実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />名
+</th>
+<th width="8%">変数<br />名
+</th>
+<th width="8%">I/O<br />と<br />データ型
+</th>
+<th width="8%">デフォルト<br />値
+</th>
+<th>説明
+</th></tr>
+<tr>
+<td>入力
+</td>
+<td>iy
+</td>
+<td>
+<p>入力
+</p><p>XYRange
+</p>
+</td>
+<td> <center>&lt;active&gt;</center>
+</td>
+<td> 平均化またはマージする複数の曲線を指定します。Origin 2020b以降、[Book]Sheet!(X,Y1:YN) 形式（X = 共通のX列、Y1:YN = X列の右側のY列の連続した範囲）の短縮構文を使用できます。[Book]Sheet!((X,Y1:YN),(X,YM:YO))の形式の非連続データからのより複雑な文字列も使用できます。
+</td></tr>
+<tr>
+<td>手法
+</td>
+<td>method
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> 手法を指定します。
+<p>オプションリスト：
+</p>
+<ul><li><i>ave:平均</i>{0}
+<dl><dd>入力曲線を平均化します。</dd></dl></li>
+<li><i>concatenate:マージ</i> {1}
+<dl><dd>入力曲線をマージします。</dd></dl></li></ul>
+</td></tr>
+<tr>
+<td>平均化されたX
+</td>
+<td>avex
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td> これは、手法で平均が選択されている場合のみ利用できます。平均化した曲線のX値を計算する手法を指定します。
+<p>オプションリスト：
+</p>
+<ul><li><i>same:ソースXと同じ</i> {0}
+<dl><dd>すべての入力曲線のX値を平均化した曲線のXとして使います。「共通Xの許容値」で指定した許容範囲にあるX値は、同じX値として扱われ、平均化されます。</dd></dl></li>
+<li><i>common:共通X範囲</i> {1}
+<dl><dd>入力曲線の共通X範囲で平均化した曲線のX値を計算します。すべてのデータセットの最大最小Xから最小最大Xまでの<i>npts</i>のXデータセットを作成し、補間法に基づいてY値の平均を計算します。</dd></dl></li>
+<li><i>full:全X範囲 </i> {2}
+<dl><dd>入力曲線のX範囲全体で平均化した曲線のX値を計算します。すべてのデータセットの最小Xから最大Xまでの<i>npts</i>のXデータセットを作成し、補間法に基づいてY値の平均を計算します。</dd></dl></li>
+<li><i>custom:カスタム</i> {3}
+<dl><dd>X最小とX最大で編集したX範囲の平均曲線のX値を計算します。選択したX最小値から選択したX最大値までの<i>npts</i>のXデータセットを作成し、補間法に基づいてY値の平均を計算します。</dd></dl></li>
+<li><i>trace:曲線トレースに従う</i> {4}
+<dl><dd>トレース補間による平均曲線のX値を計算します。これは、入力曲線と同様の形状の新しい曲線を作成します。詳細については、以下のアルゴリズムの項目を参照してください。</dd></dl></li></ul>
+</td></tr>
+<tr>
+<td>共通Xの許容値
+</td>
+<td>toler
+</td>
+<td>
+<p>入力
+</p><p>double
+</p>
+</td>
+<td> <center>1e-8</center>
+</td>
+<td> これは、<b>平均化されたX</b>で<b>ソースXと同じが</b>選択されている場合にのみ使用可能です。入力曲線のX値が同じかどうかを確認するために使用されます。次の場合に2つの異なるX値は同じと判断されます。abs(X1 - X2) &lt;
+</td></tr>
+<tr>
+<td>ポイント数
+</td>
+<td>npts
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>&lt;自動&gt;</center>
+</td>
+<td> これは、<b>平均化されたX</b>で<b>ソースXと同じ</b>が設定されて<i>いない</i>場合に使用できます。選択した補間方法に基づいてY値を取得するために、X最小からX最大までの等間隔のX点の数を指定します。<b>平均化されたX</b>が<b>カスタム</b>の場合、自動チェックボックスのチェックを外して、最小値または最大値を指定することができます。
+</td></tr>
+<tr>
+<td>X最小
+</td>
+<td>xmin
+</td>
+<td>
+<p>入力
+</p><p>double
+</p>
+</td>
+<td> <center>&lt;自動&gt;</center>
+</td>
+<td> 平均化されたXでカスタムが選択されているときに利用できます。<b>共通X範囲</b>と<b>全X範囲</b>の場合は読み取り専用です。平均化された曲線の最小Xを指定します。自動チェックボックスにチェックがついている場合は自動的に数を計算します。自動のチェックを外すと値を入力できます。
+</td></tr>
+<tr>
+<td>X最大
+</td>
+<td>xmax
+</td>
+<td>
+<p>入力
+</p><p>double
+</p>
+</td>
+<td> <center>&lt;自動&gt;</center>
+</td>
+<td> <b>平均化されたX</b>が<b>カスタム</b>の場合のみ使用できます。<b>共通X範囲</b>と<b>全X範囲</b>の場合は読み取り専用です。平均化された曲線の最大Xを指定します。自動チェックボックスにチェックがついている場合は自動的に数を計算します。自動のチェックを外すと値を入力できます。
+</td></tr>
+<tr>
+<td>補間
+</td>
+<td>interp
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> これは<b>平均化されたX</b>が<b>ソースXと同じ</b>設定されていない場合にのみ利用可能です。平均化するときにY値を補間する手法を指定します。
+<p>オプションリスト：
+</p>
+<ul><li><i>linear:線形</i>
+<dl><dd>Y値に対して線形補間を実行します。</dd></dl></li>
+<li><i>spline:スプライン</i>
+<dl><dd>Y値に対してスプライン補間を実行します。</dd></dl></li>
+<li><i>bspline:B-スプライン</i>
+<dl><dd>Y値に対してB-スプライン補間を実行します。</dd></dl></li></ul>
+</td></tr>
+<tr>
+<td>補外なし
+</td>
+<td>extrap
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td> <b>平均化されたX</b>で<b>全X範囲</b>、<b>カスタム</b>、<b>曲線トレースに従う</b>が選択されていないときのみ使用できます。曲線のX範囲が異なる場合に曲線を補外するかどうかを決定します。
+</td></tr>
+<tr>
+<td>Xソート
+</td>
+<td>sortx
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td> これは、<b>手法</b>で<b>統合</b>が選択されている場合のみ使用できます。平均化された曲線のX値をソートする方法を指定します。Y値はそれに応じて並び替えられます。
+<p>オプションリスト：
+</p>
+<ul><li><i>none:なし</i>
+<dl><dd>X値をソートしません。</dd></dl></li>
+<li><i>ascend:昇順</i>
+<dl><dd>X値を昇順でソートします。</dd></dl></li>
+<li><i> descend:降順</i>
+<dl><dd>X値を昇順でソートします。</dd></dl></li></ul>
+</td></tr>
+<tr>
+<td>標準偏差
+</td>
+<td>sd
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> これは、<b>手法</b>が<b>平均</b>に設定されている場合のみ使用できます。これは、平均化曲線の標準偏差を計算するかどうかを指定します。
+</td></tr>
+<tr>
+<td>標準誤差
+</td>
+<td>se
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> これは、<b>手法</b>が<b>平均</b>に設定されている場合のみ使用できます。これは、平均化曲線の標準誤差を計算するかどうかを指定します。
+</td></tr>
+<tr>
+<td>N
+</td>
+<td>n
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> これは、<b>手法</b>が<b>平均</b>に設定されている場合のみ使用できます。平均化した各X値に対応する入力データの数を計算するかどうかを指定します。
+</td></tr>
+<tr>
+<td>最小
+</td>
+<td>min
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> これは、<b>手法</b>が<b>平均</b>に設定されている場合のみ使用できます。最小値を出力するかどうかを指定します。
+</td></tr>
+<tr>
+<td>最大
+</td>
+<td>max
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> これは、<b>手法</b>が<b>平均</b>に設定されている場合のみ使用できます。最大値を出力するかどうかを指定します。
+</td></tr>
+<tr>
+<td>SD×2
+</td>
+<td>sd2
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> これは、<b>手法</b>が<b>平均</b>に設定されている場合のみ使用できます。標準偏差の2倍を計算するかどうかを指定します。
+</td></tr>
+<tr>
+<td>SD×3
+</td>
+<td>sd3
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> これは、<b>手法</b>が<b>平均</b>に設定されている場合のみ使用できます。標準偏差の3倍を計算するかどうかを指定します。
+</td></tr>
+<tr>
+<td>出力
+</td>
+<td>rd
+</td>
+<td>
+<p>出力
+</p><p>ReportData
+</p>
+</td>
+<td> <center>[&lt;入力&gt;]&lt;新規&gt;</center>
+</td>
+<td> 出力データを指定します。
+</td></tr></table>
+<h2><a name="Examples"></a><span class="mw-headline">サンプル</span></h2>
+<ul><li> 2つの入力曲線（アクティブなグラフレイヤの最初の2つのプロット）を統合するには、<b>コマンドウィンドウで</b>次のスクリプトコマンドを入力します。</li></ul>
+<p><code>
+avecurves iy:=(plot(1), plot(2)) method:=concatenate;
+</code>
+</p>
+<ul><li> コードサンプル</li></ul>
+<pre class="lt" style="font-family:monospace;"><span style="color: #008000; font-style: regular;">/*
+次のサンプルでは、Xが単調に増加する複数のXYデータを平均します。Xは必ずしも共有X値である必要はありません。
+サンプルデータは
+  OriginPath\Samples\Spectroscopy\DSC\Data フォルダにあります
+1.同じブックの異なるワークシートにデータを読み込む
+2. avecurves XFを使用して、すべてのシートのA（X）B（Y）を平均
+3. 結果を新しいシートに出力
+4.元のデータを1つのグラフに、平均データを別のグラフにプロット
+*/</span>
+<span style="color: #008000;">// 既存の loadDSC.ogsを使用して、</span>
+<span style="color: #008000;">// サンプルデータを別々のシートにロード</span>
+string LoadDSCogsPath<span style="color: #000080;">$</span><span style="color: #000080;">=</span>system.<span style="color: #000080;">path</span>.<span style="color: #000080;">program</span><span style="color: #000080;">$</span> <span style="color: #000080;">+</span> <span style="color: #ff00ff;">&quot;Samples\LabTalk Script Examples\LoadDSC.ogs&quot;</span>;
+<span style="color: #000080;">%</span>A<span style="color: #000080;">=</span>LoadDSCogsPath<span style="color: #000080;">$</span>;
+if<span style="color: #000000;">(</span><span style="color: #000080;">!</span>run.<span style="color: #000080;">section</span><span style="color: #000000;">(</span><span style="color: #000080;">%</span>A, Main, <span style="color: #0000dd;">0</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span>
+	break <span style="color: #0000dd;">1</span>;
+<span style="color: #008000;">// データをアクティブなブックにロードする必要あり</span>
+string dscBook<span style="color: #000080;">$</span><span style="color: #000080;">=</span><span style="color: #000080;">%</span>H;
+<span style="color: #008000;">//最初にすべてのデータA(X), B(Y)をプロット</span>
+plotxy <span style="color: #000000;">[</span>dscBook<span style="color: #000080;">$</span><span style="color: #000000;">]</span><span style="color: #000000;">(</span><span style="color: #0000dd;">1</span><span style="color: #000000;">:</span>end<span style="color: #000000;">)</span><span style="color: #000080;">!</span><span style="color: #000000;">(</span><span style="color: #0000dd;">1</span>,<span style="color: #0000dd;">2</span><span style="color: #000000;">)</span> plot<span style="color: #000000;">:</span><span style="color: #000080;">=</span><span style="color: #0000dd;">200</span>;
+
+<span style="color: #008000;">// 線形補間のinterp averageメソッドを使用して、すべてのシートデータの平均化を実行</span>
+avecurves iy<span style="color: #000000;">:</span><span style="color: #000080;">=</span><span style="color: #000000;">[</span>dscBook<span style="color: #000080;">$</span><span style="color: #000000;">]</span><span style="color: #000000;">(</span><span style="color: #0000dd;">1</span><span style="color: #000000;">:</span>end<span style="color: #000000;">)</span><span style="color: #000080;">!</span><span style="color: #000000;">(</span><span style="color: #0000dd;">1</span>,<span style="color: #0000dd;">2</span><span style="color: #000000;">)</span> rd<span style="color: #000000;">:</span><span style="color: #000080;">=</span><span style="color: #000000;">[</span><span style="color: #000080;">&lt;</span>input<span style="color: #000080;">&gt;</span><span style="color: #000000;">]</span><span style="color: #000080;">&lt;</span>new name<span style="color: #000000;">:</span><span style="color: #000080;">=</span><span style="color: #ff00ff;">&quot;Averaged Data&quot;</span><span style="color: #000080;">&gt;</span><span style="color: #000080;">!</span> method<span style="color: #000000;">:</span><span style="color: #000080;">=</span>ave interp<span style="color: #000000;">:</span><span style="color: #000080;">=</span>linear;
+<span style="color: #008000;">// 同様に平均データをプロット</span>
+plotxy <span style="color: #000000;">[</span>dscBook<span style="color: #000080;">$</span><span style="color: #000000;">]</span><span style="color: #ff00ff;">&quot;Averaged Data&quot;</span><span style="color: #000080;">!</span><span style="color: #000000;">(</span><span style="color: #0000dd;">1</span>,<span style="color: #0000dd;">2</span><span style="color: #000000;">)</span> plot<span style="color: #000000;">:</span><span style="color: #000080;">=</span><span style="color: #0000dd;">200</span> ogl<span style="color: #000000;">:</span><span style="color: #000080;">=</span><span style="color: #000000;">[</span><span style="color: #000080;">&lt;</span>new<span style="color: #000080;">&gt;</span><span style="color: #000000;">]</span><span style="color: #000080;">&lt;</span>new<span style="color: #000080;">&gt;</span><span style="color: #000080;">!</span>;</pre>
+<h2><a name="More_Information"></a><span class="mw-headline">詳細な情報</span></h2>
+<p>詳細は、ユーザガイドの<a class="external text" href="../../UserGuide/UserGuide/Average_Multiple_Curves.html">このページ</a> を参照して下さい。
+</p>
+<ul><li>概要</li>
+<li>アルゴリズム</li></ul>
+<p><br />
+</p><p><br />
+</p>
+<h2><a name="Related_X-Functions"></a><span class="mw-headline">関連するXファンクション</span></h2>
+<p><a href="../../XFunction/X-Function/Averagexy.html" title="X-Function:Averagexy">averagexy</a>
+</p>
+
+
+
+
+
+
+    

@@ -1,0 +1,324 @@
+<h1 class="firstHeading">2.10.25 plot_vari</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">Menu Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">Brief Information</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">Additional Information</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">Command Line Usage</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#X-Function_Execution_Options"><span class="tocnumber">5</span> <span class="toctext">X-Function Execution Options</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Variables"><span class="tocnumber">6</span> <span class="toctext">Variables</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Details_of_Show_Mean_Lines_for_Factors_TreeNode"><span class="tocnumber">7</span> <span class="toctext">Details of Show Mean Lines for Factors TreeNode</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Description"><span class="tocnumber">8</span> <span class="toctext">Description</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">Menu Information</span></h2>
+<p><b>Plot: Statistical: Variability Chart  </b>
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">Brief Information</span></h2>
+<p>Create a Multi-Vari Chart
+</p>
+<h2><a name="Additional_Information"></a><span class="mw-headline">Additional Information</span></h2>
+<p class="version" >Minimum Origin Version Required: Origin 2025 </p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">Command Line Usage</span></h2>
+<p><code>
+plot_vari -r 2 irng:=[Book3]Sheet1!E"City mpg" factor:=[Book3]Sheet1!(C"Identification.Classification",D"Identification.Year") trmean.f1:=1 trmean.f2:=1 gmean:=0 sd:=1 trsdmean.f1:=1 trsdmean.f2:=1 points:=0;
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">X-Function Execution Options</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">Please refer to the page for additional option switches when accessing the x-function from script</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">Variables</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">Display<br />Name
+</th>
+<th width="8%">Variable<br />Name
+</th>
+<th width="8%">I/O<br />and<br />Type
+</th>
+<th width="8%">Default<br />Value
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Input
+</td>
+<td>irng
+</td>
+<td>
+<p>Input 
+</p><p>Range
+</p>
+</td>
+<td><center>&lt;active&gt;</center>
+</td>
+<td>Specify the input data column.
+</td></tr>
+<tr>
+<td>Factors
+</td>
+<td>factor
+</td>
+<td>
+<p>Input 
+</p><p>Range
+</p>
+</td>
+<td><center>&lt;unassigned&gt;</center>
+</td>
+<td>Specify multiple factors in order.
+</td></tr>
+<tr>
+<td>Connect Cell Mean
+</td>
+<td>cell
+</td>
+<td>
+<p>Input 
+</p><p>int
+</p>
+</td>
+<td><center>1</center>
+</td>
+<td>Specify whether connects the mean values of the last factor.
+<p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Show Mean Lines for Factors
+</td>
+<td>trmean
+</td>
+<td>
+<p>Input 
+</p><p>TreeNode
+</p>
+</td>
+<td><center> </center>
+</td>
+<td>Specify whether shows mean lines for factors.
+</td></tr>
+<tr>
+<td>Show Grand Mean Line
+</td>
+<td>gmean
+</td>
+<td>
+<p>Input 
+</p><p>int
+</p>
+</td>
+<td><center>1 </center>
+</td>
+<td>Specify whether shows the grand mean line in the chart.
+<p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Show Grand Median Line
+</td>
+<td>gmedian
+</td>
+<td>
+<p>Input 
+</p><p>int
+</p>
+</td>
+<td><center>0</center>
+</td>
+<td>Specify whether shows the grand median line in the chart.
+<p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Show Standard Deviation Chart
+</td>
+<td>sd
+</td>
+<td>
+<p>Input 
+</p><p>int
+</p>
+</td>
+<td><center>0</center>
+</td>
+<td>Specify whether show SD chart under the variability chart.
+<p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Show Mean of SD
+</td>
+<td>sdgmean
+</td>
+<td>
+<p>Input 
+</p><p>int
+</p>
+</td>
+<td><center>1</center>
+</td>
+<td>Specify whether show the mean of the standard deviation values of the last factor.
+<p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Show Mean Lines for Factors
+</td>
+<td>trsdmean
+</td>
+<td>
+<p>Input 
+</p><p>TreeNode
+</p>
+</td>
+<td><center> </center>
+</td>
+<td>Specify whether shows mean lines for factors on the SD chart.
+</td></tr>
+<tr>
+<td>Show Individual Data Points
+</td>
+<td>points
+</td>
+<td>
+<p>Input 
+</p><p>int
+</p>
+</td>
+<td><center>1</center>
+</td>
+<td>Specify whether show the individual data points instead of only showing the whisker lines.
+<p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Show Box
+</td>
+<td>box
+</td>
+<td>
+<p>Input 
+</p><p>int
+</p>
+</td>
+<td><center>0</center>
+</td>
+<td>Specify whether show box plot for each group.
+<p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Show Range Line
+</td>
+<td>rline
+</td>
+<td>
+<p>Input 
+</p><p>int
+</p>
+</td>
+<td><center>1</center>
+</td>
+<td>Specify whether show range whisker line for each group.
+<p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Template
+</td>
+<td>template
+</td>
+<td>
+<p>Input 
+</p><p>string
+</p>
+</td>
+<td><center>variability</center>
+</td>
+<td>Specify the graph template to create this plot. <b>variability.optu</b> is the default template that is installed to the Origin program folder.
+<p><i>0=...File:[Graph Template (*.otpu )] *.otpu</i>
+<br /><i>1=[Graph Template(*.otp)]*.otp</i>
+</p>
+</td></tr>
+<tr>
+<td>ReportData
+</td>
+<td>rd
+</td>
+<td>
+<p>Output
+</p><p>ReportData
+</p>
+</td>
+<td> <center>[&lt;input&gt;]&lt;new&gt;</center>
+</td>
+<td>Specify where to output result table.
+</td></tr></table>
+<h2><a name="Details_of_Show_Mean_Lines_for_Factors_TreeNode"></a><span class="mw-headline">Details of Show Mean Lines for Factors TreeNode</span></h2>
+<p>TreeNode Details：
+</p><p>The <b>trmean</b> tree specifies whether shows mean lines for factors. In the mean time, the <b>trsdmean</b> tree specifies whether shows mean lines for factors in the SD chart.
+</p><p>Syntax: 
+</p>
+<ul><li><b>trmean.<i>Treenode</i>:=&lt;value&gt;</b></li>
+<li><b>trsdmean.<i>Treenode</i>:=&lt;value&gt;</b></li></ul>
+<p><br />
+Example:
+</p>
+<ul><li><b>trmean.f1:=1</b></li>
+<li><b>trsdmean.f2:=1</b></li></ul>
+<table class="treetable">
+<tr>
+<th width="10%"> Treenode
+</th>
+<th width="8%"> Label
+</th>
+<th width="8%"> Type
+</th>
+<th width="8%">Default
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td>f1
+<p>(from <i>f1</i> to <i>f10</i>)
+</p>
+</td>
+<td><i>factor name</i>
+</td>
+<td>int
+</td>
+<td>0
+</td>
+<td>Specifies whether shows mean lines for this factors.
+<p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">Description</span></h2>
+<p>This X-Function allows you to create a Variability Chart with up to 4 factor. Please refer to <a class="external text" href="../../UserGuide/UserGuide/Variability_Chart.html">Variability Chart</a> for more details.
+</p>
+
+
+
+
+

@@ -1,0 +1,184 @@
+﻿<h1 class="firstHeading">plot_multivari</h1>
+<p><br /></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>目次</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">追加の情報</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#X-Function_Execution_Options"><span class="tocnumber">5</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Variables"><span class="tocnumber">6</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Description"><span class="tocnumber">7</span> <span class="toctext">説明</span></a></li>
+</ul>
+</div>
+<h2><a name="Menu_Information" id="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p><b>作図: 統計&#160;: 多変量管理図</b></p>
+<h2><a name="Brief_Information" id="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>多変量管理図を作成</p>
+<h2><a name="Additional_Information" id="Additional_Information"></a><span class="mw-headline">追加の情報</span></h2>
+<p class="version">必要なOriginのバージョン: Origin 2025以降</p>
+<h2><a name="Command_Line_Usage" id="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>plot_multivari -r 2 irng:=[Book3]Sheet1!E"City mpg" factor:=[Book3]Sheet1!(B"Engine Information.Driveline",C"Identification.Classification",D"Identification.Year") points:=1 grand:=1;</code></p>
+<h2><a name="X-Function_Execution_Options" id="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクション実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a></p>
+<h2><a name="Variables" id="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />
+名</th>
+<th width="8%">変数<br />
+名</th>
+<th width="8%">I/O<br />
+と<br />
+データ型</th>
+<th width="8%">デフォルト<br />
+値</th>
+<th>説明</th>
+</tr>
+<tr>
+<td>入力</td>
+<td>irng</td>
+<td>
+<p>入力</p>
+<p>Range</p>
+</td>
+<td>
+<center>&lt;active&gt;</center>
+</td>
+<td>入力データ列を指定します。</td>
+</tr>
+<tr>
+<td>因子</td>
+<td>factor</td>
+<td>
+<p>入力</p>
+<p>Range</p>
+</td>
+<td>
+<center>&lt;unassigned&gt;</center>
+</td>
+<td>複数の因子を順番に指定します。複数の列を選択できますが、4列までにしてください。</td>
+</tr>
+<tr>
+<td>第1因子の平均を接続</td>
+<td>mean1</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>1</center>
+</td>
+<td>第1因子の平均点を接続するかどうかを指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>第2因子の平均を接続</td>
+<td>mean2</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>1</center>
+</td>
+<td>第2因子の平均点を接続するかどうかを指定します。因子が1つしかない場合は無効になります。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>第3因子の平均を接続</td>
+<td>mean3</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>1</center>
+</td>
+<td>第3因子の平均点を接続するかどうかを指定します。 因子が1つまたは2つしかない場合は無効になります。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>個々のデータポイントを表示</td>
+<td>points</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>0</center>
+</td>
+<td>個々のデータポイントを表示するか指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>総平均を表示</td>
+<td>grand</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>0</center>
+</td>
+<td>参照線として<i>Mean(plotdata(*,y))</i>に総平均を表示するかどうかを指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>テンプレート</td>
+<td>template</td>
+<td>
+<p>入力</p>
+<p>string</p>
+</td>
+<td>
+<center>multivari</center>
+</td>
+<td>このプロットを作成するグラフテンプレートを指定します。Originプログラムフォルダにインストールされるデフォルトのテンプレートは<b>multivari.optu</b>です。
+<p><i>0=...File:[グラフテンプレート (*.otpu )] *.otpu</i><br />
+<i>1=[グラフテンプレート(*.otp)]*.otp</i></p>
+</td>
+</tr>
+<tr>
+<td>レポートデータ</td>
+<td>rd</td>
+<td>
+<p>出力</p>
+<p>ReportData</p>
+</td>
+<td>
+<center>[&lt;input&gt;]&lt;new&gt;</center>
+</td>
+<td>結果テーブルを出力する場所を指定します。</td>
+</tr>
+</table>
+<h2><a name="Description" id="Description"></a><span class="mw-headline">説明</span></h2>
+<p>このXファンクションを使用すると、最大4つの係数を持つ多変量管理図を作成できます。詳細は<a class="external text" href="../../UserGuide/UserGuide/Multi-Vari_Chart.html">多変量管理図</a>を参照してください。</p>

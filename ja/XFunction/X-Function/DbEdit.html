@@ -1,0 +1,205 @@
+﻿<h1 class="firstHeading">dbEdit</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Brief_Information"><span class="tocnumber">1</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Additional_Information"><span class="tocnumber">2</span> <span class="toctext">追加の情報</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Command_Line_Usage"><span class="tocnumber">3</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#X-Function_Execution_Options"><span class="tocnumber">4</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Variables"><span class="tocnumber">5</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Description"><span class="tocnumber">6</span> <span class="toctext">説明</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#ODS_file"><span class="tocnumber">6.1</span> <span class="toctext">ODSファイル</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#ODQ_file"><span class="tocnumber">6.2</span> <span class="toctext">ODQファイル</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Connection_String"><span class="tocnumber">6.3</span> <span class="toctext">接続文字列</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Examples"><span class="tocnumber">7</span> <span class="toctext">サンプル</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Related_X-Functions"><span class="tocnumber">8</span> <span class="toctext">関連するXファンクション</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>SQLエディタダイアログを開く
+</p>
+<h2><a name="Additional_Information"></a><span class="mw-headline">追加の情報</span></h2>
+<p>XファンクションはAuto GetNダイアログとして設計されていません。
+</p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>
+1. dbEdit execute:=change;
+</p><p>2. dbEdit execute:=load fname:=&quot;%Ystars.ods&quot; iw:=[book2]sheet1!;
+</p><p>3. dbEdit sql:=&quot;Select Stars.Name, Stars.LightYears From Stars&quot;;
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクションの実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />名
+</th>
+<th width="8%">変数<br />名
+</th>
+<th width="8%">I/O<br />と<br />データ型
+</th>
+<th width="8%">デフォルト<br />値
+</th>
+<th>説明
+</th></tr>
+<tr>
+<td>コマンドオプション
+</td>
+<td>execute
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> ワークシートに対して実行するデータベース操作を指定します。
+<p>オプションリスト:
+</p>
+<ul><li><i>change:クエリの作成/変更</i>
+<dl><dd><b>SQLエディタ</b>ダイアログを開き、クエリを作成または変更します。</dd></dl></li>
+<li><i>askrem:確認してクエリを削除</i>
+<dl><dd>ユーザに確認してから、ワークシートからクエリを削除します。</dd></dl></li>
+<li><i>load:クエリファイルを読み込み</i>
+<dl><dd>クエリファイル（.ODQ または .ODS）をワークシートに読み込みます。ファイル名は<b>fname</b>変数で指定する必要があります。</dd></dl></li>
+<li><i>remove:クエリを削除</i>
+<dl><dd>ワークシートからクエリを削除します。</dd></dl></li>
+<li><i>new:新規の接続を作成</i>
+<dl><dd>アクティブなワークシートにデータベース接続アイコンを追加し、「データコネクタ」ボタン構成でSQLエディタを開きます。</dd></dl></li>
+<li><i>wks:コネクタモード</i>
+<dl><dd>アクティブなワークシートで既存のデータベースクエリを編集します。SQLエディタには「データコネクタ」ボタン構成があります。</dd></dl></li></ul>
+</td></tr>
+<tr>
+<td>入力ODQまたはODSファイルパス
+</td>
+<td>fname
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&quot;&quot;</center>
+</td>
+<td> <b>execute</b>変数が<b>Load</b>の場合、この変数を使用して読み込む .odq または .ods ファイルのパスを指定できます。
+</td></tr>
+<tr>
+<td>ワークシート
+</td>
+<td>iw
+</td>
+<td>
+<p>入力
+</p><p>Worksheet
+</p>
+</td>
+<td> <center>&lt;active&gt;</center>
+</td>
+<td> 操作を実行するワークシートを指定します。
+</td></tr>
+<tr>
+<td>新しいSQL文字列
+</td>
+<td>sql
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&quot;&quot;</center>
+</td>
+<td> ワークシートの現在のクエリに書き込む新しいSQL文字列を指定します。
+</td></tr>
+<tr>
+<td>新しい接続文字列
+</td>
+<td>connect
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&quot;&quot;</center>
+</td>
+<td> ワークシートの現在のクエリに書き込む新しい接続文字列を指定します。
+</td></tr>
+<tr>
+<td>インポートオプション
+</td>
+<td>option
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> データをインポートする方法を指定します。
+<p>オプションリスト:
+</p>
+<ul><li><i>ado:ADOオブジェクトを使用したデータのインポート</i>
+<dl><dd>データをインポートするのにADOオブジェクトを使用します。 </dd></dl></li>
+<li><i>odbc:ODBCを使用したデータのインポート</i>
+<dl><dd>データをインポートするのにODBCを使用します。</dd></dl></li></ul>
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">説明</span></h2>
+<p>このツールは、データベースクエリを作成するか、データベースクエリを削除/読み込み/編集するための<b>SQLエディタ</b>ダイアログを開きます。
+</p><p><i>Note: 以下で説明する<b>ODS</b>ファイルと<b>ODQ</b>ファイルは、<b>メモ帳</b>で表示および編集できるプレーンテキストファイルです。</i>
+</p>
+<h3><a name="ODS_file"></a><span class="mw-headline">ODSファイル</span></h3>
+<p><b>データソース</b>ファイル。ODSファイルには、Originがデータベースへの接続を開くための<b><i>接続文字列</i></b>が含まれています。ファイルには、サーバ名、データベースの場所、サーバへの接続に必要なユーザIDとパスワードなどの情報が含まれています。
+</p><p><b>SQLエディタ</b>のメニューの<b>ファイル：接続を新規に保存...</b>で .ODS ファイルを作成できます。下記はSQLサーバデータベースの例です。
+</p><p><font color="navy">
+[DataSource]<br />
+Provider=SQLOLEDB.1;Password=abc123;Persist Security Info=True;User ID=tester;Initial Catalog=Northwind;Data Source=MYSQLSERVER;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MYSQLSERVER;Use Encryption for Data=False;Tag with column collation when possible=False
+</font>
+</p>
+<h3><a name="ODQ_file"></a><span class="mw-headline">ODQファイル</span></h3>
+<p><b>データクエリ</b>ファイル。.ODQ ファイルには、データベースから情報を取得するために使用される<b><i>接続文字列</i></b>と<b><i>SQLクエリ</i></b>の両方が含まれています。
+</p><p><b>SQLエディタ</b>のメニューの<b>ファイル：接続とクエリを新規に保存...</b>で .ODQ ファイルを作成できます。下記はOracleデータベースの例です。
+</p><p><font color="navy">
+[DataSource]<br />
+Provider=OraOLEDB.Oracle.1;Password=tiger;Persist Security Info=True;User ID=scott;Data Source=orcl;Extended Properties=&quot;&quot;
+</p><p>[SQL]<br />
+Select SCOTT.DEPT.DNAME, SCOTT.DEPT.LOC, SCOTT.EMP.ENAME, SCOTT.EMP.JOB, SCOTT.EMP.SAL<br />
+From SCOTT.DEPT Inner Join SCOTT.EMP On SCOTT.DEPT.DEPTNO = SCOTT.EMP.DEPTNO
+</p><p>[UseODBC]<br />
+ADO
+</font>
+</p>
+<h3><a name="Connection_String"></a><span class="mw-headline">接続文字列</span></h3>
+<p>上の2つの例は、ODSファイルまたはODQファイルのいずれかに<b><i>[DataSource]</i></b>セクションに接続文字列が含まれていることを示しています。また、<b>SQLエディタ</b>で<b>ファイル：接続文字列を表示</b>または<b>ファイル：接続文字列を編集...</b>を選択して、この文字列を見つけることもできます。
+</p><p>スクリプト（またはOrigin C）によるクエリを実行する場合、この接続文字列を使用してデータベース接続を設定し、クエリを送信することが重要です。したがって、データを照会する前に、<b>SQLエディタ</b>を使用して手動で作成した接続/クエリから接続文字列を取得し、この文字列をコード内でコピーして使用する必要があります。
+</p>
+<h2><a name="Examples"></a><span class="mw-headline">サンプル</span></h2>
+<p>次のコマンドを実行して、SQLiteデータベースに接続するテーブルをロックし、テーブルを変更するときに他のユーザーが同時に変更できないようにします。
+</p>
+<pre class="lt" style="font-family:monospace;">cstring<span style="color: #000080;">$</span><span style="color: #000080;">=</span><span style="color: #ff00ff;">&quot;Driver={SQLite3 ODBC Driver};Database=%(sqliteFolder$)\struct.sqlite3&quot;</span>;
+schema1<span style="color: #000080;">$</span><span style="color: #000080;">=</span>data_sessions;
+
+dbEdit connect<span style="color: #000000;">:</span><span style="color: #000080;">=</span><span style="color: #ff00ff;">&quot;%(cstring$)&quot;</span> iw<span style="color: #000000;">:</span><span style="color: #000080;">=&lt;</span>active<span style="color: #000080;">&gt;</span>;
+dbEdit sql<span style="color: #000000;">:</span><span style="color: #000080;">=</span><span style="color: #ff00ff;">&quot;BEGIN EXCLUSIVE TRANSACTION;INSERT INTO&nbsp;%(schema1$) (pid, rid, rev, latest, col1, col2) 
+VALUES (&apos;animals:%(strain$)%(Animal$)&apos;,&apos;%(rid$)&apos;,&apos;0&apos;,&apos;1&apos;,&apos;%(starttime$)&apos;,&apos;%(pL$)&apos;);COMMIT TRANSACTION;&quot;</span>;
+dbImport;</pre>
+<h2><a name="Related_X-Functions"></a><span class="mw-headline">関連するXファンクション</span></h2>
+<p><a href="../../XFunction/X-Function/DbImport.html" title="X-Function:DbImport">dbImport</a>, <a href="../../XFunction/X-Function/DbInfo.html" title="X-Function:DbInfo">dbInfo</a>, <a href="../../XFunction/X-Function/DbPreview.html" title="X-Function:DbPreview">dbPreview</a>
+</p>
+<hr class='keywordshr'><p><span class='keywords'>キーワード:</span><span class='keywordsInput'>データベース、クエリ</span></p>
+
+
+
+
+
+
+
+    

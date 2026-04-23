@@ -1,0 +1,311 @@
+﻿<h1 class="firstHeading">template_saveas</h1><div id="toc" class="toc"><div id="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Brief_Information"><span class="tocnumber">1</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Command_Line_Usage"><span class="tocnumber">2</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#X-Function_Execution_Options"><span class="tocnumber">3</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Variables"><span class="tocnumber">4</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Description"><span class="tocnumber">5</span> <span class="toctext">説明</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Examples"><span class="tocnumber">6</span> <span class="toctext">サンプル</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>グラフ、ワークブック、行列ウィンドウをテンプレートとして保存
+</p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>
+template_saveas pg:=[Graph1] category:=&quot;My Templates&quot; template:=&quot;OffsetY&quot; filepath:=&quot;C:\My Templates&quot; emf:=0 bmp:=1;
+</p><p></code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクションの実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />名
+</th>
+<th width="8%">変数<br />名
+</th>
+<th width="8%">I/O<br />と<br />データ型
+</th>
+<th width="8%">デフォルト<br />値
+</th>
+<th>説明
+</th></tr>
+<tr>
+<td>ページ
+</td>
+<td>pg
+</td>
+<td>
+<p>入力
+</p><p>ページ
+</p>
+</td>
+<td> <center>&lt;active&gt;</center>
+</td>
+<td> テンプレートとして保存するページを指定します。ページが指定されていない場合、デフォルトでアクティブなページが使用されます。
+</td></tr>
+<tr>
+<td>カテゴリー
+</td>
+<td>category
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;auto&gt;</center>
+</td>
+<td> テンプレートのカテゴリー名を指定します。
+</td></tr>
+<tr>
+<td>テンプレート名
+</td>
+<td>template
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;auto&gt;</center>
+</td>
+<td> テンプレート名を指定します。デフォルトは<i>ORIGIN</i> です。
+</td></tr>
+<tr>
+<td>ファイルの種類
+</td>
+<td>ftype
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> ファイルの種類を指定します。グラフテンプレートを保存するときのデフォルトのファイルタイプは<b>OTPU</b>です。ブックテンプレートを保存するときのデフォルトのファイルタイプは<b>OTWU</b>です。行列テンプレートを保存する場合、デフォルトのファイルタイプは<b>OTMU</b>です。
+<p>オプションリスト:
+</p>
+<ul><li> 0=a: OTPU / OTWU/ OTMU</li>
+<li> 1=b: OTP  / OTW / OTM</li></ul>
+</td></tr>
+<tr>
+<td>テンプレート説明
+</td>
+<td>desc
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> テンプレートに関する説明を入力できます。
+</td></tr>
+<tr>
+<td>テンプレートタイプ
+</td>
+<td>savetemplate
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;active&gt;</center>
+</td>
+<td> テンプレータイプを指定します。指定したページに応じて自動的に設定されます。<i>ワークブックテンプレート (*.otw)</i>、<i>グラフテンプレート (*.otp)</i>、<i>行列テンプレート (*.otm)</i> です。GUIでは表示されません。
+</td></tr>
+<tr>
+<td>グラフショートネームの事前定義
+</td>
+<td>sname
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;auto&gt;</center>
+</td>
+<td> このテンプレートから作成されたグラフのショートネームを事前設定します。グラフウィンドウでのみ使用可能です。
+</td></tr>
+<tr>
+<td>グラフロングネームの事前定義
+</td>
+<td>lname
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;auto&gt;</center>
+</td>
+<td> このテンプレートから作成されたグラフのロングネームを事前設定します。グラフウィンドウでのみ使用可能です。
+</td></tr>
+<tr>
+<td>クローンテンプレートのマーク
+</td>
+<td>clone
+</td>
+<td>
+<p>入力
+</p><p>TreeNode
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> テンプレートがクローン可能かどうかを指定します。グラフウィンドウでのみ使用可能です。
+</td></tr>
+<tr>
+<td>一致条件
+</td>
+<td>matchModifiers
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> 一部のプロット属性は、値の列にマッピングすることで変更できます。マッピングされた列は、列のインデックス番号(オフセット)、ショートネーム、ロングネーム、単位、コメント、(組込) パラメータ(n) 、ユーザ定義パラメータによって、識別されます。
+</td></tr>
+<tr>
+<td>ファイルパス
+</td>
+<td>filepath
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;auto&gt;</center>
+</td>
+<td> テンプレートファイルパスを指定します。デフォルトのパスは<i>User Filesフォルダ</i>です。パスが存在している必要があることに注意してください。存在しないと、スクリプトがエラーを返します。
+</td></tr>
+<tr>
+<td>プレビューイメージ（オプション）
+</td>
+<td>preview
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> グラフまたはブックテンプレートを保存すると、ウィンドウのプレビューイメージが自動的に生成されます。グラフプレビューは、作図メニュー（テンプレートカテゴリ）とテンプレートライブラリで使用されます。ブックプレビューは、新しいブックダイアログで使用されます。
+<p>オプションリスト:
+0=...ファイル:[*.bmp;*.jpg;*.png]*.bmp;*.jpg;*.png
+</p>
+</td></tr>
+<tr>
+<td>ダークモード用のプレビュー画像 (オプション)
+</td>
+<td>previewdark
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> ダークモードの場合、グラフまたはブックテンプレートを保存すると、ウィンドウのプレビュー画像が自動的に生成されます。グラフプレビューは、作図メニュー（テンプレートカテゴリ）とテンプレートライブラリで使用されます。ブックプレビューは、新しいブックダイアログで使用されます。
+<p>オプションリスト:
+0=...ファイル:[*.bmp;*.jpg;*.png]*.bmp;*.jpg;*.png
+</p>
+</td></tr>
+<tr>
+<td>EMFファイル
+</td>
+<td>emf
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td> テンプレートプレビュー用にEMFイメージファイルを保存するかどうかを指定指定します。グラフテンプレートを保存するときに使用できるチェックボックスです。
+</td></tr>
+<tr>
+<td>ビットマップ
+</td>
+<td>bmp
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> テンプレートプレビュー用にビットマップイメージファイルを保存するかどうかを指定します。グラフテンプレートを保存するときに使用できるチェックボックスです。
+</td></tr>
+<tr>
+<td>システムテーマとシステム推移リストを優先
+</td>
+<td>loadsys
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>&lt;auto&gt;</center>
+</td>
+<td> ロード時にシステムテーマを使用してテンプレート設定を上書きするかどうかを指定します。グラフウィンドウを保存するときに使用できるチェックボックスです。
+<p>オプションリスト:
+</p>
+<ul><li> 0=偽</li>
+<li> 1=真</li></ul>
+</td></tr>
+<tr>
+<td>ダイアログヒント
+</td>
+<td>asksave
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td> ダイアログヒント（表示専用）。システムテーマとシステム推移リストを優先チェックボックスにチェックが付いている場合、テンプレート設定はロード時にシステムテーマによって上書きされる可能性があることの注意書きです。この文字列は、システムテーマとシステム推移リストを優先がチェックされたときにダイアログに表示されます。
+</td></tr>
+</table>
+<h2><a name="Description"></a><span class="mw-headline">説明</span></h2>
+<p>このXファンクションは、グラフ/ワークブック/行列ウィンドウをテンプレートに保存するために使用します。これら3種のウィンドウをテンプレートに保存するためにそれぞれの設定があります。そして、ダイアログは指定されたページによって異なります。
+</p>
+<h2><a name="Examples"></a><span class="mw-headline">サンプル</span></h2>
+<ol>
+<li>プロジェクト&lt;Origin プログラムディレクトリ&gt;\Samples\Graphing\OffsetY.opj を開きます。
+
+<li>Graph1をアクティブにし、コマンドウィンドウで<code>template_saveas -d;</code> を実行します。ポップアップダイアログで以下のように設定し、<i>OffsetY</i>という名前のテンプレートを<i>My Template</i>カテゴリに保存します。
+
+<dl><dd><br /><a  class="image"><img alt="Template saveas example 1.png" src="../images/Template_saveas/Template_saveas_example_1.png" width="701"  /></a><br /><br /></dd></dl>
+
+<li><b>OK</b>ボタンをクリックして、このページをテンプレートとして保存する。以下のようにtemplateが表示されます。
+
+<dl><dd><br /><a  class="image"><img alt="Template saveas example 2.png" src="../images/Template_saveas/Template_saveas_example_2.png" width="509"  /></a></dd></dl>
+</ol>
+
+
+
+
+
+
+
+    

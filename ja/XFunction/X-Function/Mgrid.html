@@ -1,0 +1,231 @@
+﻿<h1 class="firstHeading">mgrid</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Command_Line_Usage"><span class="tocnumber">3</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#X-Function_Execution_Options"><span class="tocnumber">4</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Variables"><span class="tocnumber">5</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Description"><span class="tocnumber">6</span> <span class="toctext">説明</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p>仮想行列または行列から作成された等高線図を右クリックし、<b>データポイントを抽出</b>を選択するか、ミニツールバーのボタン<a  class="image"><img alt="Popup Extract Data Points.png" src="../images/Mgrid/Popup_Extract_Data_Points.png" width="24"  /></a>をクリックします。
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>(仮想)行列等高線図からデータ点を抽出します。
+</p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>
+mgrid cols:=10  rows:=10 missing:=0;
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクション実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />名
+</th>
+<th width="8%">変数<br />名
+</th>
+<th width="8%">I/O<br />と<br />データ型
+</th>
+<th width="8%">デフォルト<br />値
+</th>
+<th>説明
+</th></tr>
+<tr>
+<td>データポイント
+</td>
+<td>iz
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> データポイントを抽出するメソッドを指定します。
+<p>オプションリスト:
+</p>
+<ul><li><i>0=grids: グリッドによる</i></li>
+<li><i>1=cols: 列による </i></li>
+<li><i>2=pick: グラフから選択</i></li></ul>
+</td></tr>
+<tr>
+<td>入力行列
+</td>
+<td>im
+</td>
+<td>
+<p>入力
+</p><p>MatrixObject
+</p>
+</td>
+<td> <center>&lt;active&gt;</center>
+</td>
+<td> 行列オブジェクトを指定します。
+</td></tr>
+<tr>
+<td>入力
+</td>
+<td>iy
+</td>
+<td>
+<p>入力
+</p><p>XYRange
+</p>
+</td>
+<td> <center></center>
+</td>
+<td> 列ごとにデータポイントを抽出する場合は、抽出されるデータポイントのXY範囲を指定します。
+</td></tr>
+<tr>
+<td>Xグリッドサイズ
+</td>
+<td>cols
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>21</center>
+</td>
+<td> X方向のグリッド点の数を指定します。
+</td></tr>
+<tr>
+<td>Yグリッドサイズ
+</td>
+<td>rows
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>21</center>
+</td>
+<td> Y方向のグリッド点の数を指定します。
+</td></tr>
+<tr>
+<td>X最小
+</td>
+<td>xmin
+</td>
+<td>
+<p>入力
+</p><p>double
+</p>
+</td>
+<td> <center>&lt;auto&gt;</center>
+</td>
+<td> 出力行列データの最小X値を指定します。デフォルトでは、すべてのデータポイントが含まれます。
+</td></tr>
+<tr>
+<td>X最大
+</td>
+<td>xmax
+</td>
+<td>
+<p>入力
+</p><p>double
+</p>
+</td>
+<td> <center>&lt;auto&gt;</center>
+</td>
+<td> 出力行列データの最大X値を指定します。デフォルトでは、すべてのデータポイントが含まれます。
+</td></tr>
+<tr>
+<td>Y最小
+</td>
+<td>ymin
+</td>
+<td>
+<p>入力
+</p><p>double
+</p>
+</td>
+<td> <center>&lt;auto&gt;</center>
+</td>
+<td> 出力行列データの最小Y値を指定します。デフォルトでは、すべてのデータポイントが含まれます。
+</td></tr>
+<tr>
+<td>Y最大
+</td>
+<td>ymax
+</td>
+<td>
+<p>入力
+</p><p>double
+</p>
+</td>
+<td> <center>&lt;auto&gt;</center>
+</td>
+<td> 出力行列データの最大Y値を指定します。デフォルトでは、すべてのデータポイントが含まれます。
+</td></tr>
+<tr>
+<td>欠損値の前処理
+</td>
+<td>missing
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td> 補間を使用してデータポイントを抽出するときに、欠損値を前処理する方法を指定します。
+<p>オプションリスト:
+</p>
+<ul><li> <i>0=skip:スキップ</i></li></ul>
+<dl><dd>最初にすべての欠損値を削除してから補間を実行します。</dd></dl>
+<ul><li> <i>1=rc:Renka Clineで補間</i></li></ul>
+<dl><dd>Renka Cline: 任意の点Pに対して、Pを含む三角形の3つの頂点それぞれにおけるデータ値と勾配推定値を用いて補間値を計算します。</dd></dl>
+</td></tr>
+<tr>
+<td>ポイント選択
+</td>
+<td>pickpts
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center> </center>
+</td>
+<td> グラフから選択でデータポイントを抽出する場合は、グラフをダブルクリックして点を指定します。
+</td></tr>
+<tr>
+<td>出力行列
+</td>
+<td>om
+</td>
+<td>
+<p>出力
+</p><p>MatrixObject
+</p>
+</td>
+<td> <center>&lt;input&gt;</center>
+</td>
+<td> 出力行列を指定します
+<p><a class="external text" href="../../XFunction/X-Function/Output_Notations.html">このシンタックス</a>を参照してください。
+</p>
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">説明</span></h2>
+<p>このXファンクションを使用して、仮想行列または行列からの等高線図でデータポイントを抽出できます。
+</p>
+
+
+
+
+
+
+    

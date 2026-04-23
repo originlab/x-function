@@ -1,0 +1,240 @@
+﻿<h1 class="firstHeading">files2dc</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">追加の情報</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Variables"><span class="tocnumber">5</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Description"><span class="tocnumber">6</span> <span class="toctext">説明</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p>データ：複数ファイルに接続
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>複数ファイルとの接続を作成
+</p>
+<h2><a name="Additional_Information"></a><span class="mw-headline">追加の情報</span></h2>
+<p>必要なOriginのバージョン: 2020b以降
+</p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>
+1. string fname$=&quot;C:\examples\Gasoline 1.mat%(CRLF)C:\examples\Gasoline 2.mat%(CRLF)C:\examples\Gasoline 3.mat&quot;;
+files2dc dc:=MATLAB;
+</p><p>2. files2dc dc:=CSV fname:=&quot;%Ytest2.csv%(CRLF)%Ytest1.csv&quot; samebk:=1 dlg:=1;
+</p><p>3. files2dc dc:=CSV src:=1 path:=%YData samebk:=1;
+</p><p>4. files2dc dc:=&quot;Import Filter&quot; fname:=&quot;%YS32-014-04.dat%(CRLF)%YS21-235-07.dat%(CRLF)%YS15-125-03.dat&quot; samebk:=1;
+</code>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="15%">表示<br />名
+</th>
+<th width="8%">変数<br />名
+</th>
+<th width="8%">I/O<br />と<br />データ型
+</th>
+<th width="8%">デフォルト<br />値
+</th>
+<th>説明
+</th></tr>
+<tr>
+<td>データコネクタ
+</td>
+<td>dc
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center></center>
+</td>
+<td> データコネクタのファイルタイプを指定します。Biologic、TDMS、XML、MATLAB、HDF、CSV、Excelなど、複数のタイプがサポートされています。指定したフィルタでファイルをインポートすることもできます。
+</td></tr>
+<tr>
+<td>ソース
+</td>
+<td>src
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> インポートするファイルのソースを指定します。2つのオプションを利用できます。
+<dl><dd><ul><li><i>0:指定したファイル</i>：下の<b>ファイル名</b>でインポートするファイルを指定します。</li>
+<li><i>1:指定したフォルダ内のファイル</i>：<b>フォルダ</b>内（下記参照）を検索し、<b>データコネクタ</b>で指定されたデータ型のすべてのファイルをインポートします。 </li></ul></dd></dl>
+</td></tr>
+<tr>
+<td>ファイル名
+</td>
+<td>fname
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>fname$</center>
+</td>
+<td> <b>ソース</b>が<b>指定したファイル</b>の場合に利用できます。インポートするファイルを指定します。ファイルのパス全体を含める必要があります。
+</td></tr>
+<tr>
+<td>フォルダ
+</td>
+<td>path
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td>
+</td>
+<td> <b>ソース</b>が<b>指定したフォルダ内のファイル</b>の場合に利用できます。フォルダパスを指定します。
+</td></tr>
+<tr>
+<td>同一ブック
+</td>
+<td>samebk
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> このチェックボックスは、CSVコネクタのように同じワークブック内に複数ファイルをインポート可能なコネクタを選択した場合に利用できます。このチェックを入れると、ワークブックには第一ファイルの名前が付けられます。別々のワークブックにインポートした場合、各ワークブックには各ファイルの名前が付けられます。
+</td></tr>
+<tr>
+<td>同一シートに追加
+</td>
+<td>samesheet
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> <b>データコネクタ</b>が<b>CSV</b>および<b>同一ブック</b>の場合に利用できます。複数のファイルを同じワークシートにインポートするかどうか、およびインポートする場合はファイルの追加方法を指定します。次の3つのオプションを使用できます。
+<dl><dd><ul><li><i>0：なし</i>：各ファイルを別々のシートにインポートします。 </li>
+<li><i>1：新規行</i>：全てのファイルを同じワークシートの行方向に追加します。</li>
+<li><i>2：新規列</i>：各ファイルを同じワークシートの列方向に追加します。</li></ul></dd></dl>
+</td></tr>
+<tr>
+<td>ファイル名を挿入
+</td>
+<td>addfn
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> <b>同一シートに追加</b>が<b>新規行</b>の場合に利用できます。このチェックボックスをオンにすると、ファイル名情報を格納する最初の列が挿入されます。
+</td></tr>
+<tr>
+<td>ファイル名オプション
+</td>
+<td>filename
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> <b>同一シートに追加</b>が<b>新規行</b>または<b>新規列</b>の場合に利用できます。ファイル名から抽出する情報を指定します。次の3つのオプションを使用できます。
+<dl><dd><ul><li><i>0:ファイル名のみ</i>：ファイル名のみ抽出、ファイル拡張子なし </li>
+<li><i>1:名前と拡張子</i>：ファイル名と拡張子の両方を抽出</li>
+<li><i>2:ファイル名の一部</i>：ファイル名の一部を抽出します。下記の<b>ファイル名の一部を抽出</b>編集ボックスを使用します。</li></ul></dd></dl>
+</td></tr>
+<tr>
+<td>ファイル名の一部を抽出
+</td>
+<td>parts
+</td>
+<td>
+<p>入力
+</p><p>String
+</p>
+</td>
+<td>
+</td>
+<td> <b>ファイル名オプション</b>が<b>ファイル名の一部</b>の場合に、ファイル名のどの部分を最初の列に抽出するかを指定します。文字範囲を<i>開始位置</i>:<i>終了位置</i>または<i>開始位置</i>+<i>文字数</i>の形式で入力します。<i>1は</i>最初の文字を表し、<i>0は</i>最後の文字を表します。
+<p>例えば、インポートファイル名（拡張子付き）が<i>T325K.csvで</i>あるとします。温度（単位を含む）、つまり<i>325K</i>を抽出するには、<code>2:0</code> または<code>2+4</code> と入力します。
+</p>
+</td></tr>
+<tr>
+<td>部分ファイル名ラベル
+</td>
+<td>label
+</td>
+<td>
+<p>入力
+</p><p>String
+</p>
+</td>
+<td>
+</td>
+<td> <b>同一シートに追加</b>が<b>新規行</b>の場合はファイル名列ロングネームを、<b>同一シートに追加</b>が<b>新規列</b>の場合はラベル行ヘッダを指定します。
+</td></tr>
+<tr>
+<td>第一ファイルでダイアログを開く
+</td>
+<td>dlg
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> このチェックボックスをオンにすると、最初のファイルをインポートする前に<b>インポートオプション</b>ダイアログを開きます。残りのすべてのファイルは、この設定に従ってインポートされます。
+</td></tr>
+<tr>
+<td>列属性の設定
+</td>
+<td>cols
+</td>
+<td>
+<p>入力
+</p><p>String
+</p>
+</td>
+<td>
+</td>
+<td> インポート時に<a class="external text" href="../../UserGuide/UserGuide/Set_Column_Designation.html">列属性</a>を指定します。ここで使用されている指定記号については、<a class="external text" href="../../UserGuide/UserGuide/Set_Column_Designation.html#Column_Designation_Symbols">このページ</a>を参照してください。繰り返しパターン(括弧で囲まれたパターンが繰り返される)と、先頭と末尾の指定記号を含むパターンがサポートされています。
+<p>例えば、
+<br /><code>XY</code>は第1列をX、第2列をYに設定します。これ以降の列属性はすべてYになります。
+<br /><code>3(XY)</code>は最初の6列をXYXYXYに設定します。ワークシートに6つ以上の列がある場合、残りはすべてYとなります。
+<br /><code>N(XY)</code>は第1列を無属性、残りの列はXYの組に設定します。
+<br /><code>NL(XY)Z</code>は第1列を無属性、第2列をラベル、最後の列をZ、その間の列はXYの組に設定します。
+</p>
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">説明</span></h2>
+<p>このXファンクションは同時に複数のファイルに接続するのに使用します。現在は一部のコネクタでサポートされており、たとえば、ワークブックの場合はCSV、Excel、MATLAB、HDF、NetCDFコネクタ+インポートフィルタで、行列の場合はMATLAB、HDF、NetCDFコネクタです。 
+</p><p>このダイアログは、指定されたファイルまたは指定されたフォルダ内のすべてのファイルの選択が可能です。CSVコネクタなどいくつかのコネクタは、同じワークブック内に複数ファイルをインポート可能です。<b>第一ファイルでダイアログを開く</b>チェックボックスをオンにすると、<b>インポートオプション</b>ダイアログが開き、インポート設定を指定できます。残りのすべてのファイルは、この設定に従ってインポートされます。
+</p><p>詳細は<a class="external text" href="../../UserGuide/UserGuide/Connecting_to_File.html#Connect_Multiple_Files">このドキュメント</a>を参照してください。
+</p>
+
+
+
+
+
+
+    

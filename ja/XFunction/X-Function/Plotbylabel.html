@@ -1,0 +1,272 @@
+﻿<h1 class="firstHeading">plotbylabel</h1><div id="toc" class="toc"><div id="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">追加の情報</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#X-Function_Execution_Options"><span class="tocnumber">5</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Variables"><span class="tocnumber">6</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Description"><span class="tocnumber">7</span> <span class="toctext">説明</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Examples"><span class="tocnumber">8</span> <span class="toctext">サンプル</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Related_X-Functions"><span class="tocnumber">9</span> <span class="toctext">関連するXファンクション</span></a></li>
+</ul>
+</div>
+<h2><a name="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p>作図&gt; 複数区分、複数軸：複数区分...を選択します。
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>グループとして列ラベルを使用して複数レイヤグラフをプロット
+</p>
+<h2><a name="Additional_Information"></a><span class="mw-headline">追加の情報</span></h2>
+<p>必要なOriginのバージョン：Origin 8.1 SR0以上。Origin 8.5.1 SR0で更新。<br />
+グラフを非表示にする機能は9.0から利用可能で、レイヤ間の間隔の調整は2016 SR0から利用可能です。<br />
+グラフテンプレートの指定は2021bから可能です。
+</p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>
+plotbylabel iy:=[book1]1!((1,2),(1,3),(1,4)) group:=U plottype:=2 rows:=3 cols:=1;
+</p><p>plotbylabel iy:=[Book1]1!((1,2),(3,4),(5,6),(7,8),(9,10),(11,12),(13,14),(15,16)) group:=L plottype:=1 rows:=4 cols:=2 hgap:=10 vgap:=10 tmg:=5 bmg:=5;
+</p><p>plotbylabel group:=C plottype:=linesymb template:=C:\Users\shirley\Documents\OriginLab\UserFiles202002\MyTest.otpu;
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクションの実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />名
+</th>
+<th width="8%">変数<br />名
+</th>
+<th width="8%">I/O<br />と<br />データ型
+</th>
+<th width="8%">デフォルト<br />値
+</th>
+<th>説明
+</th></tr>
+<tr>
+<td>入力
+</td>
+<td>iy
+</td>
+<td>
+<p>入力
+</p><p>XYRange
+</p>
+</td>
+<td> <center>&lt;active&gt;</center>
+</td>
+<td> 入力データ範囲を指定します。
+</td></tr>
+<tr>
+<td>グループ識別子
+</td>
+<td>group
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> 入力データ範囲をプロットするためのグループ識別子を指定します。X列を区切りとして使用して、Y列を複数のレイヤにプロットすることもできます。指定した数のグループを使って入力範囲を分割し、複数のレイヤにプロットできます。
+<ul><li> 列ラベル行が選択されている場合、同じグループ識別子を持つデータは同じレイヤにプロットされます。スクリプトの場合、<a class="external text" href="../../LabTalk/LabTalk/Column_Label_Row_Characters.html">列ラベル行文字</a>のラベル行を指定するための単一文字を参照してください。</li>
+<li> X列が選択されている場合、X列が区切りとして使用され、Y列が複数のグループに分割され、その後、これらのグループが隣接するXデータに対して複数のパネルとしてプロットされます。</li>
+<li> 指定したグラフ数の場合、グループサイズを指定して入力範囲を分割し、複数のレイヤにプロットできます。</li></ul>
+</td></tr>
+<tr>
+<td>グラフタイプ
+</td>
+<td>plottype
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> プロットタイプを指定します。
+<p>オプションリスト:
+</p>
+<ul><li><i>line:折れ線</i> {0}
+<dl><dd>折れ線プロット</dd></dl></li>
+<li><i>scatter:散布図</i> {1}
+<dl><dd>散布図</dd></dl></li>
+<li><i>linesymb:線+シンボル</i> {2}
+<dl><dd>線＋シンボルプロット</dd></dl></li>
+<li><i>column:縦棒</i> {3}
+<dl><dd>縦棒グラフ</dd></dl></li></ul>
+</td></tr>
+<tr>
+<td>グラフテンプレート
+</td>
+<td>template
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>&lt;auto&gt;</center>
+</td>
+<td> グラフテンプレートを指定して、パネルの書式設定や設定を適用します。<b>自動</b>は、デフォルトのテンプレート<i>mgroups.optu</i>が適用されます。自動のチェックを外すと、<b>...</b>ボタンをクリックしてテンプレートファイルを選択できます。
+</td></tr>
+<tr>
+<td>行数
+</td>
+<td>rows
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>&lt;auto&gt;</center>
+</td>
+<td> レイヤーはN×Mのグリッドに配置されます。この変数は、グリッド内の行数Mを指定します。
+</td></tr>
+<tr>
+<td>列数
+</td>
+<td>cols
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>&lt;auto&gt;</center>
+</td>
+<td> レイヤーはN×Mのグリッドに配置されます。この変数は、グリッド内の列数Nを指定します。
+</td></tr>
+<tr>
+<td>水平の間隔
+</td>
+<td>hgap
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>5</center>
+</td>
+<td> 隣接するレイヤ間の水平ギャップをページサイズの%で指定します。
+</td></tr>
+<tr>
+<td>垂直の間隔
+</td>
+<td>vgap
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>5</center>
+</td>
+<td> 隣接するレイヤ間の垂直ギャップをページサイズの%で指定します。
+</td></tr>
+<tr>
+<td>左端余白
+</td>
+<td>lmg
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>12</center>
+</td>
+<td> 新しいグラフページの左余白をページサイズの%で指定します。
+</td></tr>
+<tr>
+<td>右端余白
+</td>
+<td>rmg
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>10</center>
+</td>
+<td> 新しいグラフページの右余白をページサイズの%で指定します。
+</td></tr>
+<tr>
+<td>上部余白
+</td>
+<td>tmg
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>10</center>
+</td>
+<td> 新しいグラフページの上余白をページサイズの%で指定します。
+</td></tr>
+<tr>
+<td>下部余白
+</td>
+<td>bmg
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>12</center>
+</td>
+<td> 新しいグラフページの下余白をページサイズの%で指定します。
+</td></tr>
+<tr>
+<td>新しく作成したグラフを非表示にする
+</td>
+<td>hide
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> 新しく作成したグラフを非表示にするかどうかを指定します。このオプションはダイアログで非表示になっています。LabTalkスクリプトを通じてのみ値を設定できます。
+<p><br />
+</p>
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">概要</span></h2>
+<p>このXファンクションは、グループ識別子、X列の区切り、またはグループサイズに基づいて、複数のXY範囲を異なるレイヤにプロットします。グループ識別子は、<i>ロングネーム</i>、<i>単位</i>、<i>コメント</i>やその他のカスタマイズされたヘッダで指定できます。
+</p>
+<h2><a name="Examples"></a><span class="mw-headline">サンプル</span></h2>
+<p>この例では、アンスタックされたデータ範囲をプロットします。まず、<a href="../../XFunction/X-Function/Wunstackcol.html" title="X-Function:Wunstackcol">wunstackcol</a> Xファンクションを使用して、アンスタックデータを生成する必要があります。
+</p>
+<ol><li> データ<i>&lt;Origin Installation Directory&gt;\Samples\Statistics\nitrogen.txt</i>をインポートします。（ASCIIダイアログでファイルタイプを<b>テキストファイル (.txt)</b>または<b>全てのファイル (.*)</b>に変更し、同名のDATファイルではなくTXTファイルを取得してください。）</li>
+<li> B列を選択し、メニューから<b>データ整形: 列アンスタッキング</b>を選択します。 </li>
+<li> 開いたダイアログで、A列を<b>グループ列</b>として選択し、<b>グループ情報の出力先</b>を<b>ユーザ定義パラメータ</b>に設定します。そして、<b>グループ情報の引用元</b>を<b>ロングネーム</b>に設定します。
+<dl><dd><a  class="image"><img alt="Plotbylabel example 4.png" src="../images/Plotbylabel/750px-Plotbylabel_example_4.png" width="750"   /></a></dd></dl></li>
+<li> OKをクリックしてデータを生成します。
+<dl><dd><a  class="image"><img alt="Plotbylabel example 1.png" src="../images/Plotbylabel/Plotbylabel_example_1.png" width="456"  /></a></dd></dl></li>
+<li> <b>UnstackCols1</b>ワークシートの最初の列を選択し、メニューから<b>作図 &gt; 基本の2Dグラフ : 折れ線</b>を選択して、折れ線プロットを作成します。このグラフでは、ミニツールバーを使って<b>レイヤの背景</b>を<i>明るい灰色</i>に変更し、Y軸に主グリッド線を追加します。
+<dl><dd> <a  class="image"><img alt="Plotbylabel example 5.png" src="../images/Plotbylabel/750px-Plotbylabel_example_5.png" width="750"   /></a></dd></dl></li>
+<li>ウィンドウのタイトルバーを右クリックして、コンテキストメニューから<b>テンプレートの新規保存</b>を選択し、グラフウィンドウを<i>MyLine.optu</i>というテンプレートとして保存します。後で複数パネルのグラフをプロットする際に再利用できます。
+<dl><dd> <a  class="image"><img alt="Plotbylabel example 6.png" src="../images/Plotbylabel/Plotbylabel_example_6.png" width="602"  /></a></dd></dl></li>
+<li> <b>UnstackCols1</b>ワークシートに戻り、すべての列を選択して、Originのメインメニュー<b>作図 &gt; 複数区分、複数軸：複数区分…</b>を選択して、<b>plotbylabel</b>ダイアログを開きます。</li>
+<li> ダイアログで、<b>グループ識別子</b>を<b>plant</b>に設定し、<b>グラフタイプ</b>を<b>線+シンボル</b>に設定します。<b>グラフテンプレート</b>で先ほど保存したテンプレートを選択します。行数と列数はデフォルト（自動）のままにします。
+<dl><dd><a  class="image"><img alt="Plotbylabel example 2.png" src="../images/Plotbylabel/750px-Plotbylabel_example_2.png" width="851"   /></a></dd></dl></li>
+<li> <b>OK</b>ボタンをクリックして、Y軸でグループ識別子（<b>PLANT1</b>, <b>PLANT2</b>など）で識別された4つのレイヤを持つグラフがプロットされます。レイヤ背景とY軸の主グリッド線がすべてのパネルに適用されていることが確認できます。
+<dl><dd><a  class="image"><img alt="Plotbylabel example 3.png" src="../images/Plotbylabel/Plotbylabel_example_3.png" width="720"  /></a></dd></dl></li></ol>
+<h2><a name="Related_X-Functions"></a><span class="mw-headline">関連するXファンクション</span></h2>
+<p><a href="../../XFunction/X-Function/Plotgroup.html" title="X-Function:Plotgroup">plotgroup</a>, <a href="../../XFunction/X-Function/Plotmyaxes.html" title="X-Function:Plotmyaxes">plotmyaxes</a>
+</p>
+
+
+
+    

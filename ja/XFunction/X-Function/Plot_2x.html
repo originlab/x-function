@@ -1,0 +1,116 @@
+﻿<h1 class="firstHeading">plot_2x</h1>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>目次</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">追加の情報</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Variables"><span class="tocnumber">5</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Description"><span class="tocnumber">6</span> <span class="toctext">説明</span></a></li>
+</ul>
+</div>
+<h2><a name="Menu_Information" id="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p><b>作図 &gt; 複数区分、複数軸: 二重X軸 – 独立XY</b></p>
+<p><b>作図 &gt; 複数区分、複数軸: 二重X軸 – カスタム数式</b></p>
+<p><b>作図 &gt; 複数区分、複数軸: アレニウス</b></p>
+<h2><a name="Brief_Information" id="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>二重X軸グラフを作成します。</p>
+<h2><a name="Additional_Information" id="Additional_Information"></a><span class="mw-headline">追加の情報</span></h2>
+<p>必要なOriginのバージョン:2026以降</p>
+<h2><a name="Command_Line_Usage" id="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>plot_2x -r 1 type:=scatter; plot_2x -r doublex:=cform;</code></p>
+<h2><a name="Variables" id="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />
+名</th>
+<th width="8%">変数<br />
+名</th>
+<th width="8%">I/O<br />
+と<br />
+データ型</th>
+<th width="8%">デフォルト<br />
+値</th>
+<th>説明</th>
+</tr>
+<tr>
+<td>入力</td>
+<td>iy</td>
+<td>
+<p>入力</p>
+<p>XYRange</p>
+</td>
+<td>
+<center>&lt;active&gt;</center>
+</td>
+<td>二重X軸グラフを作成する元の列を選択します。</td>
+</tr>
+<tr>
+<td>プロットタイプ</td>
+<td>type</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>2</center>
+</td>
+<td>プロットタイプを指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><b>折れ線</b></li>
+<li><b>散布図</b></li>
+<li><b>線+シンボル</b></li>
+<li><b>縦棒</b></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>二重X軸モード</td>
+<td>doublex</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>0</center>
+</td>
+<td>選択列をどの方法で二重X軸グラフにするか指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><b>独立XY</b>: <a class="external text" href="../../UserGuide/UserGuide/Double_X_Independent_XY.html">独立XYの二重X軸グラフ</a>を作成します。</li>
+<li><b>カスタム関数</b>:<a class="external text" href="../../UserGuide/UserGuide/Double_X_Custom_Formula.html">カスタム関数で二重X軸グラフ</a>を作成します。</li>
+<li><b>アレニウス</b>: <a class="external text" href="../../UserGuide/UserGuide/Double_X_Arrhenius.html">アレニウスプロット</a>を作成します。</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>グラフテンプレート</td>
+<td>template</td>
+<td>
+<p>入力</p>
+<p>string</p>
+</td>
+<td>
+<center>&lt;auto&gt;</center>
+</td>
+<td>現在のモードに適した既定のグラフテンプレートが選択されます。自動のチェックを外すとユーザ定義テンプレートを指定可能です。</td>
+</tr>
+<tr>
+<td>プロットデータ出力</td>
+<td>rd</td>
+<td>
+<p>出力</p>
+<p>ReportData</p>
+</td>
+<td>
+<center>&lt;optional&gt;</center>
+</td>
+<td>プロットデータをワークシートに出力するかどうかを選択できます。</td>
+</tr>
+</table>
+<h2><a name="Description" id="Description"></a><span class="mw-headline">説明</span></h2>
+<p>このXファンクションは二重X軸グラフを作成するために使用します。 <a class="external text" href="https://www.originlab.com/FileExchange/details.aspx?fid=558" target="_blank">「Doule X Plot」アプリ</a>でも同様の機能を持ちます。</p>

@@ -1,0 +1,465 @@
+<h1 class="firstHeading">2.9.4 ReportStyle</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">Menu Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">Brief Information</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">Additional Information</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">Command Line Usage</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#X-Function_Execution_Options"><span class="tocnumber">5</span> <span class="toctext">X-Function Execution Options</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Variables"><span class="tocnumber">6</span> <span class="toctext">Variables</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Description"><span class="tocnumber">7</span> <span class="toctext">Description</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">Menu Information</span></h2>
+<p>Preference: Report Style
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">Brief Information</span></h2>
+<p>Customize the report sheet style.
+</p>
+<h2><a name="Additional_Information"></a><span class="mw-headline">Additional Information</span></h2>
+<p class="version" >Minimum Origin Version Required: Origin 2025 </p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">Command Line Usage</span></h2>
+<p><code>
+ReportStyle rowFill:=30862532 colFill:=28109823 tlfColor:=31420186 tlfThickness:=3 tlgColor:=28913021 tlsColor:=15 tlsThickness:=2 ttFontColor:=21525541 ttItalic:=1 graphWidth:=200 graphKeepRatio:=1 gapBetBranch:=150;
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">X-Function Execution Options</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">Please refer to the page for additional option switches when accessing the x-function from script</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">Variables</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">Display<br />Name
+</th>
+<th width="8%">Variable<br />Name
+</th>
+<th width="8%">I/O<br />and<br />Type
+</th>
+<th width="8%">Default<br />Value
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Row Fill
+</td>
+<td>rowFill
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>18</center>
+</td>
+<td>
+<p>Specify the color filled in the rows of table header in the report sheet.
+<br />Color may be an index into Origin's Color List&#160;: 1 (Black), 2 (Red), up to 24 (Dark Gray) or up to 40 if you have defined the 16 Custom Colors in the Color dialog. Additionally, you can use the color function to assign any RGB color, as <b>rowFill:=color(240,208,0)</b>
+</p>
+</td></tr>
+<tr>
+<td>Font Color
+</td>
+<td>rowFontColor
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td>
+<p>Specify the color of the font in the rows of table header in the report sheet.
+<br />Color may be an index into Origin's Color List&#160;: 1 (Black), 2 (Red), up to 24 (Dark Gray) or up to 40 if you have defined the 16 Custom Colors in the Color dialog. Additionally, you can use the color function to assign any RGB color, as <b>rowFontColor:=color(240,208,0)</b>
+</p>
+</td></tr>
+<tr>
+<td>Bold
+</td>
+<td>rowBold
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td>
+<p>Specify whether set the font to bold in the rows of table header in the report sheet.
+</p><p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Column Fill
+</td>
+<td>colFill
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>18</center>
+</td>
+<td>
+<p>Specify the color filled in the columns of table header in the report sheet.
+<br />Color may be an index into Origin's Color List&#160;: 1 (Black), 2 (Red), up to 24 (Dark Gray) or up to 40 if you have defined the 16 Custom Colors in the Color dialog. Additionally, you can use the color function to assign any RGB color, as <b>colFill:=color(240,208,0)</b>
+</p>
+</td></tr>
+<tr>
+<td>Font Color
+</td>
+<td>colFontColor
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td>
+<p>Specify the color of the font in the columns of table header in the report sheet.
+<br />Color may be an index into Origin's Color List&#160;: 1 (Black), 2 (Red), up to 24 (Dark Gray) or up to 40 if you have defined the 16 Custom Colors in the Color dialog. Additionally, you can use the color function to assign any RGB color, as <b>colFontColor:=color(240,208,0)</b>
+</p>
+</td></tr>
+<tr>
+<td>Bold
+</td>
+<td>colBold
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td>
+<p>Specify whether set the font to bold in the columns of table header in the report sheet.
+</p><p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Fill to 1st Cell
+</td>
+<td>colFillTo1
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td>
+<p>Specify whether fill color to the first cell of table header in the report sheet.
+</p><p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Frame
+</td>
+<td>tlfFrame
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td>
+<p>Control the frame displaying for the table lines.
+</p><p>Option list:
+</p>
+<ul><li><i>0=no: No Frame</i></li>
+<li><i>1=full: Full Frame</i></li>
+<li><i>2=tb: Top&amp;Bottom Frame</i></li>
+<li><i>3=lr: Left&amp;Right Frame</i></li></ul>
+</td></tr>
+<tr>
+<td>Color
+</td>
+<td>tlfColor
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>24</center>
+</td>
+<td>
+<p>Specify the color of the frame in the report table.
+<br />Color may be an index into Origin's Color List&#160;: 1 (Black), 2 (Red), up to 24 (Dark Gray) or up to 40 if you have defined the 16 Custom Colors in the Color dialog. Additionally, you can use the color function to assign any RGB color, as <b>tlfColor:=color(240,208,0)</b>
+</p>
+</td></tr>
+<tr>
+<td>Thickness
+</td>
+<td>tlfThickness
+</td>
+<td>
+<p>Input
+</p><p>double
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td>
+<p>Specify the thickness of the frame in the report table.
+</p>
+</td></tr>
+<tr>
+<td>Grids
+</td>
+<td>tlgGrids
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td>
+<p>Control the grid line displaying in the report table.
+</p><p>Option list:
+</p>
+<ul><li><i>0=no:No Grid</i></li>
+<li><i>1=all:All Grids</i></li>
+<li><i>2=row:Row Grids Only</i></li>
+<li><i>3=col:Column Grids Only</i></li></ul>
+</td></tr>
+<tr>
+<td>Color
+</td>
+<td>tlgColor
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>30593746</center>
+</td>
+<td>
+<p>Specify the color of the grid line in the report table.
+<br />Color may be an index into Origin's Color List&#160;: 1 (Black), 2 (Red), up to 24 (Dark Gray) or up to 40 if you have defined the 16 Custom Colors in the Color dialog. Additionally, you can use the color function to assign any RGB color, as <b>tlgColor:=color(240,208,0)</b>
+</p>
+</td></tr>
+<tr>
+<td>Thickness
+</td>
+<td>tlgThickness
+</td>
+<td>
+<p>Input
+</p><p>double
+</p>
+</td>
+<td> <center>&lt;auto&gt;</center>
+</td>
+<td>
+<p>Specify the thickness of the grid line in the report table.
+</p>
+</td></tr>
+<tr>
+<td>Separator
+</td>
+<td>tlsSeparator
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td>
+<p>Control the separator line displaying in the report table.
+</p><p>Option list:
+</p>
+<ul><li><i>0=header:Header Separator</i></li>
+<li><i>1=colHeader:Column Header</i></li>
+<li><i>2=rowGroup:Group Separator</i></li></ul>
+</td></tr>
+<tr>
+<td>Color
+</td>
+<td>tlsColor
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>24</center>
+</td>
+<td>
+<p>Specify the color of the separator line in the report table.
+<br />Color may be an index into Origin's Color List&#160;: 1 (Black), 2 (Red), up to 24 (Dark Gray) or up to 40 if you have defined the 16 Custom Colors in the Color dialog. Additionally, you can use the color function to assign any RGB color, as <b>tlsColor:=color(240,208,0)</b>
+</p>
+</td></tr>
+<tr>
+<td>Thickness
+</td>
+<td>tlsThickness
+</td>
+<td>
+<p>Input
+</p><p>double
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td>
+<p>Specify the thickness of the separator line in the report table.
+</p>
+</td></tr>
+<tr>
+<td>Color
+</td>
+<td>ttFontColor
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>24</center>
+</td>
+<td>
+<p>Specify the font color of table titles.
+<br />Color may be an index into Origin's Color List&#160;: 1 (Black), 2 (Red), up to 24 (Dark Gray) or up to 40 if you have defined the 16 Custom Colors in the Color dialog. Additionally, you can use the color function to assign any RGB color, as <b>ttFontColor:=color(240,208,0)</b>
+</p>
+</td></tr>
+<tr>
+<td>Bold
+</td>
+<td>ttBold
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td>
+<p>Specify whether set the font of table titles to bold..
+</p><p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Italic
+</td>
+<td>ttItalic
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td>
+<p>Specify whether set the font of table titles to italic..
+</p><p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Graph Width
+</td>
+<td>graphWidth
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>300</center>
+</td>
+<td>
+<p>Specify the graph width size in the report sheet.
+</p>
+</td></tr>
+<tr>
+<td>Keep Aspect Ratio
+</td>
+<td>graphKeepRatio
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td>
+<p>Specify the graph in the report sheet whether keep aspect ratio
+</p><p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Gap Between Branches
+</td>
+<td>gapBetBranch
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>100</center>
+</td>
+<td>
+<p>Specify the gap size between each branch. For example, gap size between table and the graph.
+</p>
+</td></tr>
+<tr>
+<td>Grids for Report Branches
+</td>
+<td>reportGrids
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td>Grids for Report Branches
+<p>Specify whether to show the grid lines for the report branches.
+</p><p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr></table>
+<p><br />
+</p>
+<h2><a name="Description"></a><span class="mw-headline">Description</span></h2>
+<p>This X-Function is used to customize the report sheet style. You also can control it by the dialog and preview the style in the Preview window.
+</p><p><a  class="image"><img alt="ReportSytle 01.png" src="../images/ReportStyle/800px-ReportSytle_01.png?v=84690" width="800"   /></a>
+</p>
+
+
+
+
+

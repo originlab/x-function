@@ -1,0 +1,430 @@
+﻿<h1 class="firstHeading">ReportStyle</h1>
+<p><br /></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>目次</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">追加の情報</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#X-Function_Execution_Options"><span class="tocnumber">5</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Variables"><span class="tocnumber">6</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Description"><span class="tocnumber">7</span> <span class="toctext">説明</span></a></li>
+</ul>
+</div>
+<h2><a name="Menu_Information" id="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p>環境設定:レポートスタイル</p>
+<h2><a name="Brief_Information" id="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>レポートシートスタイルをカスタマイズします。</p>
+<h2><a name="Additional_Information" id="Additional_Information"></a><span class="mw-headline">追加の情報</span></h2>
+<p class="version">必要なOriginのバージョン: Origin 2025以降</p>
+<h2><a name="Command_Line_Usage" id="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>ReportStyle rowFill:=30862532 colFill:=28109823 tlfColor:=31420186 tlfThickness:=3 tlgColor:=28913021 tlsColor:=15 tlsThickness:=2 ttFontColor:=21525541 ttItalic:=1 graphWidth:=200 graphKeepRatio:=1 gapBetBranch:=150;</code></p>
+<h2><a name="X-Function_Execution_Options" id="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクション実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a></p>
+<h2><a name="Variables" id="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />
+名</th>
+<th width="8%">変数<br />
+名</th>
+<th width="8%">I/O<br />
+と<br />
+データ型</th>
+<th width="8%">デフォルト<br />
+値</th>
+<th>説明</th>
+</tr>
+<tr>
+<td>行 塗りつぶし</td>
+<td>rowFill</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>18</center>
+</td>
+<td>
+<p>レポートシートの表ヘッダ行の塗りつぶし色を指定します。<br />
+色は、Originのカラーリストのインデックスで、&#160;1 (黒)、2 (赤)、最大24 (ダークグレー)、または色ダイアログで16のカスタムカラーを定義した場合は最大40までです。さらに、color関数を使用して、<b>rowFill:=color(240,208,0)</b>のように任意のRGBカラーを割り当てることができます。</p>
+</td>
+</tr>
+<tr>
+<td>フォント色</td>
+<td>rowFontColor</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>1</center>
+</td>
+<td>
+<p>レポートシートの表ヘッダーの行でのフォントの色を指定します。<br />
+色は、Originのカラーリストのインデックスで、&#160;1 (黒)、2 (赤)、最大24 (ダークグレー)、または色ダイアログで16のカスタムカラーを定義した場合は最大40までです。さらに、color関数を使用して、<b>rowFontColor:=color(240,208,0)</b>のように任意のRGBカラーを割り当てることができます。</p>
+</td>
+</tr>
+<tr>
+<td>太字</td>
+<td>rowBold</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>0</center>
+</td>
+<td>
+<p>レポートシートの表ヘッダーの行でフォントを太字に設定するかどうかを指定します。</p>
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>列 塗りつぶし</td>
+<td>colFill</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>18</center>
+</td>
+<td>
+<p>レポートシートの表ヘッダーの列の塗りつぶしの色を指定します。<br />
+色は、Originのカラーリストのインデックスで、&#160;1 (黒)、2 (赤)、最大24 (ダークグレー)、または色ダイアログで16のカスタムカラーを定義した場合は最大40までです。さらに、color関数を使用して、<b>colFill:=color(240,208,0)</b>のように任意のRGBカラーを割り当てることができます。</p>
+</td>
+</tr>
+<tr>
+<td>フォント色</td>
+<td>colFontColor</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>1</center>
+</td>
+<td>
+<p>レポートシートの表ヘッダーの列のフォントの色を指定します。<br />
+色は、Originのカラーリストのインデックスで、&#160;1 (黒)、2 (赤)、最大24 (ダークグレー)、または色ダイアログで16のカスタムカラーを定義した場合は最大40までです。さらに、color関数を使用して、<b>colFontColor:=color(240,208,0)</b>のように任意のRGBカラーを割り当てることができます。</p>
+</td>
+</tr>
+<tr>
+<td>太字</td>
+<td>colBold</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>1</center>
+</td>
+<td>
+<p>レポートシートの表ヘッダーの列でフォントを太字に設定するかどうかを指定します。</p>
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>1番目のセルまで入力</td>
+<td>colFillTo1</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>1</center>
+</td>
+<td>
+<p>レポートシートの表ヘッダーの最初のセルの塗りつぶし色を指定します。</p>
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>枠</td>
+<td>tlfFrame</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>2</center>
+</td>
+<td>
+<p>表の行に表示される枠を制御します。</p>
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=no: フレームなし</i></li>
+<li><i>1= Full：フレーム全体</i></li>
+<li><i>2=tb: 上と下のフレーム</i></li>
+<li><i>3=lr: 左と右のフレーム</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>色</td>
+<td>tlfColor</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>24</center>
+</td>
+<td>
+<p>レポートテーブルでフレーム（枠）の色を指定します。<br />
+色は、Originのカラーリストのインデックスで、&#160;1 (黒)、2 (赤)、最大24 (ダークグレー)、または色ダイアログで16のカスタムカラーを定義した場合は最大40までです。さらに、color関数を使用して、任意のRGBカラーを<b>tlfColor:=color(240,208,0)</b>として割り当てることができます。</p>
+</td>
+</tr>
+<tr>
+<td>太さ</td>
+<td>tlfThickness</td>
+<td>
+<p>入力</p>
+<p>double</p>
+</td>
+<td>
+<center>2</center>
+</td>
+<td>
+<p>レポートテーブルでフレームの太さを指定します。</p>
+</td>
+</tr>
+<tr>
+<td>グリッド</td>
+<td>tlgGrids</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>2</center>
+</td>
+<td>
+<p>レポートテーブルに表示されるグリッド線を制御します。</p>
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=no:グリッドなし</i></li>
+<li><i>1=all:全グリッド</i></li>
+<li><i>2=row:行グリッドのみ</i></li>
+<li><i>3=col:列グリッドのみ</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>色</td>
+<td>tlgColor</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>30593746</center>
+</td>
+<td>
+<p>レポートテーブルのグリッド線の色を指定します。<br />
+色は、Originのカラーリストのインデックスで、&#160;1 (黒)、2 (赤)、最大24 (ダークグレー)、または色ダイアログで16のカスタムカラーを定義した場合は最大40までです。さらに、color関数を使用して、任意のRGBカラーを<b>tlgColor:=color(240,208,0)</b>のように割り当てることができます。</p>
+</td>
+</tr>
+<tr>
+<td>太さ</td>
+<td>tlgThickness</td>
+<td>
+<p>入力</p>
+<p>double</p>
+</td>
+<td>
+<center>&lt;auto&gt;</center>
+</td>
+<td>
+<p>レポートテーブルのグリッド線の太さを指定します。</p>
+</td>
+</tr>
+<tr>
+<td>セパレータ</td>
+<td>tlsSeparator</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>2</center>
+</td>
+<td>
+<p>レポートテーブルに表示される区切り線を制御します。</p>
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=header:ヘッダセパレータ</i></li>
+<li><i>1= colHeader:列ヘッダ</i></li>
+<li><i>2= rowGroup:グループセパレータ</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>色</td>
+<td>tlsColor</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>24</center>
+</td>
+<td>
+<p>レポートテーブルの区切り線の色を指定します。<br />
+色は、Originのカラーリストのインデックスで、&#160;1 (黒)、2 (赤)、最大24 (ダークグレー)、または色ダイアログで16のカスタムカラーを定義した場合は最大40までです。さらに、color関数を使用して、任意のRGBカラーを<b>tlsColor:=color(240,208,0)</b>として割り当てることができます。</p>
+</td>
+</tr>
+<tr>
+<td>太さ</td>
+<td>tlsThickness</td>
+<td>
+<p>入力</p>
+<p>double</p>
+</td>
+<td>
+<center>1</center>
+</td>
+<td>
+<p>レポートテーブルの区切り線の太さを指定します。</p>
+</td>
+</tr>
+<tr>
+<td>色</td>
+<td>ttFontColor</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>24</center>
+</td>
+<td>
+<p>表タイトルのフォント色を指定します。<br />
+色は、Originのカラーリストのインデックスで、&#160;1 (黒)、2 (赤)、最大24 (ダークグレー)、または色ダイアログで16のカスタムカラーを定義した場合は最大40までです。さらに、color関数を使用して、<b>ttFontColor:=color(240,208,0)</b>ように任意のRGBカラーを割り当てることができます。</p>
+</td>
+</tr>
+<tr>
+<td>太字</td>
+<td>ttBold</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>1</center>
+</td>
+<td>
+<p>表タイトルのフォントを太字に設定するかどうかを指定します。</p>
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>斜体</td>
+<td>ttItalic</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>0</center>
+</td>
+<td>
+<p>表タイトルのフォントをイタリックに設定するかどうかを指定します。</p>
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>グラフ幅</td>
+<td>graphWidth</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>300</center>
+</td>
+<td>
+<p>レポートシートでグラフ幅のサイズを指定します。</p>
+</td>
+</tr>
+<tr>
+<td>縦横比を保持</td>
+<td>graphKeepRatio</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>0</center>
+</td>
+<td>
+<p>レポートシートでグラフを縦横比を維持するかどうか指定します。</p>
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>枝間の間隔</td>
+<td>gapBetBranch</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>100</center>
+</td>
+<td>
+<p>各ブランチ間の間隔を指定します。たとえば、表とグラフの間の間隔を作図などが設定されます。</p>
+</td>
+</tr>
+<tr>
+<td>レポート枝のグリッド</td>
+<td>reportGrids</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>0</center>
+</td>
+<td>レポート枝のグリッド
+<p>レポートブランチのグリッド線を表示するか指定します。</p>
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><br /></p>
+<h2><a name="Description" id="Description"></a><span class="mw-headline">説明</span></h2>
+<p>このXファンクションはレポートシートのスタイルをカスタマイズするために使用します。ダイアログで設定しながら、プレビューウィンドウでスタイルをプレビューすることもできます。</p>
+<p><a class="image"><img alt="ReportSytle 01.png" src="../images/ReportStyle/800px-ReportSytle_01.png" width="800" /></a></p>

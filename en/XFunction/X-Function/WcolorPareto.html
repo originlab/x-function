@@ -1,0 +1,177 @@
+<h1 class="firstHeading">2.2.3.45 wcolorPareto</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">Menu Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">Brief Information</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Command_Line_Usage"><span class="tocnumber">3</span> <span class="toctext">Command Line Usage</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#X-Function_Execution_Options"><span class="tocnumber">4</span> <span class="toctext">X-Function Execution Options</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Variables"><span class="tocnumber">5</span> <span class="toctext">Variables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#tr_TreeNode_Details"><span class="tocnumber">5.1</span> <span class="toctext">tr TreeNode Details</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Description"><span class="tocnumber">6</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Related_X-Functions"><span class="tocnumber">7</span> <span class="toctext">Related X-Functions</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">Menu Information</span></h2>
+<p>Worksheet: Conditional Formatting: Pareto
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">Brief Information</span></h2>
+<p>Calculate count of selected worksheet cells, order them from top frequent to least frequent, and color the most/least frequent items.
+</p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">Command Line Usage</span></h2>
+<p><code>
+1. wcolorPareto rng:=[Book1]Sheet1!A:B name:="C1R1-C4R0";
+</p><p>2. wcolorPareto rng:=[Book1]Sheet1!A:B name:="C1R1-C2R0" rule:=1 tr.fill:=31306751 tr.font:=32497615;
+</p><p>3. wcolorPareto rng:=[Book1]Sheet1!A:B name:="C1R1-C2R0" rule:=2 n:=10;
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">X-Function Execution Options</span></h2>
+<p>Please refer to <a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">this page</a> for additional option switches when accessing the x-function from script.
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">Variables</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">Display<br />Name
+</th>
+<th width="8%">Variable<br />Name
+</th>
+<th width="8%">I/O<br />and<br />Type
+</th>
+<th width="8%">Default<br />Value
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Range
+</td>
+<td>rng
+</td>
+<td>
+<p>Input
+</p><p>Range
+</p>
+</td>
+<td>&lt;active&gt;
+</td>
+<td> Specify range of the cells in the worksheet to apply conditional formatting.
+</td></tr>
+<tr>
+<td>Name
+</td>
+<td>name
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td>
+</td>
+<td> Specify the name for the selected range.
+</td></tr>
+<tr>
+<td>Rule
+</td>
+<td>rule
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td>0
+</td>
+<td> Determine which cells to be colored. Options:
+<dl><dd><ul><li><i>most:Most Frequent N Items(0)</i> </li>
+<li><i>mostp:Most Frequent N%(1)</i></li>
+<li><i>least:Least Frequent N Items(2)</i> </li>
+<li><i>leastp:Least Frequent N%(3)</i></li></ul></dd></dl>
+</td></tr>
+<tr>
+<td>N
+</td>
+<td>n
+</td>
+<td>
+<p>Input
+</p><p>Double
+</p>
+</td>
+<td> 1
+</td>
+<td> Specify the number of the most/least frequent items to be colored.
+</td></tr>
+<tr>
+<td>Format
+</td>
+<td>tr
+</td>
+<td>
+<p>Input
+</p><p>TreeNode
+</p>
+</td>
+<td> &lt;unassigned&gt;
+</td>
+<td> Set the colors. See details in the table below.
+</td></tr></table>
+<h3><a name="tr_TreeNode_Details"></a><span class="mw-headline">tr TreeNode Details</span></h3>
+<p><b>Syntax</b>: <b>tr.</b><i>treenode</i>=<i>value</i>
+</p>
+<table class="xfvar">
+<tr>
+<th width="8%">Display<br />Name
+</th>
+<th width="8%">Variable<br />Name
+</th>
+<th width="8%">I/O<br />and<br />Type
+</th>
+<th width="8%">Default<br />Value
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td> Background
+</td>
+<td> fill
+</td>
+<td>
+<p>Input
+</p><p>Double
+</p>
+</td>
+<td> 30067455
+</td>
+<td> Specify the filled color of worksheet cells
+</td></tr>
+<tr>
+<td> Text Color
+</td>
+<td> font
+</td>
+<td>
+<p>Input
+</p><p>Double 
+</p>
+</td>
+<td> 20132812
+</td>
+<td> Specify the font color .
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">Description</span></h2>
+<p>Calculate count of all items in the selected range, and order them from top frequent to least frequent like Pareto chart. An then color the most/least frequent <i>N</i> items.
+</p>
+<h2><a name="Related_X-Functions"></a><span class="mw-headline">Related X-Functions</span></h2>
+<p><a href="../../XFunction/X-Function/Wcolor.html" title="X-Function:Wcolor">wcolor</a>, <a href="../../XFunction/X-Function/Wcolordup.html" title="X-Function:Wcolordup">wcolordup</a>, <a href="../../XFunction/X-Function/Wheatmap.html" title="X-Function:Wheatmap">wheatmap</a>, <a href="../../XFunction/X-Function/Wcolorbycr.html" title="X-Function:Wcolorbycr">wcolorbycr</a>, <a href="../../XFunction/X-Function/Wcolortb.html" title="X-Function:Wcolortb">wcolortb</a>, <a href="../../XFunction/X-Function/Wcoloroutlier.html" title="X-Function:Wcoloroutlier">wcoloroutlier</a>
+</p>
+<hr class='keywordshr'><p><span class='keywords'>Keywords:</span><span class='keywordsInput'>cell coloring</span></p>
+
+
+
+
+
+

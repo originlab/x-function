@@ -1,0 +1,52 @@
+<h1 class="firstHeading">3.5 X-Function RangeListBox Example</h1><p><span class="OIndex" style="display:none">X-Function Range</span>
+</p>
+<h2><a name="Summary"></a><span class="mw-headline">Summary</span></h2>
+<p>This example demonstrates how to use ListBox control for Range variable.
+</p>
+<h2><a name="Steps"></a><span class="mw-headline">Steps</span></h2>
+<ol start="1">
+<li>
+Open X-Function Builder from Tools menu, enter the X-Function name and variables, as in the following picture, and then click Save. <a  class="image"><img alt="Ocguide xfdialog savebutton.png" src="../images/X-Function_RangeListBox_Example/Ocguide_xfdialog_savebutton.png?v=77100" width="23"  /></a>.<br /><a  class="image"><img alt="OCguide xf example RangeListBox.png" src="../images/X-Function_RangeListBox_Example/OCguide_xf_example_RangeListBox.png?v=84565" width="517"  /></a>
+</li>
+<li>
+Open this X-Function in Code Builder to edit the source code. First include the needed header file, as below.
+<pre class="oc" style="font-family:monospace;"><span style="color: #0000ff;">#include</span> <span style="color: #000080;">&lt;</span>..\OriginLab\wks_utils.<span style="color: #000000;">h</span><span style="color: #000080;">&gt;</span> <span style="color: #008000;">// needed for init_GetN_col_list_ctrls function</span></pre>
+</li>
+<li>
+In the X-Function's main function, <i>collistex</i>, add the following code to get the range string from the specified data range.
+<span class="OIndex" style="display:none">X-Function, Range</span>
+<pre class="oc" style="font-family:monospace;">	string str;
+	<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>collist<span style="color: #000000;">&#41;</span>
+		collist.<span style="color: #000000;">GetRangeString</span><span style="color: #000000;">&#40;</span>str, NTYPE_FOR_RANGE<span style="color: #000000;">&#41;</span>;
+	out_str<span style="color: #000000;">&#40;</span>str<span style="color: #000000;">&#41;</span>;</pre>
+</li>
+<li>
+In the X-Function's before_execute function <i>collistex_before_execute</i>, add the following code to initialize the control of collist variable. It will make collist a ListBox to list column range.
+<pre class="oc" style="font-family:monospace;">	<span style="color: #0000ff;">bool</span> bIsStart <span style="color: #000080;">=</span> is_xf_startup<span style="color: #000000;">&#40;</span>nGetNDialog, dwCntrl<span style="color: #000000;">&#41;</span>;
+	<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>bIsStart <span style="color: #000040;">&amp;&amp;</span> <span style="color: #000000;">&#40;</span>dwCntrl <span style="color: #000040;">&amp;</span> LTXF_SHOW_DIALOG<span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span>
+	<span style="color: #000000;">&#123;</span>
+		init_GetN_col_list_ctrls<span style="color: #000000;">&#40;</span><span style="color: #0000ff;">NULL</span>, trGetN.<span style="color: #000000;">collist</span><span style="color: #000000;">&#41;</span>;
+	<span style="color: #000000;">&#125;</span></pre>
+</li>
+<h2><a name="Run_the_X-Function"></a><span class="mw-headline">Run the X-Function</span></h2>
+<ol>
+<li>
+run <i>collistex -d</i> in the Script window, and then you can see the dialog below.
+<div><a  class="image"><img alt="Ocguide xfdialog collistex display.png" src="../images/X-Function_RangeListBox_Example/Ocguide_xfdialog_collistex_display.png?v=84566" width="290"  /></a>
+</div>
+</li>
+<li>
+click the ListBox's triangle button to add columns and you can select/unselect columns in the ListBox.
+<div><a  class="image"><img alt="Ocguide xfdialog collistex columns.png" src="../images/X-Function_RangeListBox_Example/Ocguide_xfdialog_collistex_columns.png?v=84567" width="331"  /></a>
+</div>
+</li>
+<li>
+click OK. It will output the range of selected columns.
+</li>
+</ol></ol>
+
+
+
+
+
+

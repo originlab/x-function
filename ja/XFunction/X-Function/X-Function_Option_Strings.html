@@ -1,0 +1,619 @@
+﻿<h1 class="firstHeading">Xファンクションのオプション文字列</h1><p><span class="OIndex" style="display:none">X-Function, Option Strings</span>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#A_-_Recalculate_ModeX-Function.2C_Recalculate_Mode"><span class="tocnumber">1</span> <span class="toctext">A - 再計算モード<span class="OIndex" style="display:none">X-Function, Recalculate Mode</span></span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#A:0x00"><span class="tocnumber">1.1</span> <span class="toctext">A:0x00</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#A:0x01"><span class="tocnumber">1.2</span> <span class="toctext">A:0x01</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#A:0x02"><span class="tocnumber">1.3</span> <span class="toctext">A:0x02</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#A:0x04"><span class="tocnumber">1.4</span> <span class="toctext">A:0x04</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#B_-_Browser_Dialog_OptionsX-Function.2C_Browser_Dialog_Options"><span class="tocnumber">2</span> <span class="toctext">B - ブラウザダイアログオプション<span class="OIndex" style="display:none">X-Function, Browser Dialog Options</span></span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#B:0x0001"><span class="tocnumber">2.1</span> <span class="toctext">B:0x0001</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#B:0x0002"><span class="tocnumber">2.2</span> <span class="toctext">B:0x0002</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#C_-_Miscellaneous_Options"><span class="tocnumber">3</span> <span class="toctext">C - その他のオプション</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#C:0x0001X-Function.2C_Disable_Auto_Assigning_Column_Designatioin"><span class="tocnumber">3.1</span> <span class="toctext">C:0x0001<span class="OIndex" style="display:none">X-Function, Disable Auto Assigning Column Designatioin</span></span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#C:0x0002X-Function.2C_New_Hidden_Page"><span class="tocnumber">3.2</span> <span class="toctext">C:0x0002<span class="OIndex" style="display:none">X-Function, New Hidden Page</span></span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#C:0x0004_X-Function.2C_Disable_Undo"><span class="tocnumber">3.3</span> <span class="toctext">C:0x0004 <span class="OIndex" style="display:none">X-Function, Disable Undo</span></span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#C:0x0010_X-Function.2C_Missing_Data_Display_Format"><span class="tocnumber">3.4</span> <span class="toctext">C:0x0010 <span class="OIndex" style="display:none">X-Function, Missing Data Display Format</span></span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#C:0x0100_X-Function.2C_Set_Output_Range_Dimension"><span class="tocnumber">3.5</span> <span class="toctext">C:0x0100 <span class="OIndex" style="display:none">X-Function, Set Output Range Dimension</span></span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#C:0x0200"><span class="tocnumber">3.6</span> <span class="toctext">C:0x0200</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#C:0x0400"><span class="tocnumber">3.7</span> <span class="toctext">C:0x0400</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#C:0x0800"><span class="tocnumber">3.8</span> <span class="toctext">C:0x0800</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#C:0x1000"><span class="tocnumber">3.9</span> <span class="toctext">C:0x1000</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#C:0x2000"><span class="tocnumber">3.10</span> <span class="toctext">C:0x2000</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#C:0x4000"><span class="tocnumber">3.11</span> <span class="toctext">C:0x4000</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#E_-_Execution_ControlX-Function.2C_Execution_Control"><span class="tocnumber">4</span> <span class="toctext">E - 実行制御<span class="OIndex" style="display:none">X-Function, Execution Control</span></span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#F_-_Dialog_Numeric_Display_FormatX-Function.2C_Dialog_Numeric_Display_Format"><span class="tocnumber">5</span> <span class="toctext">F - ダイアログ数値表示フォーマット<span class="OIndex" style="display:none">X-Function, Dialog Numeric Display Format</span></span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="#FT_-_Data_Plot_Selection_FilterX-Function_Data_Plot_Selection_Filter"><span class="tocnumber">6</span> <span class="toctext">FT - データプロット選択フィルタ<span class="OIndex" style="display:none">X-Function Data Plot Selection Filter</span></span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="#FV_-_Specify_the_Source_of_Output_VariableX-Function.2C_Specify_the_Source_of_Output_Variable"><span class="tocnumber">7</span> <span class="toctext">FV - 出力変数のソースを指定<span class="OIndex" style="display:none">X-Function, Specify the Source of Output Variable</span></span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="#G_-_Grouping_Controls_on_GUIX-Function.2C_Grouping_Controls_on_Dialog"><span class="tocnumber">8</span> <span class="toctext">G - GUIでのグループコントロール<span class="OIndex" style="display:none">X-Function, Grouping Controls on Dialog</span></span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="#H_-_Setting_Result_Tables_Shown_StyleX-Function.2C_Set_Result_Tables_Shown_Style"><span class="tocnumber">9</span> <span class="toctext">H - 結果表表示スタイルの設定<span class="OIndex" style="display:none">X-Function, Set Result Tables Shown Style</span></span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="#I_-_Restrict_the_Behavior_of_Input_Range_ControlX-Function.2C_Input_Range_Control"><span class="tocnumber">10</span> <span class="toctext">I - 入力範囲制御の動作を制限<span class="OIndex" style="display:none">X-Function, Input Range Control</span></span></a>
+<ul>
+<li class="toclevel-2 tocsection-28"><a href="#I:0x0001"><span class="tocnumber">10.1</span> <span class="toctext">I:0x0001</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#I:0x0002"><span class="tocnumber">10.2</span> <span class="toctext">I:0x0002</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#I:0x0004"><span class="tocnumber">10.3</span> <span class="toctext">I:0x0004</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#I:0x0008"><span class="tocnumber">10.4</span> <span class="toctext">I:0x0008</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#I:0x0010"><span class="tocnumber">10.5</span> <span class="toctext">I:0x0010</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#I:0x0020"><span class="tocnumber">10.6</span> <span class="toctext">I:0x0020</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#I:0x0040"><span class="tocnumber">10.7</span> <span class="toctext">I:0x0040</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#I:0x0080"><span class="tocnumber">10.8</span> <span class="toctext">I:0x0080</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#I:0x0100"><span class="tocnumber">10.9</span> <span class="toctext">I:0x0100</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#I:0x0200"><span class="tocnumber">10.10</span> <span class="toctext">I:0x0200</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#I:0x0400"><span class="tocnumber">10.11</span> <span class="toctext">I:0x0400</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#I:0x0800"><span class="tocnumber">10.12</span> <span class="toctext">I:0x0800</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#I:0x1000"><span class="tocnumber">10.13</span> <span class="toctext">I:0x1000</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#I:0x2000"><span class="tocnumber">10.14</span> <span class="toctext">I:0x2000</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#I:0x4000"><span class="tocnumber">10.15</span> <span class="toctext">I:0x4000</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#I:0x8000"><span class="tocnumber">10.16</span> <span class="toctext">I:0x8000</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#I:0x00010000"><span class="tocnumber">10.17</span> <span class="toctext">I:0x00010000</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#I:0x00020000"><span class="tocnumber">10.18</span> <span class="toctext">I:0x00020000</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#I:0x00040000"><span class="tocnumber">10.19</span> <span class="toctext">I:0x00040000</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#I:0x00080000"><span class="tocnumber">10.20</span> <span class="toctext">I:0x00080000</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#I:0x00100000"><span class="tocnumber">10.21</span> <span class="toctext">I:0x00100000</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#I:0x00200000"><span class="tocnumber">10.22</span> <span class="toctext">I:0x00200000</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#I:0x00400000"><span class="tocnumber">10.23</span> <span class="toctext">I:0x00400000</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#I:0x00800000"><span class="tocnumber">10.24</span> <span class="toctext">I:0x00800000</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#I:0x02000000"><span class="tocnumber">10.25</span> <span class="toctext">I:0x02000000</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#I:0x04000000"><span class="tocnumber">10.26</span> <span class="toctext">I:0x04000000</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#I:0x08000000"><span class="tocnumber">10.27</span> <span class="toctext">I:0x08000000</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#I:0x10000000"><span class="tocnumber">10.28</span> <span class="toctext">I:0x10000000</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-56"><a href="#M_-_Support_Multi-line_StringX-Function.2C_Multi-lines_Text_Control"><span class="tocnumber">11</span> <span class="toctext">M - 複数行文字列のサポート<span class="OIndex" style="display:none">X-Function, Multi-lines Text Control</span></span></a></li>
+<li class="toclevel-1 tocsection-57"><a href="#N_-_Setting_the_Default_Name_of_Output_ObjectsX-Function.2C_Set_the_Default_Name_for_Output_Object"><span class="tocnumber">12</span> <span class="toctext">N - 出力オブジェクトのデフォルト名の設定<span class="OIndex" style="display:none">X-Function, Set the Default Name for Output Object</span></span></a></li>
+<li class="toclevel-1 tocsection-58"><a href="#O_-_Setting_Output_Object_Action_after_Running_X-FunctionX-Function.2C_Set_Output_Object_Action"><span class="tocnumber">13</span> <span class="toctext">O - Xファンクション実行後の出力オブジェクトのデフォルト名の動作を設定<span class="OIndex" style="display:none">X-Function, Set Output Object Action</span></span></a>
+<ul>
+<li class="toclevel-2 tocsection-59"><a href="#O:A"><span class="tocnumber">13.1</span> <span class="toctext">O:A</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#O:C"><span class="tocnumber">13.2</span> <span class="toctext">O:C</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#O:N"><span class="tocnumber">13.3</span> <span class="toctext">O:N</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-62"><a href="#X-Function.2C_Editable.2FDisable_ControlP_-_Setting_Control_Editable_on_GUI"><span class="tocnumber">14</span> <span class="toctext"><span class="OIndex" style="display:none">X-Function, Editable/Disable Control</span>P - GUIでの編集可能操作の設定</span></a>
+<ul>
+<li class="toclevel-2 tocsection-63"><a href="#P:0_or_P:1"><span class="tocnumber">14.1</span> <span class="toctext">P:0 or P:1</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="#P:2"><span class="tocnumber">14.2</span> <span class="toctext">P:2</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#P:4"><span class="tocnumber">14.3</span> <span class="toctext">P:4</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-66"><a href="#R_-_Restrict_the_Behavior_of_Dialog_Combo_BoxX-Function.2C_Dialog_Combo_Box"><span class="tocnumber">15</span> <span class="toctext">R - ダイアログコンボボックスの動作を制限<span class="OIndex" style="display:none">X-Function, Dialog Combo Box</span></span></a>
+<ul>
+<li class="toclevel-2 tocsection-67"><a href="#R:0"><span class="tocnumber">15.1</span> <span class="toctext">R:0</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="#R:1"><span class="tocnumber">15.2</span> <span class="toctext">R:1</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-69"><a href="#S_-_Defining_Default_Data_Selection_for_Input_VariableX-Function.2C_Data_Selector_Default_Selection"><span class="tocnumber">16</span> <span class="toctext">S - 入力変数のデフォルトデータ選択を定義<span class="OIndex" style="display:none">X-Function, Data Selector Default Selection</span></span></a>
+<ul>
+<li class="toclevel-2 tocsection-70"><a href="#S:0"><span class="tocnumber">16.1</span> <span class="toctext">S:0</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="#S:0x01"><span class="tocnumber">16.2</span> <span class="toctext">S:0x01</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="#S:0x10"><span class="tocnumber">16.3</span> <span class="toctext">S:0x10</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-73"><a href="#SV_-_Support_String_Item_in_X-Function_Dialog_Combo_Box"><span class="tocnumber">17</span> <span class="toctext">SV - Xファンクションダイアログコンボボックス内の文字列のサポート</span></a></li>
+<li class="toclevel-1 tocsection-74"><a href="#X-Function.2C_Dialog_ThemeT_-_Skipping_the_Variable_from_Theme"><span class="tocnumber">18</span> <span class="toctext"><span class="OIndex" style="display:none">X-Function, Dialog Theme</span>T - テーマから変数をスキップ</span></a>
+<ul>
+<li class="toclevel-2 tocsection-75"><a href="#T:0"><span class="tocnumber">18.1</span> <span class="toctext">T:0</span></a></li>
+<li class="toclevel-2 tocsection-76"><a href="#T:1"><span class="tocnumber">18.2</span> <span class="toctext">T:1</span></a></li>
+<li class="toclevel-2 tocsection-77"><a href="#T:4"><span class="tocnumber">18.3</span> <span class="toctext">T:4</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-78"><a href="#X-Function.2C_Set_Output_as_OptionalU_-_Specifying_Output_as_Optional"><span class="tocnumber">19</span> <span class="toctext"><span class="OIndex" style="display:none">X-Function, Set Output as Optional</span>U - 出力をオプションとして指定</span></a>
+<ul>
+<li class="toclevel-2 tocsection-79"><a href="#U:1"><span class="tocnumber">19.1</span> <span class="toctext">U:1</span></a></li>
+<li class="toclevel-2 tocsection-80"><a href="#U:0"><span class="tocnumber">19.2</span> <span class="toctext">U:0</span></a></li>
+<li class="toclevel-2 tocsection-81"><a href="#U:n"><span class="tocnumber">19.3</span> <span class="toctext">U:n</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-82"><a href="#X-Function.2C_Set_Control_as_InvisibleV_-_Specifying_Control_to_be_Invisible"><span class="tocnumber">20</span> <span class="toctext"><span class="OIndex" style="display:none">X-Function, Set Control as Invisible</span>V - コントロールを非表示に指定</span></a>
+<ul>
+<li class="toclevel-2 tocsection-83"><a href="#V:0"><span class="tocnumber">20.1</span> <span class="toctext">V:0</span></a></li>
+<li class="toclevel-2 tocsection-84"><a href="#V:1"><span class="tocnumber">20.2</span> <span class="toctext">V:1</span></a></li>
+<li class="toclevel-2 tocsection-85"><a href="#V:2"><span class="tocnumber">20.3</span> <span class="toctext">V:2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-86"><a href="#X-Function.2C_Editable.2FDisable_ControlX-Function.2C_Branch_Check_BoxZ_-_Adding_Check_Box_to_Set_Editable_or_Disable_for_Variable_Control"><span class="tocnumber">21</span> <span class="toctext"><span class="OIndex" style="display:none">X-Function, Editable/Disable Control</span><span class="OIndex" style="display:none">X-Function, Branch Check Box</span>Z - 変数制御のための編集可/不可を設定するチェックボックスを追加</span></a></li>
+</ul>
+</div>
+<h2><a name="A_-_Recalculate_ModeX-Function.2C_Recalculate_Mode"></a><span class="mw-headline">A - 再計算モード<span class="OIndex" style="display:none">X-Function, Recalculate Mode</span></span></h2>
+<p>再計算オプションを使用すると、Xファンクションの<b>再計算</b>モードを制御できます。デフォルトでは、Xファンクションが、入力または出力変数として、XYRange、XYZRange、vector、Column、matrix、MatrixObjectといったOriginオブジェクトタイプを含むとき、<b>手動</b>、<b>自動</b>、<b>なし</b>を<b>再計算</b>モードとして使用できます（デフォルトのモードは<b>手動</b>）。変数が入力変数と出力変数の両方として使用されている場合、<b>再計算</b>モードは禁止され、<b>再計算</b>コンボボックスは非表示になることに注意してください。
+</p>
+<h3><a name="A:0x00"></a><span class="mw-headline">A:0x00</span></h3>
+<p>Xファンクションダイアログで<b>再計算</b>コンボボックスを非表示にします。 
+</p><p><u><i><b>例</b></i></u>
+</p>
+<ol><li>次の図に示すように、名前と変数を使用して新しいXファンクションを作成します。次に、<b>保存</b>ボタン<a  class="image"><img alt="Ocguide xfdialog savebutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_savebutton.png" width="23"  /></a>をクリックして、Xファンクションを<i>&lt;ユーザファイルフォルダ&gt;\X-Functions\OC Guide\</i>に保存します（このフォルダが存在しない場合は作成します）。<br /><a  class="image"><img alt="OCguide xf optionstring a0 variables.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_a0_variables.png" width="444"  /></a></li>
+<li>このXファンクションを、コマンドウィンドウ内でコマンド<code>OptionStringA -d;</code>と実行します。開いたダイアログには<b>再計算</b>コンボボックスが表示されません。 <br /><a  class="image"><img alt="OCguide xf optionstring a0 xfdialog.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_a0_xfdialog.png" width="381"  /></a></li>
+</ol>
+<h3><a name="A:0x01"></a><span class="mw-headline">A:0x01</span></h3>
+<p>デフォルトの<b>再計算</b>モードを<b>なし</b>に設定します。このモードは入力変数と出力変数の両方で使用できます。
+</p><p><u><i><b>例</b></i></u>
+</p>
+<ol><li>次の図に示すように、名前と変数を使用して新しいXファンクションを作成します。次に、<b>保存</b>ボタン<a  class="image"><img alt="Ocguide xfdialog savebutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_savebutton.png" width="23"  /></a>をクリックして、Xファンクションを<i>&lt;ユーザファイルフォルダ&gt;\X-Functions\OC Guide\</i>に保存します（このフォルダが存在しない場合は作成します）。<br /><a  class="image"><img alt="OCguide xf optionstring a1 variables.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_a1_variables.png" width="473"  /></a></li>
+<li>このXファンクションを、コマンドウィンドウ内でコマンド<code>OptionStringA1 -d;</code>と実行します。開いたダイアログでは、<b>再計算</b>コンボボックスで<b>なし</b>が選択されています。 <br /><a  class="image"><img alt="OCguide xf optionstring a1 xfdialog.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_a1_xfdialog.png" width="416"  /></a></li>
+</ol>
+<h3><a name="A:0x02"></a><span class="mw-headline">A:0x02</span></h3>
+<p><b>再計算</b>モードで出力列のソートを許可します。出力変数に対してのみ機能します。
+</p><p><u><i><b>例</b></i></u>
+</p>
+<ol><li>次の図に示すように、名前と変数を使用して新しいXファンクションを作成します。  次に、<b>保存</b>ボタン<a  class="image"><img alt="Ocguide xfdialog savebutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_savebutton.png" width="23"  /></a>をクリックして、Xファンクションを<i>&lt;ユーザファイルフォルダ&gt;\X-Functions\OC Guide\</i>に保存します（このフォルダが存在しない場合は作成します）。 <br /><a  class="image"><img alt="OCguide xf optionstring a2 variables.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_a2_variables.png" width="515"  /></a></li>
+<li>1つの列を持つ新規のワークシートを作成し、この列に行番号を入力します。次に列を選択し、コマンドウィンドウでコマンド<code>OptionStringA2 -d;</code> を使用してXファンクションを実行します。<b>OK</b>ボタンをクリックすると、以下のように鍵アイコン付きの2つの空の出力列が表示されます。<br /><a  class="image"><img alt="OCguide xf optionstring a2 output.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_a2_output.png" width="396"  /></a></li>
+<li>列Bのヘッダをクリックして選択し、右クリックメニューで<b>ソート（ワークシート）</b>を選択します。サブコンテキストメニューで、出力列のソートの方法を指定できます。<br /><a  class="image"><img alt="OCguide xf optionstring a2 sortmenu.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_a2_sortmenu.png" width="133"  /></a></li>
+</ol>
+<h3><a name="A:0x04"></a><span class="mw-headline">A:0x04</span></h3>
+<p><b>再計算</b>モードを許可しますが、<b>再計算</b>コンボボックスはXファンクションダイアログで非表示になります。
+</p>
+<h2><a name="B_-_Browser_Dialog_OptionsX-Function.2C_Browser_Dialog_Options"></a><span class="mw-headline">B - ブラウザダイアログオプション<span class="OIndex" style="display:none">X-Function, Browser Dialog Options</span></span></h2>
+<p>ブラウザダイアログオプションは、Xファンクションダイアログ内のボタンで開く<b>ページ/グラフブラウザ</b>ダイアログの設定を制御します。また、開いているダイアログをフィルタリングするためにも使用できます。<a href="../../XFunction/X-Function/Open_Graph_Browser_Dialog_in_X-Function.html" title="Xファンクション:グラフブラウザダイアログをXファンクションで開く">Xファンクショングラフブラウザダイアログの例</a>を参照してください。
+</p>
+<h3><a name="B:0x0001"></a><span class="mw-headline">B:0x0001</span></h3>
+<p>ダイアログが開くと<b>ページ/グラフブラウザ</b>内のすべてのページをソートします。
+</p>
+<h3><a name="B:0x0002"></a><span class="mw-headline">B:0x0002</span></h3>
+<p><b>グラフブラウザ</b>から3Dグラフを除外します。
+</p>
+<h2><a name="C_-_Miscellaneous_Options"></a><span class="mw-headline">C - その他のオプション</span></h2>
+<h3><a name="C:0x0001X-Function.2C_Disable_Auto_Assigning_Column_Designatioin"></a><span class="mw-headline">C:0x0001<span class="OIndex" style="display:none">X-Function, Disable Auto Assigning Column Designatioin</span></span></h3>
+<p>複合範囲の列指定の割り当てを無効にします。例えば、XYRange型の出力変数を取ります。  このオプション文字列が変数に指定されていない場合、出力列は2つあり、1つはX、もう1つはYです。そうでない場合、2つの列は両方ともデフォルトのY属性を持ちます。
+</p>
+<h3><a name="C:0x0002X-Function.2C_New_Hidden_Page"></a><span class="mw-headline">C:0x0002<span class="OIndex" style="display:none">X-Function, New Hidden Page</span></span></h3>
+<p>非表示状態の新しいページを作成します。
+</p>
+<h3><a name="C:0x0004_X-Function.2C_Disable_Undo"></a><span class="mw-headline">C:0x0004 <span class="OIndex" style="display:none">X-Function, Disable Undo</span></span></h3>
+<p>Xファンクションを元に戻せないようにします。
+</p>
+<h3><a name="C:0x0010_X-Function.2C_Missing_Data_Display_Format"></a><span class="mw-headline">C:0x0010 <span class="OIndex" style="display:none">X-Function, Missing Data Display Format</span></span></h3>
+<p>デフォルトでは、double型の変数に値がない場合、この変数は何も表示しません（空のセルとなります）。このオプション文字列は、この種類の空の変数を&quot;--&quot;として表示するために使用されます。
+</p>
+<h3><a name="C:0x0100_X-Function.2C_Set_Output_Range_Dimension"></a><span class="mw-headline">C:0x0100 <span class="OIndex" style="display:none">X-Function, Set Output Range Dimension</span></span></h3>
+<p>このオプション文字列はRange型の出力変数に対してのみ使用できます。出力変数が<i>&lt;new&gt;</i>に設定されている場合、有効なOrigin C Rangeオブジェクトが作成されますが、新しい列は作成されません。このオプション文字列は、ユーザがXファンクション本体内の出力範囲オブジェクトの行と列を準備するのを助けます。
+</p>
+<h3><a name="C:0x0200"></a><span class="mw-headline">C:0x0200</span></h3>
+<p>このオプション文字列はRange型の出力変数に対してのみ使用できます。出力変数が<i>&lt;new&gt;</i>に設定されている場合、入力範囲を同じ列数と行数で複製します。
+</p>
+<h3><a name="C:0x0400"></a><span class="mw-headline">C:0x0400</span></h3>
+<p>MarkerInfoとButtonInfo XVariableに適用できます。設定すると非表示になります。 
+</p>
+<h3><a name="C:0x0800"></a><span class="mw-headline">C:0x0800</span></h3>
+<p>出力XVariableに適用できます。設定されている場合、書き込み可能チェックは抑制されます。 
+</p>
+<h3><a name="C:0x1000"></a><span class="mw-headline">C:0x1000</span></h3>
+<p>任意のXVariableに適用できます。設定されている場合は、ダイアログからのスクリプトを生成を常にサポートします。 
+</p>
+<h3><a name="C:0x2000"></a><span class="mw-headline">C:0x2000</span></h3>
+<p><span style="color:red">バージョン9.0から利用可能です。</span>Output Page/Layer XVariableに適用できます。設定されている場合、別のXVariableの値をチェックし、&quot;hide&quot; を呼び出して、新しく作成されたページを非表示にするかどうかを決定します。 
+</p>
+<h3><a name="C:0x4000"></a><span class="mw-headline">C:0x4000</span></h3>
+<p><span style="color:red">バージョン9.0から利用可能です。</span>グループ開始であるXVariable (オプション文字列Gを使用) に適用できます。設定すると、現在のXVariableが非表示の場合でもブランチ全体が非表示になりません。 
+</p>
+<h2><a name="E_-_Execution_ControlX-Function.2C_Execution_Control"></a><span class="mw-headline">E - 実行制御<span class="OIndex" style="display:none">X-Function, Execution Control</span></span></h2>
+<p><b>E:V</b>
+</p><p>XファンクションウィザードとXファンクションバーで変数の真の値を保持するために使用されます。最初の<b>適用</b>ボタンによって作成された先は、その後の<b>適用</b>ボタンによって使用されます。
+</p>
+<h2><a name="F_-_Dialog_Numeric_Display_FormatX-Function.2C_Dialog_Numeric_Display_Format"></a><span class="mw-headline">F - ダイアログ数値表示フォーマット<span class="OIndex" style="display:none">X-Function, Dialog Numeric Display Format</span></span></h2>
+<p><b> F:*6* </b>
+</p><p>double型の数値を表示するためのフォーマット文字列を提供します。<i>*</i>（Originグローバル数値フォーマット設定）や、<i>.2</i>（10進数2桁）など、標準的なLabTalk数値形式表記を使用できます。
+</p>
+<h2><a name="FT_-_Data_Plot_Selection_FilterX-Function_Data_Plot_Selection_Filter"></a><span class="mw-headline">FT - データプロット選択フィルタ<span class="OIndex" style="display:none">X-Function Data Plot Selection Filter</span></span></h2>
+<p><b> FT:str1|str2 </b>
+</p><p>グラフからのデータ選択のアクションフィルタのタグを指定します。データオブジェクトにタグ<i>str1</i>または<i>str2</i>が含まれている場合、メニューの<b>アクティブグラフページ/レイヤにすべてのプロットを追加する</b>でデータが選択された時に無視されます。
+</p><p><u><i><b>例</b></i></u>
+</p><p>この例では、グラフからすべてのプロットを選択するときに、<b>FT</b>オプション文字列を使用してタグ名<i>TestCurves</i>のデータプロットを除外する方法を示します。
+</p>
+<ol>
+<li>次の図に示すように、名前と変数を使用して新しいXファンクションを作成します。  次に、<b>保存</b>ボタン<a  class="image"><img alt="Ocguide xfdialog savebutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_savebutton.png" width="23"  /></a>をクリックして、Xファンクションを<i>&lt; ユーザファイルフォルダ &gt;\X-Functions\OC Guide\に</i>保存します（このフォルダが存在しない場合は作成します）。 <br /><a  class="image"><img alt="OCguide xf optionstring ft variables.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_ft_variables.png" width="578"  /></a></li>
+<li><b>コードビルダ</b>でこのXファンクションを開き、次のコードをコピーしてメインの関数<b>OptionStringFT</b>の本文に貼り付け、<b>コンパイル</b>ボタン<a  class="image"><img alt="Ocguide XF Compile Button.PNG" src="../images/X-Function_Option_Strings/Ocguide_XF_Compile_Button.PNG" width="107"  /></a>をクリックします。
+<pre class="oc" style="font-family:monospace;"><span style="color: #008000;">// XYRange出力のためのデータを置く</span>
+vector vx, vy;
+vx.<span style="color: #000000;">Data</span><span style="color: #000000;">(</span><span style="color: #0000dd;">1</span>, <span style="color: #0000dd;">10</span>, <span style="color: #0000dd;">1</span><span style="color: #000000;">)</span>;
+vy <span style="color: #000080;">=</span> vx;
+oy.<span style="color: #000000;">SetData</span><span style="color: #000000;">(</span><span style="color: #000040;">&amp;</span>vy, <span style="color: #000040;">&amp;</span>vx<span style="color: #000000;">)</span>;
+<span style="color: #008000;">// 指定された名前はオプション文字列 &quot;FT&quot; と同じである必要がある</span>
+tag_columns_in_data_range<span style="color: #000000;">(</span>oy, <span style="color: #ff00ff;">&quot;TestCurves&quot;</span><span style="color: #000000;">)</span>; 
+<span style="color: #008000;">// ソース範囲グラフ取得、グラフに結果をプロット</span>
+vector<span style="color: #000080;">&lt;</span>uint<span style="color: #000080;">&gt;</span> vnIDs;
+<span style="color: #0000ff;">if</span><span style="color: #000000;">(</span> iy.<span style="color: #000000;">GetPlots</span><span style="color: #000000;">(</span>vnIDs<span style="color: #000000;">)</span> <span style="color: #000080;">&gt;</span> <span style="color: #0000dd;">0</span> <span style="color: #000000;">)</span>
+<span style="color: #000000;">{</span>
+	DataPlot dp;
+	dp <span style="color: #000080;">=</span> <span style="color: #000000;">(</span>DataPlot<span style="color: #000000;">)</span>Project.<span style="color: #000000;">GetObject</span><span style="color: #000000;">(</span>vnIDs<span style="color: #000000;">[</span><span style="color: #0000dd;">0</span><span style="color: #000000;">]</span><span style="color: #000000;">)</span>;
+	GraphLayer gl;
+	dp.<span style="color: #000000;">GetParent</span><span style="color: #000000;">(</span>gl<span style="color: #000000;">)</span>;
+	
+	gl.<span style="color: #000000;">AddPlot</span><span style="color: #000000;">(</span>oy<span style="color: #000000;">)</span>;
+<span style="color: #000000;">}</span></pre></li>
+<li>ファイル<i>&lt; Originインストールフォルダ&gt;\Samples\Curve Fitting\Multiple Gaussians.dat</i>を新しいワークシートにインポートします。すべての列を選択し、折れ線グラフを作成します。  新しく作成したグラフを選択し、コマンドウィンドウで<code>OptionStringFT -d;</code> を実行し、<b>OK</b>ボタンをクリックしてソースワークシートに出力XY列を生成し、そのプロットをソースグラフに追加します。
+</li>
+<li>グラフをアクティブにして<code>OptionStringFT -d;</code> を再度実行し、Xファンクションダイアログを開きます。<b>入力XY</b>ブランチには、このデータプロットのタグ名が<i>TestCurves</i>であるため、上から新たに出力されたデータプロットは表示されません。
+</li>
+</ol>
+<h2><a name="FV_-_Specify_the_Source_of_Output_VariableX-Function.2C_Specify_the_Source_of_Output_Variable"></a><span class="mw-headline">FV - 出力変数のソースを指定<span class="OIndex" style="display:none">X-Function, Specify the Source of Output Variable</span></span></h2>
+<p><b>FV:varname</b> はそれぞれの出力変数のための入力変数の名前を指定します。この変数のブック/シート/オブジェクトの情報はトレースされ、出力変数が<i>&lt;input&gt;/&lt;same&gt;</i>で設定されたときに出力変数と共有されます。例えば、あるXファンクションが3つのXYRange変数を含んでいるとし、最初の2つは入力変数であり、最後の1つは出力変数とします。このオプション文字列で出力変数に入力変数の名前を設定した場合、出力が<i>&lt;input&gt;</i>または<i>&lt;same&gt;</i>に設定された場合、出力列は指定された入力列と同じになります。それ以外の場合、出力列は最初の入力列と同じになります。
+</p>
+<h2><a name="G_-_Grouping_Controls_on_GUIX-Function.2C_Grouping_Controls_on_Dialog"></a><span class="mw-headline">G - GUIでのグループコントロール<span class="OIndex" style="display:none">X-Function, Grouping Controls on Dialog</span></span></h2>
+<p>Xファンクションダイアログで関連変数をグループ化するために使用されます。グループの先頭の変数の<b>オプション文字列</b>フィールドに<b>G:<i>Group Name</i></b>を追加し、 グループの末尾の変数の<b>オプション文字列</b>フィールドに<b>G</b>を追加します。
+</p><p><b> G:<i>Group</i> </b>
+</p><p>グループの始まり。デフォルトでは、グループのブランチは閉じています。最初からこのブランチを開いた状態にするには、ダイアログを開き、<i>グループ名</i>の前に<b>G:-<i>Group Name</i></b> のような - を追加します。ダイアログは次回開かれたときにブランチの状態を記憶します。
+</p><p><b> G </b>
+</p><p>グループの終わり。
+</p><p><u><i><b>例</b></i></u>
+</p>
+<ol>
+<li>F10を押してXファンクションビルダを開きます。次の画像のようにXファンクションを作成し、<b>保存</b>ボタン<a  class="image"><img alt="Ocguide xfdialog savebutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_savebutton.png" width="23"  /></a>をクリックして、<i>&lt; Originユーザファイルフォルダ &gt;\X-Functions\OC Guide\</i>に保存します（このフォルダが存在しない場合は作成します）。<br /><a  class="image"><img alt="OCguide xf optionstring g variables.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_g_variables.png" width="507"  /></a></li>
+<li>コマンドウィンドウで <code>OptionStringG -d;</code> を実行します。  次のようなダイアログが開きます。<br /><a  class="image"><img alt="OCguide xf optionstring g xfdialog.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_g_xfdialog.png" width="360"  /></a></li>
+</ol>
+<h2><a name="H_-_Setting_Result_Tables_Shown_StyleX-Function.2C_Set_Result_Tables_Shown_Style"></a><span class="mw-headline">H - 結果表表示スタイルの設定<span class="OIndex" style="display:none">X-Function, Set Result Tables Shown Style</span></span></h2>
+<ol><li>次の図に示すように、名前と変数を使用して新しいXファンクションを作成します。次に、<b>保存</b>ボタン<a  class="image"><img alt="Ocguide xfdialog savebutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_savebutton.png" width="23"  /></a>をクリックして、Xファンクションを<i>&lt;ユーザファイルフォルダ&gt;\X-Functions\OC Guide\</i>に保存します（このフォルダが存在しない場合は作成します）。 <br /><a  class="image"><img alt="OCguide xf optionstring h variables.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_h_variables.png" width="495"  /></a></li>
+<li>
+<b>コードビルダ</b>でこのXファンクションを開き、<i>//put additional include files here</i>の行の後に次の必要なヘッダファイルを追加します。
+<pre class="oc" style="font-family:monospace;"><span style="color: #0000ff;">#include</span> <span style="color: #000080;">&lt;</span>ReportTree.<span style="color: #000000;">h</span><span style="color: #000080;">&gt;</span></pre>
+</li>
+<li>次のコードをメイン関数 <b>OptionStringH</b>にコピーします。この関数は、選択したデータに対して基本的な統計分析を実行し、結果のレポート シートを準備するために使用されます。
+<pre class="oc" style="font-family:monospace;"><span style="color: #008000;">// Data Rangeオブジェクトからデータを取得</span>
+matrix mData;
+<span style="color: #0000ff;">if</span><span style="color: #000000;">(</span> rng.<span style="color: #000000;">GetData</span><span style="color: #000000;">(</span>mData<span style="color: #000000;">)</span> <span style="color: #000080;">&lt;=</span> <span style="color: #0000dd;">0</span> <span style="color: #000000;">)</span>
+<span style="color: #000000;">{</span>
+	XF_THROW<span style="color: #000000;">(</span><span style="color: #ff00ff;">&quot;No data is selected&quot;</span><span style="color: #000000;">)</span>;
+<span style="color: #000000;">}</span>
+<span style="color: #008000;">// 各列の基本統計量を計算</span>
+vector vPoints, vSum, vSD;
+<span style="color: #0000ff;">for</span><span style="color: #000000;">(</span><span style="color: #0000ff;">int</span> index <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span>; index <span style="color: #000080;">&lt;</span> mData.<span style="color: #000000;">GetNumCols</span><span style="color: #000000;">(</span><span style="color: #000000;">)</span>; index<span style="color: #000040;">++</span><span style="color: #000000;">)</span>		
+<span style="color: #000000;">{</span>
+	vector vData;
+	mData.<span style="color: #000000;">GetColumn</span><span style="color: #000000;">(</span>vData, index<span style="color: #000000;">)</span>;
+	
+	<span style="color: #0000ff;">int</span> nPoints;
+	<span style="color: #0000ff;">double</span> dSum, dSD;
+	ocmath_basic_summary_stats<span style="color: #000000;">(</span>vData.<span style="color: #000000;">GetSize</span><span style="color: #000000;">(</span><span style="color: #000000;">)</span>, vData, <span style="color: #000040;">&amp;</span>nPoints, 
+				<span style="color: #000040;">&amp;</span>dSum, <span style="color: #000040;">&amp;</span>dSD<span style="color: #000000;">)</span>;
+	
+	vPoints.<span style="color: #000000;">Add</span><span style="color: #000000;">(</span>nPoints<span style="color: #000000;">)</span>;
+	vSum.<span style="color: #000000;">Add</span><span style="color: #000000;">(</span>dSum<span style="color: #000000;">)</span>;
+	vSD.<span style="color: #000000;">Add</span><span style="color: #000000;">(</span>dSD<span style="color: #000000;">)</span>;
+<span style="color: #000000;">}</span>	
+<span style="color: #008000;">// データ表を作成</span>
+<span style="color: #0000ff;">int</span> nID <span style="color: #000080;">=</span> <span style="color: #0000dd;">0</span>; <span style="color: #008000;">// IDは固有である必要がある</span>
+ReportTable rTable <span style="color: #000080;">=</span> rt.<span style="color: #000000;">CreateTable</span><span style="color: #000000;">(</span><span style="color: #ff00ff;">&quot;Report&quot;</span>, <span style="color: #ff00ff;">&quot;Report Table&quot;</span>, <span style="color: #000040;">++</span>nID, <span style="color: #0000dd;">0</span>, <span style="color: #0000dd;">1</span><span style="color: #000000;">)</span>;	
+rTable.<span style="color: #000000;">AddColumn</span><span style="color: #000000;">(</span>vPoints, <span style="color: #ff00ff;">&quot;N&quot;</span>, <span style="color: #000040;">++</span>nID, <span style="color: #ff00ff;">&quot;Points&quot;</span>, OKDATAOBJ_DESIGNATION_Y<span style="color: #000000;">)</span>;
+rTable.<span style="color: #000000;">AddColumn</span><span style="color: #000000;">(</span>vSum, <span style="color: #ff00ff;">&quot;Sum&quot;</span>, <span style="color: #000040;">++</span>nID, <span style="color: #ff00ff;">&quot;Sum&quot;</span>, OKDATAOBJ_DESIGNATION_Y<span style="color: #000000;">)</span>;
+rTable.<span style="color: #000000;">AddColumn</span><span style="color: #000000;">(</span>vSD, <span style="color: #ff00ff;">&quot;SD&quot;</span>, <span style="color: #000040;">++</span>nID, <span style="color: #ff00ff;">&quot;SD&quot;</span>, OKDATAOBJ_DESIGNATION_Y<span style="color: #000000;">)</span>;
+<span style="color: #008000;">// どのフォーマットも指定しないように属性を0とする</span>
+<span style="color: #008000;">// テーブルの表示形式を設定するために、多くのビット GETNBRANCH_*がoc_const.h に定義されている</span>
+rTable.<span style="color: #000000;">SetAttribute</span><span style="color: #000000;">(</span>TREE_Table, GETNBRANCH_TRANSPOSE<span style="color: #000000;">)</span>;</pre>
+</li>
+<li>
+5列ある新しいワークシートを作成し、全ての列を乱数データで埋めます（全て選択し、右クリックして<b><b>列値の一律設定：一様乱数</b></b>を選択）。コマンドウィンドウで <code>OptionStringH -d;</code> を実行し、ダイアログを開きます。ダイアログで、すべての列が<b>入力データ</b>に選択され、<b>レポート</b>に<i>&lt;new&gt;</i>が選択されていることを確認します。<b>OK</b>ボタンをクリックすると、レポートシートが通常の形式（<font color="red">H:0</font>）で表示されます。<br /><a  class="image"><img alt="OCguide xf optionstring h report data.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_h_report_data.png" width="357"  /></a></li>
+<li>
+XファンクションビルダでXファンクションを再度開き、<i>H:0</i>を<i>H:1</i>に変更します。そして保存します。コマンドウィンドウで <code>OptionStringH -d;</code> を実行します。今回は、レポートシートが階層テーブル形式（<font color="red">H:1</font>）で表示されます。<br /><a  class="image"><img alt="OCguide xf optionstring h report table.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_h_report_table.png" width="357"  /></a></li>
+</ol>
+<h2><a name="I_-_Restrict_the_Behavior_of_Input_Range_ControlX-Function.2C_Input_Range_Control"></a><span class="mw-headline">I - 入力範囲制御の動作を制限<span class="OIndex" style="display:none">X-Function, Input Range Control</span></span></h2>
+<p>入力データ範囲を制限し、インタラクティブコントロールの動作を変更します。このオプション文字列は、Range、XYRange、XYRangeComplex、XYZRange、VECTOR、VECTOR &lt;string&gt;、およびVECTOR &lt;complex&gt;の入力データ型に対してのみ機能します。
+</p>
+<h3><a name="I:0x0001"></a><span class="mw-headline">I:0x0001</span></h3>
+<p>第1サブレンジの複数データ選択を許可します。 
+</p>
+<h3><a name="I:0x0002"></a><span class="mw-headline">I:0x0002</span></h3>
+<p>第2サブレンジの複数データ選択を許可します。 
+</p>
+<h3><a name="I:0x0004"></a><span class="mw-headline">I:0x0004</span></h3>
+<p>第3サブレンジの複数データ選択を許可します。 
+</p>
+<h3><a name="I:0x0008"></a><span class="mw-headline">I:0x0008</span></h3>
+<p>すべてのサブレンジの複数データ選択を許可します。 
+</p>
+<h3><a name="I:0x0010"></a><span class="mw-headline">I:0x0010</span></h3>
+<p>1つのデータセットに限定します。
+</p>
+<h3><a name="I:0x0020"></a><span class="mw-headline">I:0x0020</span></h3>
+<p>Yエラーをサポートします（XYRangeのみ）。
+</p>
+<h3><a name="I:0x0040"></a><span class="mw-headline">I:0x0040</span></h3>
+<p>Range内でラベルエリアをサポートします。このオプション文字列を使用すると、出力範囲は実行前にデータを消去しません。これは<b>I:0x00040000</b>と同様です。
+</p>
+<h3><a name="I:0x0080"></a><span class="mw-headline">I:0x0080</span></h3>
+<p>出力変数のポップアップメニューに<i>&lt;input&gt;</i>オプションが表示されなくなります。
+</p>
+<h3><a name="I:0x0100"></a><span class="mw-headline">I:0x0100</span></h3>
+<p>出力変数のポップアップメニューに<i>&lt;new&gt;</i>オプションが表示されなくなります。
+</p>
+<h3><a name="I:0x0200"></a><span class="mw-headline">I:0x0200</span></h3>
+<p>出力変数のポップアップリストから<i>(&lt;input&gt;,&lt;new&gt;)</i>オプションがなくなります。XYRangeのみ。
+</p>
+<h3><a name="I:0x0400"></a><span class="mw-headline">I:0x0400</span></h3>
+<p>ポップアップメニューのボタンを削除します。
+</p>
+<h3><a name="I:0x0800"></a><span class="mw-headline">I:0x0800</span></h3>
+<p>インタラクティブボタンを削除します。
+</p>
+<h3><a name="I:0x1000"></a><span class="mw-headline">I:0x1000</span></h3>
+<p>ベクトル型と列型の入力変数にのみ有効です。データ選択用の文字列を取得すると、列はインデックスで識別されますが、列のショートネームは識別されません。
+</p>
+<h3><a name="I:0x2000"></a><span class="mw-headline">I:0x2000</span></h3>
+<p>このオプション文字列は、初期化中にベクトル変数がY列のみを使用するようにします。
+</p>
+<h3><a name="I:0x4000"></a><span class="mw-headline">I:0x4000</span></h3>
+<p><b>列ブラウザ</b>ボタンを表示します。
+</p>
+<h3><a name="I:0x8000"></a><span class="mw-headline">I:0x8000</span></h3>
+<p>変数を読み取り専用に設定します。<b>I:0x0400</b>と<b>I:0x0800の</b>両方が一緒に動作します。
+</p>
+<h3><a name="I:0x00010000"></a><span class="mw-headline">I:0x00010000</span></h3>
+<p>初期化中またはインタラクティブな瞬間に行の選択を取り除きます。変数型：Column, Range, XYRange
+</p>
+<h3><a name="I:0x00020000"></a><span class="mw-headline">I:0x00020000</span></h3>
+<p>シート全体の範囲文字列を列表記に置き換えます。たとえば、<i>Book1</i>内のワークシート<i>Sheet1</i>に2つの列が含まれている場合、範囲文字列<i>[Book1]Sheet1</i>は<i>[Book1]Sheet1!1:2</i>に置き換えられます。
+</p>
+<h3><a name="I:0x00040000"></a><span class="mw-headline">I:0x00040000</span></h3>
+<p>このオプション文字列は、実行を終了する前に出力範囲のデータを消去しないようにします。このオプション文字列を指定しないと、入力データ範囲に重複がない場合、出力範囲の列は新しいデータを使用する前にクリアされます。
+</p><p><u><i><b>例</b></i></u>
+</p>
+<ol>
+<li>次の図に示すように、名前と変数を使用して新しいXファンクションを作成します。次に、<b>保存</b>ボタン<a  class="image"><img alt="Ocguide xfdialog savebutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_savebutton.png" width="23"  /></a>をクリックして、Xファンクションを<i>&lt;ユーザファイルフォルダ&gt;\X-Functions\OC Guide\</i>に保存します（このフォルダが存在しない場合は作成します）。 <br /><a  class="image"><img alt="OCguide xf optionstring i variables.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_i_variables.png" width="495"  /></a></li>
+<li><b>コードビルダ</b>でこのXファンクションを開き、入力列から出力列にデータをコピーする次のコードをメイン関数<b>OptionStringI</b>の本文にコピーし、<b>コンパイル</b>ボタン<a  class="image"><img alt="Ocguide XF Compile Button.PNG" src="../images/X-Function_Option_Strings/Ocguide_XF_Compile_Button.PNG" width="107"  /></a>をクリックします。
+<pre class="oc" style="font-family:monospace;">orng <span style="color: #000080;">=</span> irng;</pre>
+</li>
+<li>列Aと列Bの2列ある新しいワークシートを作成し、A列の最初の10行を選択して右クリックし、表示されたメニューから<b><b>列値の一律設定：行番号</b></b>を選択してこれらに行番号を入力します。コマンドウィンドウで<code>OptionStringI -d;</code> を実行し、列Aを入力、列Bを出力として選択し、<b>OK</b>ボタンをクリックします。その結果、列Bにも行番号が入ります。
+</li>
+<li>列Aから最初の5行を選択し、右クリックしてコンテキストメニューを開き、<b>削除</b>を選択してこれらの5行を削除します。列Bのヘッダの鍵アイコンの色が緑から黄色に変わります。鍵アイコンをクリックし、ポップアップメニューから<b>再計算</b>を選択します。  その結果、列Bの最後の5行の元のデータが、次の図に示すように保持されます。<br /><a  class="image"><img alt="OCguide xf optionstring i output.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_i_output.png" width="355"  /></a></li>
+</ol>
+<h3><a name="I:0x00080000"></a><span class="mw-headline">I:0x00080000</span></h3>
+<p>全ての列を対話型のポップアップメニューで非表示にします。
+</p>
+<h3><a name="I:0x00100000"></a><span class="mw-headline">I:0x00100000</span></h3>
+<p>アクティブなグラフレイヤに選択がなく、<i>&lt;active&gt;</i>を使用して範囲変数が設定されている場合、範囲変数はアクティブレイヤのすべてのプロットに設定されます。
+</p>
+<h3><a name="I:0x00200000"></a><span class="mw-headline">I:0x00200000</span></h3>
+<p>サンプリング間隔を出力Xとして使用します。
+</p>
+<h3><a name="I:0x00400000"></a><span class="mw-headline">I:0x00400000</span></h3>
+<h3><a name="I:0x00800000"></a><span class="mw-headline">I:0x00800000</span></h3>
+<p>全ての列を対話型のポップアップメニューで非表示にします。
+</p>
+<h3><a name="I:0x02000000"></a><span class="mw-headline">I:0x02000000</span></h3>
+<p>出力XYRangeが<i>&lt;auto&gt;</i>を使用して設定されている場合、このオプションは新しいX列を作成します。
+</p>
+<h3><a name="I:0x04000000"></a><span class="mw-headline">I:0x04000000</span></h3>
+<p>行範囲は無視され、単一のブロック範囲のみが有効です。選択範囲がない場合、または選択範囲に1つのセルしか含まれていない場合、選択範囲はワークシート全体と見なされます。
+</p>
+<h3><a name="I:0x08000000"></a><span class="mw-headline">I:0x08000000</span></h3>
+<p>インデックスの代わりに最初と最後のX値を使用して範囲文字列を作成します。構文は <b>[BookName]SheetName!ColName[xFirstValue:LastValue]</b> となります。単調なデータに対して非常に有用です。
+</p>
+<h3><a name="I:0x10000000"></a><span class="mw-headline">I:0x10000000</span></h3>
+<p>Range変数には係数も重みも持ちません。
+</p>
+<h2><a name="M_-_Support_Multi-line_StringX-Function.2C_Multi-lines_Text_Control"></a><span class="mw-headline">M - 複数行文字列のサポート<span class="OIndex" style="display:none">X-Function, Multi-lines Text Control</span></span></h2>
+<p><b>M:m-n</b>
+</p><p>文字列変数が複数行テキストをサポートするようにします。文字列変数が非表示の場合、<i>m</i>行のテキストがサポートされ、展開した場合、<i>n</i>行がサポートされます。編集コントロールの右下隅でサイズを変更するには、行範囲文字列に*を追加します。
+</p>
+<h2><a name="N_-_Setting_the_Default_Name_of_Output_ObjectsX-Function.2C_Set_the_Default_Name_for_Output_Object"></a><span class="mw-headline">N - 出力オブジェクトのデフォルト名の設定<span class="OIndex" style="display:none">X-Function, Set the Default Name for Output Object</span></span></h2>
+<p>出力オブジェクトのデフォルト名を指定します。
+</p>
+<ul><li><b>ReportTree</b>および<b>ReportData</b></li></ul>
+<p>N: Book:=&quot;Book Name&quot; Sheet:=&quot;Sheet Name&quot;
+</p>
+<ul><li> <b>MatrixObject</b></li></ul>
+<p>N: Book:=&quot;Book Name&quot; Sheet:=&quot;Sheet Name&quot; X:=&quot;Object Name&quot;
+</p>
+<ul><li> <b>MatrixLayer</b>, <b>Image</b>, <b>vector</b>, <b>Column</b></li></ul>
+<p>N: &quot;Name&quot;
+</p>
+<ul><li> <b>XYRange</b></li></ul>
+<p>N: X:=&quot;X Name&quot; Y:=&quot;Y Name&quot;
+</p>
+<ul><li> <b>XYZRange</b></li></ul>
+<p>N: X:=&quot;X Name&quot; Y:=&quot;Y Name&quot; Z:=&quot;Z Name&quot;
+</p>
+<ul><li> <b>Worksheet</b></li></ul>
+<p>N: Book:=&quot;Book Name&quot; Sheet:=&quot;Sheet Name&quot;
+</p><p><br />
+バージョン<b>2021b</b>以降、Originは出力名の置換表記をサポートしています（例：<b>N:&quot;Stats of&nbsp;%W&quot;</b>）。変数は、User Files\Origin.iniの<b>[OutputLongName]</b>セクションに次のように記載されています。
+</p>
+<ul><li> <b>%A</b> = 解析機能名 (e.g. FitNL) or Xファンクション名</li>
+<li> <b>%W</b> = 入力シート名</li>
+<li> <b>%N</b> = 入力列のロングネーム、ロングネームがない場合はショートネーム</li>
+<li>  <b>%B</b> = 入力ブックのロングネーム</li>
+<li> <b>%S</b> = 入力ブックのショートネーム</li></ul>
+<p><br />
+<u><i><b>例</b></i></u>
+</p>
+<ol>
+<li>
+F10を押してXファンクションビルダを開き、下の画像に示す名前と変数を使用して新しいXファンクションを作成します。<b>保存</b>ボタン<a  class="image"><img alt="Ocguide xfdialog savebutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_savebutton.png" width="23"  /></a>をクリックしてXファンクションを保存します。<br />
+<a  class="image"><img alt="OCguide xf optionstring n variables.png" src="../images/X-Function_Option_Strings/600px-OCguide_xf_optionstring_n_variables.png" width="576"   /></a>
+</li>
+<li> <b>Xファンクションをコードビルダで編集する</b>ボタン<a  class="image"><img alt="Ocguide xfdialog codebuilderbutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_codebuilderbutton.png" width="23"  /></a>をクリックして、このXファンクションを<b>コードビルダ</b>で開きます。メイン関数<b>OptionStringN</b>の本文にコード<code>input.CopyTo(output, 0, -1, 0, -1, 0);</code> を入力し、コンパイルボタン<a  class="image"><img alt="Ocguide XF Compile Button.PNG" src="../images/X-Function_Option_Strings/Ocguide_XF_Compile_Button.PNG" width="107"  /></a>をクリックします。
+</li>
+<li>
+新しいワークシートを作成し、任意のデータを入力します。<b>コマンド</b>ウィンドウで <code>OptionStringN -d;</code> を実行します。ダイアログが開いたら、<b>入力ワークシート</b>としてワークシートを選択し、<b>OK</b>ボタンをクリックすると、結果が「<b>[入力ワークシート名]のコピー</b>」という名前の新しいワークシートに生成されます。<br />
+<a  class="image"><img alt="OCguide xf optionstring n variables result.png" src="../images/X-Function_Option_Strings/300px-OCguide_xf_optionstring_n_variables_result.png" width="395"   /></a>
+</li>
+<h2><a name="O_-_Setting_Output_Object_Action_after_Running_X-FunctionX-Function.2C_Set_Output_Object_Action"></a><span class="mw-headline">O - Xファンクション実行後の出力オブジェクトのデフォルト名の動作を設定<span class="OIndex" style="display:none">X-Function, Set Output Object Action</span></span></h2>
+<p>正常に実行された後の出力変数のアクションを指定します。
+</p>
+<h3><a name="O:A"></a><span class="mw-headline">O:A</span></h3>
+<p>オブジェクトが非表示になっているか、別のフォルダーにあるかに関係なく、対応するOriginオブジェクトをアクティブ化します。
+</p>
+<h3><a name="O:C"></a><span class="mw-headline">O:C</span></h3>
+<p>ワークブックがアクティブウィンドウの場合にのみ、対応するOriginオブジェクトをアクティブ化します。
+</p>
+<h3><a name="O:N"></a><span class="mw-headline">O:N</span></h3>
+<p>対応するOriginオブジェクトをアクティブ化しません。
+</p>
+<h2><a name="X-Function.2C_Editable.2FDisable_ControlP_-_Setting_Control_Editable_on_GUI"></a><span class="mw-headline"><span class="OIndex" style="display:none">X-Function, Editable/Disable Control</span>P - GUIでの編集可能操作の設定</span></h2>
+<p>変数がXファンクションダイアログで編集可能であるかどうかを指定します。
+</p>
+<h3><a name="P:0_or_P:1"></a><span class="mw-headline">P:0 or P:1</span></h3>
+<p><b>P:1</b>はデフォルトのオプション文字列です。このオプション文字列を使用すると、出力変数はOriginオブジェクト型(例えばColumn、Worksheetなど)であり、<b>パラメータの変更</b>を介してXファンクションダイアログを再び表示するときに編集できなくなります。他の型を持つ変数は、オプション文字列を<b>P:0</b>として指定する必要があります。
+</p>
+<h3><a name="P:2"></a><span class="mw-headline">P:2</span></h3>
+<p>ラベルのみが表示され、編集可能フィールドは非表示です。通常はヒントテキストを表示するために使用されます。
+</p>
+<h3><a name="P:4"></a><span class="mw-headline">P:4</span></h3>
+<p>変数を区切り文字としてXファンクションダイアログに表示します。文字列型に対してのみ有効です。
+</p><p><u><i><b>例</b></i></u>
+</p>
+<ol>
+<li>
+F10を押してXファンクションビルダを開き、下の画像に示す名前と変数を使用して新しいXファンクションを作成します。次に、<b>保存</b>ボタン<a  class="image"><img alt="Ocguide xfdialog savebutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_savebutton.png" width="23"  /></a>をクリックして、Xファンクションを<i>&lt;ユーザファイルフォルダ&gt;\X-Functions\OC Guide\</i>に保存します（このフォルダが存在しない場合は作成します）。<br /><a  class="image"><img alt="OCguide xf optionstring p variables.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_p_variables.png" width="540"  /></a></li>
+<li> <b>Xファンクションをコードビルダで編集する</b>ボタン<a  class="image"><img alt="Ocguide xfdialog codebuilderbutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_codebuilderbutton.png" width="23"  /></a>をクリックして、このXファンクションを<b>コードビルダ</b>で開きます。メイン関数<b>OptionStringP</b>の本体にコード<code>out = in + var;</code> を入力し、コンパイルボタン<a  class="image"><img alt="Ocguide XF Compile Button.PNG" src="../images/X-Function_Option_Strings/Ocguide_XF_Compile_Button.PNG" width="107"  /></a>をクリックします。</li>
+<li>
+新しいワークシートを作成し、列Aに任意のデータを入力します。コマンドウィンドウで<code>OptionStringP -d;</code> を実行します。開いたダイアログで、列Aを<b>入力列</b>として選択し、列Bを<b>出力列</b>として選択します。<b>OK</b>ボタンをクリックすると、結果が生成され、列Bに格納されます。
+</li>
+<li>
+列Bのヘッダにある鍵アイコンをクリックし、コンテキストメニューから<b>パラメータを変更</b>を選択します。<b>パラメータの変更</b>によって開かれたダイアログと<code>OptionStringP -d;</code> によって開かれたダイアログの違いを以下の図に示します。<br /><a  class="image"><img alt="OCguide xf optionstring p xfdialog.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_p_xfdialog.png" width="426"  /></a></li>
+</ol>
+<h2><a name="R_-_Restrict_the_Behavior_of_Dialog_Combo_BoxX-Function.2C_Dialog_Combo_Box"></a><span class="mw-headline">R - ダイアログコンボボックスの動作を制限<span class="OIndex" style="display:none">X-Function, Dialog Combo Box</span></span></h2>
+<p>LabTalkスクリプトを介して呼び出すときに、Xファンクションのコンボボックスの値を制御するために使用されます。ダイアログには影響しません。
+</p>
+<h3><a name="R:0"></a><span class="mw-headline">R:0</span></h3>
+<p>制約はありません。コンボボックス内のリストで定義されている値の他に、LabTalkスクリプトを使用してコンボボックス変数に他の値を代入することもできます。
+</p>
+<h3><a name="R:1"></a><span class="mw-headline">R:1</span></h3>
+<p>デフォルトのオプション文字列。LabTalkスクリプトを使用してコンボボックス変数に代入できるのは、コンボボックス内のリストで定義されている値のみです。
+</p><p><u><i><b>例</b></i></u>
+</p>
+<ol><li> int型の変数（<i>x1</i>という名前）を持つ新しいXファンクション（<i>OptionStringRという名前</i>）を作成します。この変数に対する<b>制御</b>の列に、<i>AA|BB|CC</i> をセットします。</li>
+<li> コマンドウィンドウで<code>OptionStringR x1:=5;</code> を実行すると、次のエラーが表示されます：<b>#Command Error!</b></li>
+<li> XファンクションビルダでこのXファンクションを再度開き、<b>オプション文字列</b>列のint変数に<b>R:0</b>を設定してこのXファンクションを保存します。</li>
+<li> コマンドウィンドウで<code>OptionStringR x1:=5;</code> を再度実行すると、エラーは発生しません。</li></ol>
+<h2><a name="S_-_Defining_Default_Data_Selection_for_Input_VariableX-Function.2C_Data_Selector_Default_Selection"></a><span class="mw-headline">S - 入力変数のデフォルトデータ選択を定義<span class="OIndex" style="display:none">X-Function, Data Selector Default Selection</span></span></h2>
+<p>入力変数のデフォルトデータオブジェクトを定義します。このオプション文字列はRange型の変数のみに使用されます。
+</p>
+<h3><a name="S:0"></a><span class="mw-headline">S:0</span></h3>
+<p>アクティブなワークシートのすべての列がデータ範囲として選択されています。
+</p>
+<h3><a name="S:0x01"></a><span class="mw-headline">S:0x01</span></h3>
+<p>アクティブな行列シートの最初の行列オブジェクト、またはアクティブなワークシートの最初の列がデータ範囲として選択されています。
+</p>
+<h3><a name="S:0x10"></a><span class="mw-headline">S:0x10</span></h3>
+<p><i>&lt;active&gt;</i>オプションが行列オブジェクトのみを取得するようにします。出力変数の場合、<i>&lt;active&gt;</i>オプションは<i>&lt;new&gt;</i>に置き換えられ、行列ページが作成されます。
+</p>
+<h2><a name="SV_-_Support_String_Item_in_X-Function_Dialog_Combo_Box"></a><span class="mw-headline">SV - Xファンクションダイアログコンボボックス内の文字列のサポート</span></h2>
+<p>コンボボックス内の項目値を特殊な値に置き換えます。例えば、int型の変数が<b>Control</b>列の<i>Begin|Mid|End</i>文字列を介してコンボボックスとして設定されている場合、コンボボックス項目のデフォルトの項目値は、それぞれ0、1、2です。オプション文字列 <i>SV:1|5|-1</i>をこの変数に使用した場合、コンボボックス内のアイテムの戻り値はそれぞれ1、5、-1です。
+</p>
+<h2><a name="X-Function.2C_Dialog_ThemeT_-_Skipping_the_Variable_from_Theme"></a><span class="mw-headline"><span class="OIndex" style="display:none">X-Function, Dialog Theme</span>T - テーマから変数をスキップ</span></h2>
+<p>変数をXファンクションダイアログテーマファイルに記憶するかどうかを制御します。このオプション文字列は、デフォルト設定であるツリービューでテーマを選択する場合にのみ有効です。
+</p>
+<h3><a name="T:0"></a><span class="mw-headline">T:0</span></h3>
+<p>指定したテーマが選択されている場合は、そのテーマの値が変数値として使用されます。
+</p>
+<h3><a name="T:1"></a><span class="mw-headline">T:1</span></h3>
+<p>テーマが選択されている場合でも、テーマの値を変数値として使用しません。
+</p>
+<h3><a name="T:4"></a><span class="mw-headline">T:4</span></h3>
+<p>指定されたテーマが選択されている場合、テーマの値と属性の両方が変数によって使用されます。このオプションは、主にXYRange、ImageなどのOrigin内部オブジェクトで使用されます。
+</p>
+<h2><a name="X-Function.2C_Set_Output_as_OptionalU_-_Specifying_Output_as_Optional"></a><span class="mw-headline"><span class="OIndex" style="display:none">X-Function, Set Output as Optional</span>U - 出力をオプションとして指定</span></h2>
+<p>出力変数が必要かどうかを指定します。このオプション文字列は、複数の出力変数を持つXファンクションに対してのみ利用可能です。
+</p>
+<h3><a name="U:1"></a><span class="mw-headline">U:1</span></h3>
+<p>出力変数が選択されたチェックボックスを追加します。これはデフォルトのオプションです。
+</p>
+<h3><a name="U:0"></a><span class="mw-headline">U:0</span></h3>
+<p>出力変数が未選択のチェックボックスを追加します。
+</p>
+<h3><a name="U:n"></a><span class="mw-headline">U:n</span></h3>
+<p>出力変数のチェックボックスを追加しません。
+</p><p><u><i><b>例</b></i></u>
+</p>
+<ol>
+<li>次の図に示すように、名前と変数を使用して新しいXファンクションを作成します。  次に、<b>保存</b>ボタン<a  class="image"><img alt="Ocguide xfdialog savebutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_savebutton.png" width="23"  /></a>をクリックして、Xファンクションを<i>&lt; ユーザファイルフォルダ &gt;\X-Functions\OC Guide\に</i>保存します（このフォルダが存在しない場合は作成します）。<br /><a  class="image"><img alt="OCguide xf optionstring u variables.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_u_variables.png" width="569"  /></a></li>
+<li><b>Xファンクションをコードビルダで編集する</b>ボタン<a  class="image"><img alt="Ocguide xfdialog codebuilderbutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_codebuilderbutton.png" width="23"  /></a>をクリックして、このXファンクションを<b>コードビルダ</b>で開きます。メイン関数 <b>OptionStringU</b>の本文に次のコードをコピーします。
+<pre class="oc" style="font-family:monospace;">vector vv; 
+vv.<span style="color: #000000;">Data</span><span style="color: #000000;">(</span><span style="color: #0000dd;">1</span>,<span style="color: #0000dd;">10</span>,<span style="color: #0000dd;">1</span><span style="color: #000000;">)</span>;
+ 
+<span style="color: #0000ff;">if</span><span style="color: #000000;">(</span> xx <span style="color: #000000;">)</span> <span style="color: #008000;">// xx変数を出力するかチェック</span>
+ <span style="color: #000000;">{</span> 
+      xx <span style="color: #000080;">=</span> vv;
+ <span style="color: #000000;">}</span>
+ 
+<span style="color: #0000ff;">if</span><span style="color: #000000;">(</span> yy <span style="color: #000000;">)</span> <span style="color: #008000;">// yy変数を出力するかチェック</span>
+ <span style="color: #000000;">{</span>
+      yy <span style="color: #000080;">=</span> vv;
+ <span style="color: #000000;">}</span>
+zz <span style="color: #000080;">=</span> vv;</pre></li>
+<li>次のコードを<b>OptionStringU_event1</b>関数に入れ、出力変数のチェックボックスステータスを取得します。コンパイルボタン<a  class="image"><img alt="Ocguide XF Compile Button.PNG" src="../images/X-Function_Option_Strings/Ocguide_XF_Compile_Button.PNG" width="107"  /></a>をクリックします。
+<pre class="oc" style="font-family:monospace;">foreach<span style="color: #000000;">(</span>TreeNode subnode in trGetN.<span style="color: #000000;">Children</span><span style="color: #000000;">)</span>
+ <span style="color: #000000;">{</span>
+      string strVarName <span style="color: #000080;">=</span> subnode.<span style="color: #000000;">tagName</span>;
+      <span style="color: #0000ff;">int</span> nUStatus, nOutput;
+ 
+      <span style="color: #008000;">// 出力変数かチェック</span>
+      <span style="color: #0000ff;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">(</span>subnode.<span style="color: #000000;">GetAttribute</span><span style="color: #000000;">(</span>STR_XF_VAR_IO_ATTRIB, nOutput<span style="color: #000000;">)</span>
+            <span style="color: #000040;">&amp;&amp;</span> IO_OUTPUT <span style="color: #000080;">==</span> nOutput<span style="color: #000000;">)</span><span style="color: #000000;">)</span>
+      <span style="color: #000000;">{</span>
+            <span style="color: #008000;">// 出力チェックボックスステータスをチェック</span>
+            <span style="color: #0000ff;">if</span><span style="color: #000000;">(</span>subnode.<span style="color: #000000;">GetAttribute</span><span style="color: #000000;">(</span>STR_ATTRIB_DYNACONTROL_USE_CHECK, nUStatus<span style="color: #000000;">)</span><span style="color: #000000;">)</span>
+            <span style="color: #000000;">{</span>
+                  <span style="color: #0000ff;">switch</span><span style="color: #000000;">(</span>nUStatus<span style="color: #000000;">)</span>
+                  <span style="color: #000000;">{</span>
+                  <span style="color: #0000ff;">case</span> <span style="color: #0000dd;">1</span><span style="color: #000000;">:</span>
+                        <span style="color: #000000;">printf</span><span style="color: #000000;">(</span><span style="color: #ff00ff;">&quot;%s variable has Output checked check box.<span style="color: #666666; font-weight: bold;">\n</span>&quot;</span> , strVarName<span style="color: #000000;">)</span>;
+                        <span style="color: #0000ff;">break</span>;
+                  <span style="color: #0000ff;">case</span> <span style="color: #0000dd;">0</span><span style="color: #000000;">:</span>
+                        <span style="color: #000000;">printf</span><span style="color: #000000;">(</span><span style="color: #ff00ff;">&quot;%s variable has Output unchecked check box.<span style="color: #666666; font-weight: bold;">\n</span>&quot;</span> , strVarName<span style="color: #000000;">)</span>;
+                        <span style="color: #0000ff;">break</span>;
+                  <span style="color: #000000;">}</span>
+            <span style="color: #000000;">}</span>
+            <span style="color: #0000ff;">else</span>
+            <span style="color: #000000;">{</span>
+                  <span style="color: #000000;">printf</span><span style="color: #000000;">(</span><span style="color: #ff00ff;">&quot;%s variable NOT Output check box.<span style="color: #666666; font-weight: bold;">\n</span>&quot;</span>, strVarName<span style="color: #000000;">)</span>;
+            <span style="color: #000000;">}</span>
+      <span style="color: #000000;">}</span>
+<span style="color: #000000;">}</span></pre></li>
+<li>コマンドウィンドウで<code>OptionStringU -d;</code> を実行し、ダイアログの設定はデフォルトのままで<b>OK</b>ボタンをクリックします。  これにより、2列の新しいワークシートが作成され、各出力変数のチェックボックスステータスがコマンドウィンドウに表示されます。
+</ol>
+<h2><a name="X-Function.2C_Set_Control_as_InvisibleV_-_Specifying_Control_to_be_Invisible"></a><span class="mw-headline"><span class="OIndex" style="display:none">X-Function, Set Control as Invisible</span>V - コントロールを非表示に指定</span></h2>
+<p>変数をXファンクションダイアログに表示するかどうかを指定します。
+</p>
+<h3><a name="V:0"></a><span class="mw-headline">V:0</span></h3>
+<p>変数はダイアログに表示されません。
+</p>
+<h3><a name="V:1"></a><span class="mw-headline">V:1</span></h3>
+<p>変数がダイアログに表示されます。
+</p>
+<h3><a name="V:2"></a><span class="mw-headline">V:2</span></h3>
+<p>LabTalkスクリプトを使用すると、変数は非表示になります。
+</p>
+<h2><a name="X-Function.2C_Editable.2FDisable_ControlX-Function.2C_Branch_Check_BoxZ_-_Adding_Check_Box_to_Set_Editable_or_Disable_for_Variable_Control"></a><span class="mw-headline"><span class="OIndex" style="display:none">X-Function, Editable/Disable Control</span><span class="OIndex" style="display:none">X-Function, Branch Check Box</span>Z - 変数制御のための編集可/不可を設定するチェックボックスを追加</span></h2>
+<p>入力変数の横にチェックボックスを追加して、編集可能かどうかを指定します。構文は次の通りです。<b>Z:<i>State</i>|<i>Label</i>|<i>Behavior</i></b>
+</p>
+<ul><li> <b><i>State</i></b>: <i>0</i>または<i>1</i>。チェックボックスのステータスを指定します。</li>
+<li> <b><i>Label</i></b>: チェックボックスのラベル。<b><i>Label</i></b>と <b><i>Behavior</i></b>の両方が指定されていない場合、ラベルはデフォルトで<b>Auto</b>になります。</li>
+<li> <b><i>Behavior</i></b>: 
+<dl><dd> <i>0</i>：チェックボックスがオンかどうかに関係なく、変数は常に編集可能です。</dd>
+<dd> <i>1</i>：チェックすると、入力変数は無効になります。</dd>
+<dd> <i>2</i>：チェックを外すと、入力変数は無効になります。</dd></dl></li></ul>
+<p><u><i><b>例</b></i></u>
+</p>
+<ol>
+<li>次の図に示すように、名前と変数を使用して新しいXファンクションを作成します。次に、<b>保存</b>ボタン<a  class="image"><img alt="Ocguide xfdialog savebutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_savebutton.png" width="23"  /></a>をクリックして、Xファンクションを<i>&lt; ユーザファイルフォルダ &gt;\X-Functions\OC Guide\に</i>保存します（このフォルダが存在しない場合は作成します）。<br /><a  class="image"><img alt="OCguide xf optionstring z variables.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_z_variables.png" width="507"  /></a></li>
+<li><b>Xファンクションをコードビルダで編集する</b>ボタン<a  class="image"><img alt="Ocguide xfdialog codebuilderbutton.png" src="../images/X-Function_Option_Strings/Ocguide_xfdialog_codebuilderbutton.png" width="23"  /></a>をクリックして、このXファンクションを<b>コードビルダ</b>で開きます。次のコードを<b>OptionStringZ_event1</b>関数にコピーすると、<b>int型</b>変数のチェックボックスステータスが取得されます。コンパイルボタン<a  class="image"><img alt="Ocguide XF Compile Button.PNG" src="../images/X-Function_Option_Strings/Ocguide_XF_Compile_Button.PNG" width="107"  /></a>をクリックします。
+<pre class="oc" style="font-family:monospace;">TreeNode trInt <span style="color: #000080;">=</span> trGetN.<span style="color: #000000;">nn</span>;		
+<span style="color: #0000ff;">int</span> nAutoType <span style="color: #000080;">=</span> octree_get_auto_support<span style="color: #000000;">(</span><span style="color: #000040;">&amp;</span>trInt<span style="color: #000000;">)</span>;
+<span style="color: #0000ff;">switch</span><span style="color: #000000;">(</span>nAutoType<span style="color: #000000;">)</span>
+<span style="color: #000000;">{</span>
+<span style="color: #0000ff;">case</span> <span style="color: #000040;">-</span><span style="color: #0000dd;">1</span><span style="color: #000000;">:</span>
+	out_str<span style="color: #000000;">(</span><span style="color: #ff00ff;">&quot;Auto check box of int Type control is unchecked&quot;</span><span style="color: #000000;">)</span>;
+	<span style="color: #0000ff;">break</span>;
+<span style="color: #0000ff;">case</span> <span style="color: #0000dd;">0</span><span style="color: #000000;">:</span>
+	out_str<span style="color: #000000;">(</span><span style="color: #ff00ff;">&quot;No auto check box for int Type control&quot;</span><span style="color: #000000;">)</span>;
+	<span style="color: #0000ff;">break</span>;
+<span style="color: #0000ff;">case</span> <span style="color: #0000dd;">1</span><span style="color: #000000;">:</span>
+	out_str<span style="color: #000000;">(</span><span style="color: #ff00ff;">&quot;Auto check box of int Type control is checked&quot;</span><span style="color: #000000;">)</span>;
+	<span style="color: #0000ff;">break</span>;
+<span style="color: #000000;">}</span></pre></li>
+<li>コマンドウィンドウで<code>OptionString -d;</code> を実行すると、下の画像のようなダイアログが開きます。<b>TestOK</b>チェックボックスの状態を変更すると、このチェックボックスの状態に関するメッセージがコマンドウィンドウに出力されます。<br /><a  class="image"><img alt="OCguide xf optionstring z xfdialog.png" src="../images/X-Function_Option_Strings/OCguide_xf_optionstring_z_xfdialog.png" width="360"  /></a></li>
+</ol></ol>
+
+
+
+
+    

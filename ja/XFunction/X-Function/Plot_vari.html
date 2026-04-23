@@ -1,0 +1,297 @@
+﻿<h1 class="firstHeading">plot_vari</h1>
+<p><br /></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>目次</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">追加の情報</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#X-Function_Execution_Options"><span class="tocnumber">5</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Variables"><span class="tocnumber">6</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Details_of_Show_Mean_Lines_for_Factors_TreeNode"><span class="tocnumber">7</span> <span class="toctext">因子の平均線を表示ツリーノードの詳細</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Description"><span class="tocnumber">8</span> <span class="toctext">概要</span></a></li>
+</ul>
+</div>
+<h2><a name="Menu_Information" id="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p><b>作図: 統計: 変動性管理図</b></p>
+<h2><a name="Brief_Information" id="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>変動性管理図を作成</p>
+<h2><a name="Additional_Information" id="Additional_Information"></a><span class="mw-headline">追加の情報</span></h2>
+<p class="version">必要なOriginのバージョン: Origin 2025以降</p>
+<h2><a name="Command_Line_Usage" id="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>plot_vari -r 2 irng:=[Book3]Sheet1!E"City mpg" factor:=[Book3]Sheet1!(C"Identification.Classification",D"Identification.Year") trmean.f1:=1 trmean.f2:=1 gmean:=0 sd:=1 trsdmean.f1:=1 trsdmean.f2:=1 points:=0;</code></p>
+<h2><a name="X-Function_Execution_Options" id="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクション実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a></p>
+<h2><a name="Variables" id="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />
+名</th>
+<th width="8%">変数<br />
+名</th>
+<th width="8%">I/O<br />
+と<br />
+データ型</th>
+<th width="8%">デフォルト<br />
+値</th>
+<th>説明</th>
+</tr>
+<tr>
+<td>入力</td>
+<td>irng</td>
+<td>
+<p>入力</p>
+<p>Range</p>
+</td>
+<td>
+<center>&lt;active&gt;</center>
+</td>
+<td>入力データ列を指定します。</td>
+</tr>
+<tr>
+<td>因子</td>
+<td>factor</td>
+<td>
+<p>入力</p>
+<p>Range</p>
+</td>
+<td>
+<center>&lt;unassigned&gt;</center>
+</td>
+<td>複数の因子を順番に指定します。</td>
+</tr>
+<tr>
+<td>セル平均を接続</td>
+<td>cell</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>1</center>
+</td>
+<td>最後の因子の平均値をに接続するかどうかを指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>因子の平均線を表示</td>
+<td>trmean</td>
+<td>
+<p>入力</p>
+<p>TreeNode</p>
+</td>
+<td></td>
+<td>因子の平均線を表示するかどうかを指定します。</td>
+</tr>
+<tr>
+<td>総平均線を表示</td>
+<td>gmean</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>1</center>
+</td>
+<td>グラフに総平均線を表示するかどうかを指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>グランドメディアン線を表示</td>
+<td>gmedian</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>0</center>
+</td>
+<td>グラフにグランドメディアン線を表示するかどうかを指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>標準偏差チャートを表示</td>
+<td>sd</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>0</center>
+</td>
+<td>変動性管理図の下にSDチャートを表示するかどうかを指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>SDの平均を表示</td>
+<td>sdgmean</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>1</center>
+</td>
+<td>最後の因子の標準偏差値の平均を表示するかどうかを指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>因子の平均線を表示</td>
+<td>trsdmean</td>
+<td>
+<p>入力</p>
+<p>TreeNode</p>
+</td>
+<td></td>
+<td>SDチャートで因子の平均線を表示するかどうかを指定します。</td>
+</tr>
+<tr>
+<td>個々のデータポイントを表示</td>
+<td>points</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>1</center>
+</td>
+<td>ヒゲ線のみ表示するのではなく、個別のデータポイントを表示するかどうかを指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>ボックスを表示</td>
+<td>box</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>0</center>
+</td>
+<td>グループごとにボックスプロットを表示するかどうかを指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>範囲線を表示</td>
+<td>rline</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>1</center>
+</td>
+<td>グループごとに範囲ヒゲ線を表示するかどうかを指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>テンプレート</td>
+<td>template</td>
+<td>
+<p>入力</p>
+<p>string</p>
+</td>
+<td>
+<center>variability</center>
+</td>
+<td>このプロットを作成するグラフテンプレートを指定します。Originプログラムフォルダにインストールされるデフォルトのテンプレートは<b>variability.optu</b>です。
+<p><i>0=...File:[グラフテンプレート (*.otpu )] *.otpu</i><br />
+<i>1=[グラフテンプレート(*.otp)]*.otp</i></p>
+</td>
+</tr>
+<tr>
+<td>レポートデータ</td>
+<td>rd</td>
+<td>
+<p>出力</p>
+<p>ReportData</p>
+</td>
+<td>
+<center>[&lt;入力&gt;]&lt;新規&gt;</center>
+</td>
+<td>結果テーブルを出力する場所を指定します。</td>
+</tr>
+</table>
+<h2><a name="Details_of_Show_Mean_Lines_for_Factors_TreeNode" id="Details_of_Show_Mean_Lines_for_Factors_TreeNode"></a><span class="mw-headline">因子の平均線を表示ツリーノードの詳細</span></h2>
+<p>ツリーノードの詳細：</p>
+<p><b>trmean</b>ツリーは因子の平均線を表示するかどうかを指定します。一方で<b>trsdmean</b>ツリーは、SDチャートに因子の平均線を表示するかどうかを指定します。</p>
+<p>構文</p>
+<ul>
+<li><b>trmean.<i>Treenode</i>:=&lt;value&gt;</b></li>
+<li><b>trsdmean.<i>Treenode</i>:=&lt;value&gt;</b></li>
+</ul>
+<p><br />
+サンプル：</p>
+<ul>
+<li><b>trmean.f1:=1</b></li>
+<li><b>trsdmean.f2:=1</b></li>
+</ul>
+<table class="treetable">
+<tr>
+<th width="10%">ツリーノード</th>
+<th width="8%">ラベル</th>
+<th width="8%">データ型</th>
+<th width="8%">デフォルト</th>
+<th>説明</th>
+</tr>
+<tr>
+<td>f1
+<p>(<i>f1</i>から<i>f10</i>まで)</p>
+</td>
+<td><i>因子名</i></td>
+<td>int</td>
+<td>0</td>
+<td>この因子の平均線を表示するかどうかを指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=偽</i></li>
+<li><i>1=真</i></li>
+</ul>
+</td>
+</tr>
+</table>
+<h2><a name="Description" id="Description"></a><span class="mw-headline">説明</span></h2>
+<p>このXファンクションを使用すると、最大4つの因子を持つ変動性管理図を作成できます。詳細は<a class="external text" href="../../UserGuide/UserGuide/Variability_Chart.html">変動性管理図</a>を参照してください。</p>

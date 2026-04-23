@@ -1,0 +1,198 @@
+<h1 class="firstHeading">2.10.7 plot_gdot</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">Menu Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">Brief Information</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">Additional Information</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">Command Line Usage</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#X-Function_Execution_Options"><span class="tocnumber">5</span> <span class="toctext">X-Function Execution Options</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Variables"><span class="tocnumber">6</span> <span class="toctext">Variables</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Description"><span class="tocnumber">7</span> <span class="toctext">Description</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">Menu Information</span></h2>
+<p><b>Plot: Categorical: Grouped Dot Plots</b>
+<br />or
+<br /><b>Plot: Categorical: Grouped Stacked Dot Plots</b>
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">Brief Information</span></h2>
+<p>Create grouped dot plots with/without stacking
+</p>
+<h2><a name="Additional_Information"></a><span class="mw-headline">Additional Information</span></h2>
+<p class="version" >Minimum Origin Version Required: Origin 2025 </p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">Command Line Usage</span></h2>
+<p><code>
+plot_gdot -r 1 group:=[Book2]Sheet1!(A,B) stack:=allgrp ptsmange:=density;
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">X-Function Execution Options</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">Please refer to the page for additional option switches when accessing the x-function from script</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">Variables</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">Display<br />Name
+</th>
+<th width="8%">Variable<br />Name
+</th>
+<th width="8%">I/O<br />and<br />Type
+</th>
+<th width="8%">Default<br />Value
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Input
+</td>
+<td>irng
+</td>
+<td>
+<p>Input 
+</p><p>Range
+</p>
+</td>
+<td><center>&lt;active&gt;</center>
+</td>
+<td>Specify the source Y data column for counting. It supports multiple columns.
+</td></tr>
+<tr>
+<td>Group
+</td>
+<td>fakegroup
+</td>
+<td>
+<p>Input 
+</p><p>int
+</p>
+</td>
+<td><center>0</center>
+</td>
+<td>Specify the grouping column(s)
+</td></tr>
+<tr>
+<td>
+</td>
+<td>group
+</td>
+<td>
+<p>Input 
+</p><p>Range
+</p>
+</td>
+<td><center>&lt;unassigned&gt;</center>
+</td>
+<td>Specify the grouping column(s)
+</td></tr>
+<tr>
+<td>Plot Order
+</td>
+<td>order
+</td>
+<td>
+<p>Input 
+</p><p>int
+</p>
+</td>
+<td><center>0</center>
+</td>
+<td>Specify how to sort the data in Output sheet and plot grouped dot plots when there are multiple Input columns.
+<p>Option list:
+</p>
+<ul><li><i>0=plotfirst: Input Variables First</i></li>
+<li><i>1=grpfirst: Group Info First</i></li></ul>
+</td></tr>
+<tr>
+<td>Stack
+</td>
+<td>stack
+</td>
+<td>
+<p>Input 
+</p><p>int
+</p>
+</td>
+<td><center>4</center>
+</td>
+<td>Specify whether stack the dot plots and how to stack them in each group.
+<p>Option list:
+</p>
+<ul><li><i>0=all:All</i></li>
+<li><i>1=ivar:Input Variables</i></li>
+<li><i>2=lastgrp:Last Group</i></li>
+<li><i>3=allgrp:All Groups</i></li>
+<li><i>4=none:None</i></li></ul>
+</td></tr>
+<tr>
+<td>Arrange Points
+</td>
+<td>ptsmange
+</td>
+<td>
+<p>Input 
+</p><p>int
+</p>
+</td>
+<td><center>0</center>
+</td>
+<td>Specify how to arrange the dots
+<p>Option list:
+</p>
+<ul><li><i>0=histogram:Histogram</i></li></ul>
+<p>Just like a histogram plot, but show number of points instead of bars. It will split the data by bins, count the points in each bin, and then plot symbols from base line according to the count.
+</p>
+<ul><li><i>1=density:Density</i></li></ul>
+<p>The point will be arranged as that in a column scatter, but the points will be aligned to base line of each plot. Actually there is no bin for data, the data arrangement relate to size of data point.
+</p>
+</td></tr>
+<tr>
+<td>Horizontal Margin
+</td>
+<td>hmargin
+</td>
+<td>
+<p>Input 
+</p><p>int
+</p>
+</td>
+<td><center>5</center>
+</td>
+<td>Specify the horizontal margin to fit page to layer, for making the tick labels show well especially when there are multiple table rows on Y axis.
+</td></tr>
+<tr>
+<td>Worksheet
+</td>
+<td>ow
+</td>
+<td>
+<p>Output 
+</p><p>Worksheet
+</p>
+</td>
+<td><center>&lt;new&gt;</center>
+</td>
+<td>Output the unstacked input columns using specified grouping column(s).
+</td></tr>
+<tr>
+<td>template
+</td>
+<td>template
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td><center>&lt;auto&gt;</center>
+</td>
+<td><i>0=...File:[Graph Template (*.otpu )] *.otpu, 1=[Graph Template(*.otp)]*.otp</i>
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">Description</span></h2>
+<p>This X-Function allows you to create a Dot Plot with groups. And you can control the graph whether stack the dot plots. Please refer to <a class="external text" href="../../UserGuide/UserGuide/Creating_Dot_Plot.html">Creating Dot Plot</a> for more details.
+</p>
+
+
+
+
+

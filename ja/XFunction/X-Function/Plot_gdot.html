@@ -1,0 +1,178 @@
+﻿<h1 class="firstHeading">plot_gdot</h1>
+<p><br /></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>目次</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">追加の情報</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#X-Function_Execution_Options"><span class="tocnumber">5</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Variables"><span class="tocnumber">6</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Description"><span class="tocnumber">7</span> <span class="toctext">説明</span></a></li>
+</ul>
+</div>
+<h2><a name="Menu_Information" id="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p><b>作図：カテゴリカル：グループ化ドットプロット</b><br />
+または<br />
+<b>作図：カテゴリカル：グループ化積み上げドットプロット</b></p>
+<h2><a name="Brief_Information" id="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>グループ化ドットプロットを積み上げ付き/なしで作成</p>
+<h2><a name="Additional_Information" id="Additional_Information"></a><span class="mw-headline">追加の情報</span></h2>
+<p class="version">必要なOriginのバージョン: Origin 2025以降</p>
+<h2><a name="Command_Line_Usage" id="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>plot_gdot -r 1 group:=[Book2]Sheet1!(A,B) stack:=allgrp ptsmange:=density;</code></p>
+<h2><a name="X-Function_Execution_Options" id="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクション実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a></p>
+<h2><a name="Variables" id="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />
+名</th>
+<th width="8%">変数<br />
+名</th>
+<th width="8%">I/O<br />
+と<br />
+データ型</th>
+<th width="8%">デフォルト<br />
+値</th>
+<th>説明</th>
+</tr>
+<tr>
+<td>入力</td>
+<td>irng</td>
+<td>
+<p>入力</p>
+<p>Range</p>
+</td>
+<td>
+<center>&lt;active&gt;</center>
+</td>
+<td>カウントするソースYデータ列を指定します。複数の列をサポートします。</td>
+</tr>
+<tr>
+<td>グループ</td>
+<td>fakegroup</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>0</center>
+</td>
+<td>グループ化列を指定します</td>
+</tr>
+<tr>
+<td></td>
+<td>group</td>
+<td>
+<p>入力</p>
+<p>Range</p>
+</td>
+<td>
+<center>&lt;unassigned&gt;</center>
+</td>
+<td>グループ化列を指定します</td>
+</tr>
+<tr>
+<td>プロット順</td>
+<td>order</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>0</center>
+</td>
+<td>入力列が複数ある場合、出力シートでデータをソートしてグループ化ドットプロットをどのようにプロットするか指定できます。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0= plotfirst:入力変数が最初</i></li>
+<li><i>1=grpfirst: グループ情報が最初</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>積み上げ</td>
+<td>stack</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>4</center>
+</td>
+<td>ドットプロットを積み上げるかどうか、および各グループでの積み上げ方法を指定します。
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=all: 全て</i></li>
+<li><i>1=ivar: 入力変数</i></li>
+<li><i>2= lastgrp:最後のグループ</i></li>
+<li><i>3= allgrp：すべてのグループ</i></li>
+<li><i>4=none:なし</i></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>ポイントを配置</td>
+<td>PTSMANGE</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>0</center>
+</td>
+<td>Specify how to arrange the dots
+<p>オプションリスト:</p>
+<ul>
+<li><i>0=Histogram:ヒストグラム</i></li>
+</ul>
+<p>ヒストグラムプロットと同じですが、棒ではなく点で数を表示します。データをビンごとに分割し、各ビン内のポイントをカウントし、そのカウントに従ってベースラインからシンボルをプロットします。</p>
+<ul>
+<li><i>1=density:密度</i></li>
+</ul>
+<p>点は列散布図と同じように配置されますが、点は各プロットのベースラインに整列されます。実際にはデータのためのビンはなく、データの配置はデータポイントのサイズに関連します。</p>
+</td>
+</tr>
+<tr>
+<td>水平の余白</td>
+<td>hmargin</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>
+<center>5</center>
+</td>
+<td>特にY軸上に複数の表形式の行がある場合に、目盛ラベルがうまく表示されるように、ページをレイヤに合わせる際の水平余白を指定します。</td>
+</tr>
+<tr>
+<td>ワークシート</td>
+<td>ow</td>
+<td>
+<p>出力</p>
+<p>ワークシート</p>
+</td>
+<td>
+<center>&lt;new&gt;</center>
+</td>
+<td>指定したグループ列を使用して、積み上げていない入力列を出力します。</td>
+</tr>
+<tr>
+<td>テンプレート</td>
+<td>template</td>
+<td>
+<p>入力</p>
+<p>string</p>
+</td>
+<td>
+<center>&lt;auto&gt;</center>
+</td>
+<td><i>0=...ファイル:[グラフテンプレート(*.otpu)]*.otpu、1=[グラフテンプレート(*.otp)]*.otp</i></td>
+</tr>
+</table>
+<h2><a name="Description" id="Description"></a><span class="mw-headline">説明</span></h2>
+<p>このX機能を使用すると、グループを含むドットプロットを作成できる。そして、グラフがドットプロットをスタックするかどうかをコントロールできる。 Please refer to <a class="external text" href="../../UserGuide/UserGuide/Creating_Dot_Plot.html">Creating Dot Plot</a> for more details.</p>

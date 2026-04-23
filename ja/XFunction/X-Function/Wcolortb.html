@@ -1,0 +1,148 @@
+﻿<h1 class="firstHeading">wcolortb</h1>
+<p><br /></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>目次</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Command_Line_Usage"><span class="tocnumber">3</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#X-Function_Execution_Options"><span class="tocnumber">4</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Variables"><span class="tocnumber">5</span> <span class="toctext">変数</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#tr_TreeNode_Details"><span class="tocnumber">5.1</span> <span class="toctext">tr ツリーノードの詳細</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Description"><span class="tocnumber">6</span> <span class="toctext">説明</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Related_X-Functions"><span class="tocnumber">7</span> <span class="toctext">関連するXファンクション</span></a></li>
+</ul>
+</div>
+<h2><a name="Menu_Information" id="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p>ワークシート:条件フォーマット: 上/下</p>
+<h2><a name="Brief_Information" id="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>上/下Nの値に色を割り当てます。</p>
+<h2><a name="Command_Line_Usage" id="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>1. wcolortb rng:=[Book1]Sheet1!A:D name:="C1R1-C4R0";</code></p>
+<p><code>2. wcolortb rng:=[Book1]Sheet1!A:B name:="C1R1-C2R0" tr.fill:=31306751 tr.font:=32497615;</code></p>
+<p><code>3. wcolortb rng:=[Book1]1!A:E name:="C2R1-C5R0" rule:=1;</code></p>
+<h2><a name="X-Function_Execution_Options" id="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクション実行オプション</span></h2>
+<p>スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについては<a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">このページ</a>を参照してください。</p>
+<h2><a name="Variables" id="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />
+名</th>
+<th width="8%">変数<br />
+名</th>
+<th width="8%">I/O<br />
+と<br />
+データ型</th>
+<th width="8%">デフォルト<br />
+値</th>
+<th>説明</th>
+</tr>
+<tr>
+<td>範囲</td>
+<td>rng</td>
+<td>
+<p>入力</p>
+<p>Range</p>
+</td>
+<td>&lt;active&gt;</td>
+<td>条件フォーマットを適用するワークシート内のセル範囲を指定します。<b>Note</b>: 条件フォーマットをテキスト値のセットに適用するには、先にこの列をカテゴリとして設定します。列を右クリックして<b>カテゴリーとして設定</b>を選択して設定できます。</td>
+</tr>
+<tr>
+<td>名前</td>
+<td>name</td>
+<td>
+<p>入力</p>
+<p>string</p>
+</td>
+<td></td>
+<td>選択した範囲の名前を指定します。</td>
+</tr>
+<tr>
+<td>ルール</td>
+<td>rule</td>
+<td>
+<p>入力</p>
+<p>int</p>
+</td>
+<td>0</td>
+<td>色を塗る値のルールを指定します。オプション：
+<dl>
+<dd>
+<ul>
+<li><i>top:上位N項目(0)</i></li>
+<li><i>topp:上位N%(1)</i></li>
+<li><i>btm:下位N項目(2)</i></li>
+<li><i>btmp:下位N%(3)</i></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr>
+<td>N</td>
+<td>n</td>
+<td>
+<p>入力</p>
+<p>Double</p>
+</td>
+<td>10</td>
+<td><b>ルール</b>の番号<i>N</i>を指定します。</td>
+</tr>
+<tr>
+<td>フォーマット</td>
+<td>tr</td>
+<td>
+<p>入力</p>
+<p>TreeNode</p>
+</td>
+<td>&lt;unassigned&gt;</td>
+<td>色の設定です。詳細は<a href="#tr_TreeNode_Details">下の表を参照</a>してください。</td>
+</tr>
+</table>
+<h3><a name="tr_TreeNode_Details" id="tr_TreeNode_Details"></a><span class="mw-headline">tr ツリーノードの詳細</span></h3>
+<p><b>シンタックス</b>: <b>tr.</b><i>treenode</i>=<i>value</i></p>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />
+名</th>
+<th width="8%">ツリーノード<br />
+名</th>
+<th width="8%">I/O<br />
+と<br />
+データ型</th>
+<th width="8%">デフォルト<br />
+値</th>
+<th>説明</th>
+</tr>
+<tr>
+<td>背景</td>
+<td>fill</td>
+<td>
+<p>入力</p>
+<p>Double</p>
+</td>
+<td>30067455</td>
+<td>ワークシートセルの塗りつぶし色を指定します。</td>
+</tr>
+<tr>
+<td>テキストの色</td>
+<td>font</td>
+<td>
+<p>入力</p>
+<p>Double</p>
+</td>
+<td>20132812</td>
+<td>値のフォント色を指定します。</td>
+</tr>
+</table>
+<h2><a name="Description" id="Description"></a><span class="mw-headline">説明</span></h2>
+<p>選択した範囲内の上位/下位N値を色付けします。詳細は<a class="external text" href="../../UserGuide/UserGuide/Conditional_Formatting.html">このドキュメント</a> を参照してください。</p>
+<h2><a name="Related_X-Functions" id="Related_X-Functions"></a><span class="mw-headline">関連するXファンクション</span></h2>
+<p><a href="../../XFunction/X-Function/Wcolor.html" title="X-Function:Wcolor">wcolor</a>, <a href="../../XFunction/X-Function/Wcolordup.html" title="X-Function:Wcolordup">wcolordup</a>, <a href="../../XFunction/X-Function/Wheatmap.html" title="X-Function:Wheatmap">wheatmap</a>, <a href="../../XFunction/X-Function/WcolorPareto.html" title="X-Function:WcolorPareto">wcolorPareto</a>, <a href="../../XFunction/X-Function/Wcolorbycr.html" title="X-Function:Wcolorbycr">wcolorbycr</a>, <a href="../../XFunction/X-Function/Wcoloroutlier.html" title="X-Function:Wcoloroutlier">wcoloroutlier</a></p>
+<hr class='keywordshr' />
+<p><span class='keywords'>キーワード:</span><span class='keywordsInput'>セルの色分け</span></p>

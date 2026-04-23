@@ -1,0 +1,469 @@
+<h1 class="firstHeading">2.2.4.2 Wtspivot</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">Menu Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">Brief Information</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">Additional Information</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">Command Line Usage</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#X-Function_Execution_Options"><span class="tocnumber">5</span> <span class="toctext">X-Function Execution Options</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Variables"><span class="tocnumber">6</span> <span class="toctext">Variables</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Description"><span class="tocnumber">7</span> <span class="toctext">Description</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">Menu Information</span></h2>
+<p>Restructure: Time Series Pivot...
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">Brief Information</span></h2>
+<p>Aggregate data based on a date-time column
+</p>
+<h2><a name="Additional_Information"></a><span class="mw-headline">Additional Information</span></h2>
+<p class="version" >Minimum Origin Version Required: Origin 2024 </p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">Command Line Usage</span></h2>
+<p><code>
+1. wtspivot -r 2 time:=[Book1]Sheet1!A"DATE" data:=[Book1]Sheet1!B"PRCP" rowsBucket:="3 Month: Quarter" rowsPeriod:=Year colsBucket:=Month;
+</p><p>2. wtspivot -r 2 time:=[Book10]Sheet1!A data:=[Book10]Sheet1!B rowsBucket:=Month rowsPeriod:=Year rowsStart:=Apr rowsEnd:=Jun colsBucket:=Week colsPeriod:=Month colsStart:=6 colsEnd:=7 method:=custom custom:="sum max";
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">X-Function Execution Options</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">Please refer to the page for additional option switches when accessing the x-function from script</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">Variables</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">Display<br />Name
+</th>
+<th width="8%">Variable<br />Name
+</th>
+<th width="8%">I/O<br />and<br />Type
+</th>
+<th width="8%">Default<br />Value
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Source Time
+</td>
+<td>time
+</td>
+<td>
+<p>Input
+</p><p>Range
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> Specify the range that will be used as the time source of the Pivot Table.
+</td></tr>
+<tr>
+<td>Source Data
+</td>
+<td>data
+</td>
+<td>
+<p>Input
+</p><p>Range
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> Specify the range of data values to be summarized.
+</td></tr>
+<tr>
+<td>Aggregation Interval
+</td>
+<td>rowsBucket
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;none&gt;</center>
+</td>
+<td> Specify the aggregation interval of time in the rows of the pivot table. This time interval is shown in first column of the pivot table.
+<p>Option list: 
+</p>
+<table class="simple">
+
+<tr>
+<td width="20%"><i>&lt;none&gt;</i>
+</td>
+<td width="20%"><i>10 yr: Decade</i>
+</td>
+<td width="20%"><i>Year</i>
+</td>
+<td width="20%"><i>3 Month: Quarter</i>
+</td></tr>
+<tr>
+<td><i>Month</i>
+</td>
+<td><i>Week</i>
+</td>
+<td><i>Day</i>
+</td>
+<td><i>Hour</i>
+</td></tr>
+<tr>
+<td><i>30 min</i>
+</td>
+<td><i>15 min</i>
+</td>
+<td><i>Minute</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td>Time Period
+</td>
+<td>rowsPeriod
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;none&gt;</center>
+</td>
+<td> Specify the time group of the aggregation interval. According to the selected Aggregation Interval, you can specify the corresponding time period.
+</td></tr>
+<tr>
+<td>Remove Empty
+</td>
+<td>rowsRemoveEmpty
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td> Specify whether to remove the empty rows.
+<p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Start
+</td>
+<td>rowsStart
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td> <center> </center>
+</td>
+<td> Enter the start time of the rows of the pivot table.
+<p>The time format of the Start is based on the specified Aggregation Interval. 
+</p>
+</td></tr>
+<tr>
+<td>End
+</td>
+<td>rowsEnd
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td> <center> </center>
+</td>
+<td> Enter the end time of the rows of the pivot table.
+<p>The time format of the End is based on the specified Aggregation Interval. 
+</p>
+</td></tr>
+<tr>
+<td>Custom Format
+</td>
+<td>rowsCustomFmt
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td> <center> </center>
+</td>
+<td> Custom the time format showing in the first column
+</td></tr>
+<tr>
+<td>Aggregation Interval
+</td>
+<td>colsBucket
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;none&gt;</center>
+</td>
+<td> Specify the aggregation interval of time in the columns of the pivot table. This time interval is shown in Comment label row of the pivot table.
+<p>Option list: 
+</p>
+<table class="simple">
+
+<tr>
+<td width="20%"><i>&lt;none&gt;</i>
+</td>
+<td width="20%"><i>10 yr: Decade</i>
+</td>
+<td width="20%"><i>Year</i>
+</td>
+<td width="20%"><i>3 Month: Quarter</i>
+</td></tr>
+<tr>
+<td><i>Month</i>
+</td>
+<td><i>Week</i>
+</td>
+<td><i>Day</i>
+</td>
+<td><i>Hour</i>
+</td></tr>
+<tr>
+<td><i>30 min</i>
+</td>
+<td><i>15 min</i>
+</td>
+<td><i>Minute</i>
+</td></tr></table>
+</td></tr>
+<tr>
+<td>Time Period
+</td>
+<td>colsPeriod
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td> <center>&lt;none&gt;</center>
+</td>
+<td> Specify the time group of the aggregation interval. According to the selected Aggregation Interval, you can specify the corresponding time period.
+</td></tr>
+<tr>
+<td>Remove Empty
+</td>
+<td>rowsRemoveEmpty
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td> Specify whether to remove the empty columns.
+<p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>Share Rows Start/End
+</td>
+<td>share
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>0 </center>
+</td>
+<td> Specify whether to share rows Start or End to the columns
+</td></tr>
+<tr>
+<td>Start
+</td>
+<td>colsStart
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td> <center> </center>
+</td>
+<td> Enter the start time of the columns of the pivot table.
+<p>The time format of the Start is based on the specified Aggregation Interval. 
+</p>
+</td></tr>
+<tr>
+<td>End
+</td>
+<td>colsEnd
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td> <center> </center>
+</td>
+<td> Enter the end time of the columns of the pivot table.
+<p>The time format of the End is based on the specified Aggregation Interval. 
+</p>
+</td></tr>
+<tr>
+<td>Custom Format
+</td>
+<td>colsCustomFmt
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td> <center> </center>
+</td>
+<td> Custom the time format showing in the Comment label row.
+</td></tr>
+<tr>
+<td>Aggregate by
+</td>
+<td>method
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td> Specify the way to summarize the <b>Source Data</b>.
+<p>Option list:
+</p>
+<table class="simple">
+<tr>
+<th width="25%"><i>count:Count</i> {0}
+</th>
+<td>Output the count of each Row/Column pair.
+</td></tr>
+<tr>
+<th><i>sum:Sum</i> {1}
+</th>
+<td>Output the sum of each Row/Column pair.
+</td></tr>
+<tr>
+<th><i>mean:Mean</i> {2}
+</th>
+<td>Output the mean of each Row/Column pair.
+</td></tr>
+<tr>
+<th><i>min:Min</i> {3}
+</th>
+<td>Output the minimum value of each Row/Column pair.
+</td></tr>
+<tr>
+<th><i>max:Max</i> {4}
+</th>
+<td>Output the maximum value of each Row/Column pair.
+</td></tr>
+<tr>
+<th><i>median:Median</i> {5}
+</th>
+<td>Output the median value of each Row/Column pair.
+</td></tr>
+<tr>
+<th><i>sd:SD</i> {6}
+</th>
+<td>Output the Standard Deviation of each Row/Column pair.
+</td></tr>
+<tr>
+<th><i>se:SE</i> {7}
+</th>
+<td>Output the Standard Error of each Row/Column pair.
+</td></tr>
+<tr>
+<th><i>rms:RMS</i> {8}
+</th>
+<td>Output the Root Mean Square of each Row/Column pair.
+</td></tr>
+<tr>
+<th><i>ci:Confidence Interval</i> {9}
+</th>
+<td>Output the confidence interval for a population mean of each Row/Column pair (using a normal distribution).
+</td></tr>
+<tr>
+<th><i>range:Range (Max - Min)</i> {10}
+</th>
+<td>Output the range between maximum and minimum of each Row/Column pair.
+</td></tr>
+<tr>
+<th><i>first:First in Subgroup</i> {11}
+</th>
+<td>Output the first value in each Row/Column pair.
+</td></tr>
+<tr>
+<th><i>last:Last in Subgroup</i> {12}
+</th>
+<td>Output the last value in each Row/Column pair.
+</td></tr>
+<tr>
+<th><i>custom:Custom</i> {13}
+</th>
+<td>Select this option to define your own summarized method in <b>Custom</b> edit box below.
+</td></tr></table>
+</td></tr>
+<tr>
+<td>Custom
+</td>
+<td>custom
+</td>
+<td>
+<p>Input
+</p><p>String
+</p>
+</td>
+<td> <center>mean sd</center>
+</td>
+<td>Available only when <b>Aggregate by</b> is set to <b>Custom</b>. You can mix them and construct your own summarized method.
+</td></tr>
+<tr>
+<td>Show Zeros when Empty
+</td>
+<td>zeros
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> Specify whether to show missing values in the pivot table as zeros.
+<p>Option list:
+</p>
+<ul><li><i>0=false</i></li>
+<li><i>1=true</i></li></ul>
+</td></tr>
+<tr>
+<td>ReportData
+</td>
+<td>rd
+</td>
+<td>
+<p>Output
+</p><p>ReportData
+</p>
+</td>
+<td> <center>[&lt;input&gt;]&lt;new&gt;</center>
+</td>
+<td>Specify where to output result table.
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">Description</span></h2>
+<p>This X-Function allows you to create a pivot table to visualize data summarization (of statistics) based on a date-time column
+</p>
+
+
+
+
+

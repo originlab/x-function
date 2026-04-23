@@ -1,0 +1,229 @@
+﻿<h1 class="firstHeading">plot_paretoraw</h1><div id="toc" class="toc"><div id="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Command_Line_Usage"><span class="tocnumber">3</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#X-Function_Execution_Options"><span class="tocnumber">4</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Variables"><span class="tocnumber">5</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Description"><span class="tocnumber">6</span> <span class="toctext">説明</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Related_X-Functions"><span class="tocnumber">7</span> <span class="toctext">関連のXファンクション</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p>作図&gt;統計：素データのパレート図
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>素データからパレート図を作成します。
+</p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>
+1. plot_paretoraw -r 2 irng:=[Book1B]Sheet1!C&quot;Food Defect&quot;;
+</p><p>2. plot_paretoraw irng:=1!2 combine:=1 mode:=count threshold:=5 label:=&quot;Others&quot;;
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクションの実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />名
+</th>
+<th width="8%">変数<br />名
+</th>
+<th width="8%">I/O<br />と<br />データ型
+</th>
+<th width="8%">デフォルト<br />値
+</th>
+<th>説明
+</th></tr>
+<tr>
+<td>入力
+</td>
+<td>irng
+</td>
+<td>
+<p>入力
+</p><p>Range
+</p>
+</td>
+<td> <center>&lt;active&gt;</center>
+</td>
+<td> データの入力範囲を指定します。
+</td></tr>
+<tr>
+<td>グループ
+</td>
+<td>group
+</td>
+<td>
+<p>入力
+</p><p>Range
+</p>
+</td>
+<td> <center>&lt;optional&gt;</center>
+</td>
+<td> グループ化列を指定します。
+</td></tr>
+<tr>
+<td>複数のグループ
+</td>
+<td>mulgroups
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> グループで分割されたプロットの配置方法を指定します。
+<p>オプションリスト:
+</p>
+<ul><li> <b>同じグラフでパネルを分割</b>: パレートチャートがグループ別に同じグラフ内で別々のパネルにプロットされます。 </li>
+<li> <b>グラフを分ける</b>: パレートチャートがグループ別に別々のグラフとしてプロットされます。</li></ul>
+</td></tr>
+<tr>
+<td> 累積パーセントプロットを表示
+</td>
+<td> cum
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td> パレート図に累積パーセントプロットを表示するかどうかを指定します。0 =累積パーセントプロットを非表示にするには、このチェックボックスをオフにします。1=累積パーセントプロットを表示するには、このボックスをチェックします。
+</td></tr>
+<tr>
+<td>棒の右側にシンボルを表示
+</td>
+<td>symr
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td> 棒の中心ではなく、棒の右側に散布図を表示するかどうかを指定します。1 =棒の右側にシンボルを表示するには、このボックスをチェックします。
+</td></tr>
+<tr>
+<td>より小さな値をまとめる
+</td>
+<td>combine
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> しきい値よりも小さいデータをまとめるかどうかを指定します。0=このチェックボックスをオフにして、データの統合を無効にします。1 =このチェックボックスをオンにして、データの統合を有効にします。
+</td></tr>
+<tr>
+<td>しきい値
+</td>
+<td>mode
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>percent</center>
+</td>
+<td> しきい値を定義する方法を指定します。オプションリスト：
+<ul><li><i>percent(0):パーセント</i></li></ul>
+<dl><dd><dl><dd>パーセント値を使用してしきい値を定義します。</dd></dl></dd></dl>
+<ul><li><i>count(1):カウント</i></li></ul>
+<dl><dd><dl><dd>カウント値を使用してしきい値を定義します。</dd></dl></dd></dl>
+<ul><li><i>bar(2):棒の数</i></li></ul>
+<dl><dd><dl><dd>棒の数を使用してしきい値を定義します。</dd></dl></dd></dl>
+</td></tr>
+<tr>
+<td>しきい値の値
+</td>
+<td>threshold
+</td>
+<td>
+<p>入力
+</p><p>double
+</p>
+</td>
+<td> <center></center>
+</td>
+<td> 指定したしきい値の値を指定します。
+<p><br />
+<b>パーセント</b>：<b>しきい値</b>で<b>パーセント</b>が選択されている場合にのみ使用できます。ここに入力した値より小さなパーセント値は1つのカテゴリにまとめられて作図されます。
+</p><p><b>カウント</b>：<b>しきい値</b>で<b>カウント</b>が選択されている場合にのみ使用できます。ここに入力した値より小さなカウント値は1つのカテゴリにまとめられて作図されます。
+</p><p><b>棒の数</b>：<b>しきい値</b>で<b>棒の数</b>が選択されている場合にのみ使用できます。パレート図にはこの編集ボックスで指定した<i>n</i>本の棒が作図されます。ビンの数が<i>n-1</i>より大きいデータは、ププロットの1つのカテゴリにまとめられて作図されます。
+</p>
+</td></tr>
+<tr>
+<td>目盛ラベル
+</td>
+<td>label
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>Other</center>
+</td>
+<td> 統合された小さな値の目盛ラベルを指定します。
+</td></tr>
+<tr>
+<td>出力データ
+</td>
+<td>rd
+</td>
+<td>
+<p>出力
+</p><p>ReportData
+</p>
+</td>
+<td> <center>[&lt;入力&gt;]&lt;新規&gt;</center>
+</td>
+<td> プロットの計算データを保存する場所を指定します。
+</td></tr>
+<tr>
+<td>グラフ出力
+</td>
+<td>rt
+</td>
+<td>
+<p>出力
+</p><p>ReportTree
+</p>
+</td>
+<td> <center>[&lt;same&gt;]&lt;new&gt;</center>
+</td>
+<td> 結果グラフを保存先を指定します。
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">概要</span></h2>
+<p>このXファンクションは、生データからパレート図を作成するために使用されます。パレート図の作成方法については、<a class="external text" href="../../UserGuide/UserGuide/Creating_Pareto_Charts.html#Creating_Pareto_Chart_from_the_Binned_Data_or_Raw_Data">こちらのヘルプページ</a>を参照してください。
+</p><p><b>Note</b>: Origin 2017以前のバージョンでは、このXファンクションをLabTalkスクリプトから呼び出せません。スクリプトからパレート図をプロットするには、以下を使用します。
+</p>
+<pre class="lt" style="font-family:monospace;">worksheet <span style="color: #000080;">-</span>px</pre>
+<p>例えば、Book1、Sheet1の列Cを棒が5本のパレート図として作図したい場合は以下のようになります。
+</p>
+<pre class="lt" style="font-family:monospace;">worksheet <span style="color: #000080;">-</span>px ParetoRaw plot_paretoraw datarng<span style="color: #000000;">:</span><span style="color: #000080;">=</span><span style="color: #0000dd;">1</span><span style="color: #000080;">!</span>A<span style="color: #ff00ff;">&quot;Data&quot;</span> countrng<span style="color: #000000;">:</span><span style="color: #000080;">=</span><span style="color: #0000dd;">1</span><span style="color: #000080;">!</span>B<span style="color: #ff00ff;">&quot;Count&quot;</span> combine<span style="color: #000000;">:</span><span style="color: #000080;">=</span><span style="color: #0000dd;">1</span> mode<span style="color: #000000;">:</span><span style="color: #000080;">=</span>count threshold<span style="color: #000000;">:</span><span style="color: #000080;">=</span><span style="color: #0000dd;">5</span>;</pre>
+<h2><a name="Related_X-Functions"></a><span class="mw-headline">関連するXファンクション</span></h2>
+<p><a href="../../XFunction/X-Function/Plot_paretobin.html" title="X-Function:Plot paretobin">plot_paretobin</a>
+</p>
+<hr class='keywordshr'><p><span class='keywords'>キーワード:</span><span class='keywordsInput'>累積合計</span></p>
+
+
+
+
+
+
+
+    

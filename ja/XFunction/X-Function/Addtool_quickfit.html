@@ -1,0 +1,156 @@
+﻿<h1 class="firstHeading">addtool_quickfit</h1><div id="toc" class="toc"><div id="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">追加の情報</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#X-Function_Execution_Options"><span class="tocnumber">4</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Variables"><span class="tocnumber">5</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Description"><span class="tocnumber">6</span> <span class="toctext">説明</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Related_X-Functions"><span class="tocnumber">7</span> <span class="toctext">関連するXファンクション</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p>ガジェット:クィックフィット
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>関心領域内のデータプロットで曲線フィットを実行
+</p>
+<h2><a name="Additional_Information"></a><span class="mw-headline">追加の情報</span></h2>
+<p><b>必要なOriginのバージョン</b>: 8.1 SR2以降
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクションの実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />名
+</th>
+<th width="8%">変数<br />名
+</th>
+<th width="8%">I/O<br />と<br />データ型
+</th>
+<th width="8%">デフォルト<br />値
+</th>
+<th>説明
+</th></tr>
+<tr>
+<td>フィットモード
+</td>
+<td>mode
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> 多項式フィットまたは非線形曲線フィットのフィットモードを指定します。
+<p>オプションリスト：
+</p>
+<ul><li><i>Polynomial Fit</i>
+<dl><dd>多項式フィットを実行します。</dd></dl></li>
+<li><i>Nonlinear Curve Fit</i>
+<dl><dd>非線形曲線フィットを実行します。</dd></dl></li></ul>
+</td></tr>
+<tr>
+<td>関数
+</td>
+<td>func
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>線形</center>
+</td>
+<td> フィット関数を指定します。
+</td></tr>
+<tr>
+<td>ラベルボックス
+</td>
+<td>trtable
+</td>
+<td>
+<p>入力
+</p><p>TreeNode
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> ソースグラフに貼り付ける結果テキストボックスの内容の設定を指定します。
+</td></tr>
+<tr>
+<td>結果レポート
+</td>
+<td>trreport
+</td>
+<td>
+<p>入力
+</p><p>TreeNode
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> フィット結果の出力先を指定します。
+</td></tr>
+<tr>
+<td>フィット曲線
+</td>
+<td>trcurve
+</td>
+<td>
+<p>入力
+</p><p>TreeNode
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> フィット曲線の設定を指定します。
+</td></tr>
+<tr>
+<td>ROIボックス
+</td>
+<td>trroi
+</td>
+<td>
+<p>入力
+</p><p>TreeNode
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> ROI設定を指定します。フィットはROI範囲内で実行されます。
+</td></tr>
+<tr>
+<td>パラメータ
+</td>
+<td>trparam
+</td>
+<td>
+<p>入力
+</p><p>TreeNode
+</p>
+</td>
+<td> <center>&lt;unassigned&gt;</center>
+</td>
+<td> パラメータの値を指定し、カーブフィット時にパラメータを固定するかどうかを指定します。
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">説明</span></h2>
+<p>この関数は、四角形をグラフに追加して、フィットを実行するのに使用します。フィット曲線がグラフに表示され、矩形のボックスを動かすと自動的に更新されます。矩形ボックスの右側にある三角のボタンをクリックして、フィット関数、フィット結果の出力ワークシート、ROIボックスのカスタマイズを変更することができます。プロット上のクィックフィットの実行についての詳細は、ユーザガイドの <a class="external text" href="../../UserGuide/UserGuide/Quick_Fit_ROI_Tools.html">クィックフィットROIツール</a> を参照してください。
+</p>
+<h2><a name="Related_X-Functions"></a><span class="mw-headline">関連するXファンクション</span></h2>
+<p><a href="../../XFunction/X-Function/Fitpoly.html" title="Xファンクション:Fitpoly">fitpoly</a>, <a href="../../XFunction/X-Function/Nlfit.html" title="Xファンクション:Nlfit">nlfit</a>, <a href="../../XFunction/X-Function/Nlbeginr.html" title="Xファンクション:Nlbeginr">nlbeginr</a>, <a href="../../XFunction/X-Function/Nlbegin.html" title="Xファンクション:Nlbegin">nlbegin</a>, <a href="../../XFunction/X-Function/Nlend.html" title="Xファンクション:Nlend">nlend</a>
+</p>
+<hr class='keywordshr'><p><span class='keywords'>キーワード:</span><span class='keywordsInput'>回帰, ROI</span></p>
+
+
+
+
+
+
+
+    
