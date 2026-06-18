@@ -11,6 +11,7 @@
 <li class="toclevel-1 tocsection-9"><a href="#Related_X-Functions"><span class="tocnumber">9</span> <span class="toctext">関連するXファンクション</span></a></li>
 </ul>
 </div>
+
 <h2><a name="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
 <p>作図&gt; 複数区分、複数軸：複数区分...を選択します。
 </p>
@@ -18,7 +19,7 @@
 <p>グループとして列ラベルを使用して複数レイヤグラフをプロット
 </p>
 <h2><a name="Additional_Information"></a><span class="mw-headline">追加の情報</span></h2>
-<p>必要なOriginのバージョン：Origin 8.1 SR0以上。Origin 8.5.1 SR0で更新。<br />
+<p><b>必要なOriginのバージョン</b>：Origin 8.1 SR0以上。Origin 8.5.1 SR0で更新。<br />
 グラフを非表示にする機能は9.0から利用可能で、レイヤ間の間隔の調整は2016 SR0から利用可能です。<br />
 グラフテンプレートの指定は2021bから可能です。
 </p>
@@ -113,6 +114,20 @@ plotbylabel iy:=[book1]1!((1,2),(1,3),(1,4)) group:=U plottype:=2 rows:=3 cols:=
 <td> <center>&lt;auto&gt;</center>
 </td>
 <td> グラフテンプレートを指定して、パネルの書式設定や設定を適用します。<b>自動</b>は、デフォルトのテンプレート<i>mgroups.optu</i>が適用されます。自動のチェックを外すと、<b>...</b>ボタンをクリックしてテンプレートファイルを選択できます。
+</td></tr>
+<tr>
+<td>すべてのグループを1つのレイヤに表示
+</td>
+<td>single
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> すべてのグループを同じレイヤにプロットするかどうかを指定します。これを有効にすると、その下のオプションは無効になります。
 </td></tr>
 <tr>
 <td>行数
@@ -242,7 +257,7 @@ plotbylabel iy:=[book1]1!((1,2),(1,3),(1,4)) group:=U plottype:=2 rows:=3 cols:=
 <p><br />
 </p>
 </td></tr></table>
-<h2><a name="Description"></a><span class="mw-headline">概要</span></h2>
+<h2><a name="Description"></a><span class="mw-headline">説明</span></h2>
 <p>このXファンクションは、グループ識別子、X列の区切り、またはグループサイズに基づいて、複数のXY範囲を異なるレイヤにプロットします。グループ識別子は、<i>ロングネーム</i>、<i>単位</i>、<i>コメント</i>やその他のカスタマイズされたヘッダで指定できます。
 </p>
 <h2><a name="Examples"></a><span class="mw-headline">サンプル</span></h2>
@@ -260,12 +275,15 @@ plotbylabel iy:=[book1]1!((1,2),(1,3),(1,4)) group:=U plottype:=2 rows:=3 cols:=
 <dl><dd> <a  class="image"><img alt="Plotbylabel example 6.png" src="../images/Plotbylabel/Plotbylabel_example_6.png" width="602"  /></a></dd></dl></li>
 <li> <b>UnstackCols1</b>ワークシートに戻り、すべての列を選択して、Originのメインメニュー<b>作図 &gt; 複数区分、複数軸：複数区分…</b>を選択して、<b>plotbylabel</b>ダイアログを開きます。</li>
 <li> ダイアログで、<b>グループ識別子</b>を<b>plant</b>に設定し、<b>グラフタイプ</b>を<b>線+シンボル</b>に設定します。<b>グラフテンプレート</b>で先ほど保存したテンプレートを選択します。行数と列数はデフォルト（自動）のままにします。
-<dl><dd><a  class="image"><img alt="Plotbylabel example 2.png" src="../images/Plotbylabel/750px-Plotbylabel_example_2.png" width="851"   /></a></dd></dl></li>
+<dl><dd><a  class="image"><img alt="Plotbylabel example 2.png" src="../images/Plotbylabel/750px-Plotbylabel_example_2.png" width="750"   /></a></dd></dl></li>
 <li> <b>OK</b>ボタンをクリックして、Y軸でグループ識別子（<b>PLANT1</b>, <b>PLANT2</b>など）で識別された4つのレイヤを持つグラフがプロットされます。レイヤ背景とY軸の主グリッド線がすべてのパネルに適用されていることが確認できます。
 <dl><dd><a  class="image"><img alt="Plotbylabel example 3.png" src="../images/Plotbylabel/Plotbylabel_example_3.png" width="720"  /></a></dd></dl></li></ol>
 <h2><a name="Related_X-Functions"></a><span class="mw-headline">関連するXファンクション</span></h2>
 <p><a href="../../XFunction/X-Function/Plotgroup.html" title="X-Function:Plotgroup">plotgroup</a>, <a href="../../XFunction/X-Function/Plotmyaxes.html" title="X-Function:Plotmyaxes">plotmyaxes</a>
 </p>
+
+
+
 
 
 

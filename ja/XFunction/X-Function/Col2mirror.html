@@ -1,0 +1,141 @@
+﻿<h1 class="firstHeading">col2mirror</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Command_Line_Usage"><span class="tocnumber">3</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#X-Function_Execution_Options"><span class="tocnumber">4</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Variables"><span class="tocnumber">5</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Description"><span class="tocnumber">6</span> <span class="toctext">説明</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Related_X-Functions"><span class="tocnumber">7</span> <span class="toctext">関連のXファンクション</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p>ワークシート：ミラー列に変換
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>参照列をミラー列に変換します。
+</p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>
+1. col2mirror scv:=0 colcpy:=1;
+</p><p>2.   col2mirror colcpy:=1 label:=1  -u;
+</p><p>3.  col2mirror scope:=1;
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクションの実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />名
+</th>
+<th width="8%">変数<br />名
+</th>
+<th width="8%">I/O<br />と<br />データ型
+</th>
+<th width="8%">デフォルト<br />値
+</th>
+<th>説明
+</th></tr>
+<tr>
+<td>列の数式
+</td>
+<td>scv
+</td>
+<td>
+<p>入力
+</p><p>int 
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td>他の列を参照する数式（<a class="external text" href="../../UserGuide/UserGuide/Quick_Start_SetColumnValues.html"><b>列値の設定</b>または<b>F(x)</b></a>）を使用して入力された列を変換するかどうかを指定します。
+<p>使用できる値： 0=false, 1=true.
+</p>
+</td></tr>
+<tr>
+<td> 列コピー出力
+</td>
+<td>colcpy
+</td>
+<td>
+<p>入力
+</p><p>int 
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td><b>ワークシート：<a class="external text" href="../../UserGuide/UserGuide/Copy_Columns_to_New_Destination.html">列のコピー</a></b>によって作成された列を変換するかどうかを指定します。
+<p>使用できる値： 0=false, 1=true.
+</p>
+</td></tr>
+<tr>
+<td>変換範囲
+</td>
+<td>scope
+</td>
+<td>
+<p>入力
+</p><p>int 
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td>検索と変換の範囲を指定します。以下のオプションを利用できます。
+<ul><li><i>sh:アクティブシート </i>{0}</li>
+<li><i>bk:アクティブブック </i>{1}</li>
+<li><i>fd:アクティブフォルダ </i>{2}</li>
+<li><i>sf:アクティブフォルダ(再帰的に適用) </i>{3}</li>
+<li><i>proj:プロジェクト</i>{4}</li></ul>
+</td></tr>
+<tr>
+<td>ソース列ラベルを使用
+</td>
+<td>label
+</td>
+<td>
+<p>入力
+</p><p>int 
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td>列の数式が選択されているとき、このチェックボックスをオンにすると元の列からラベル行がコピーされます。<b>列コピー出力</b>において、元の列のラベルを使用するかどうかは、<b><a class="external text" href="../../UserGuide/UserGuide/Copy_Columns_to_New_Destination.html">列のコピー</a></b>ダイアログ内の<b>ラベルのコピー</b>ブランチでどのラベル行が選択されているかによって制御されます。
+<p>使用できる値： 0=false, 1=true.
+</p>
+</td></tr>
+<tr>
+<td>変換された列の一覧を出力
+</td>
+<td>dump
+</td>
+<td>
+<p>入力
+</p><p>int 
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td>変換された列の一覧を出力するかどうかを指定します。以下のオプションを利用できます。
+<ul><li><i>none:なし </i>{0}</li>
+<li><i>msg:メッセージログに出力 </i>{1}</li>
+<li><i>note:ノートウィンドウに出力 </i>{2}</li>
+<li><i>pad:メモ帳に出力 </i>{3}</li></ul>
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">説明</span></h2>
+<p>Origin 2026bで、元の列を参照する<a class="external text" href="../../UserGuide/UserGuide/Mirror_Column.html">ミラー列</a>が導入されました。以前のバージョンで作成されたリンク列（列の数式（単純な参照で、計算が含まれないもの）または<b>列のコピー</b>ダイアログによるもの）については、このXファンクション &quot;col2mirror&quot; を使用することで、指定した範囲をスキャンし、これらのリンク列をミラー列に変換することができます。
+</p>
+<h2><a name="Related_X-Functions"></a><span class="mw-headline">関連するXファンクション</span></h2>
+<p><a href="../../XFunction/X-Function/Colcopy.html" title="X-Function:Colcopy">colcopy</a>, <a href="../../XFunction/X-Function/Colmirror.html" title="X-Function:Colmirror">colmirror</a>, <a href="../../XFunction/X-Function/Colmove.html" title="X-Function:Colmove">colmove</a>, <a href="../../XFunction/X-Function/Wselcol.html" title="X-Function:Wselcol">wselcol</a>, <a href="../../XFunction/X-Function/Colswap.html" title="X-Function:Colswap">colswap</a>
+</p>
+
+
+
+
+
+
+    

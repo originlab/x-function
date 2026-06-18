@@ -6,8 +6,8 @@
 <li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
 <li class="toclevel-1 tocsection-5"><a href="#X-Function_Execution_Options"><span class="tocnumber">5</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
 <li class="toclevel-1 tocsection-6"><a href="#Variables"><span class="tocnumber">6</span> <span class="toctext">変数</span></a></li>
-<li class="toclevel-1 tocsection-7"><a href="#Related_X-Functions"><span class="tocnumber">7</span> <span class="toctext">関連のXファンクション</span></a></li>
-<li class="toclevel-1 tocsection-8"><a href="#More_Information"><span class="tocnumber">8</span> <span class="toctext">詳細な情報</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Description"><span class="tocnumber">7</span> <span class="toctext">説明</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Related_X-Functions"><span class="tocnumber">8</span> <span class="toctext">関連するXファンクション</span></a></li>
 </ul>
 </div>
 
@@ -18,16 +18,17 @@
 <p>グループ列を使用してデータをアンスタック
 </p>
 <h2><a name="Additional_Information"></a><span class="mw-headline">追加の情報</span></h2>
-<p><b>必要なOriginのバージョン</b>：Origin 8.1 SR0以上。Origin 8.5.1更新。
+<p><b>必要なOriginのバージョン</b>: 8.1 SR0以降
 </p>
 <h2><a name="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
 <p><code>
 1. wunstackcol irng1:=2 irng2:=1 missing:=1;
 </p><p>2. wunstackcol irng1:=col(2) irng2:=col(1) nonstack:=1 other:=col(3);
 </p><p>3. wunstackcol -r 2 irng1:=(3:5) irng2:=col(2) sort:=data pos:=udl label:=L;
+</p><p>4. wunstackcol irng1:=[Book1]body!D&quot;height&quot;:E&quot;weight&quot; irng2:=[Book1]body!C&quot;gender&quot; nonstack:=1 other:=[Book1]body!A&quot;name&quot; owStructured:=1 label:=L;
 </code>
 </p>
-<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクション実行オプション</span></h2>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクションの実行オプション</span></h2>
 <p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a>
 </p>
 <h2><a name="Variables"></a><span class="mw-headline">変数</span></h2>
@@ -168,6 +169,23 @@
 <td> アンスタックした結果を出力する場所を指定します。
 </td></tr>
 <tr>
+<td>データテーブルへの出力
+</td>
+<td>owStructured
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> アンスタックされた結果を<a class="external text" href="../../UserGuide/UserGuide/Life_Science_Mode.html#Data_Table">データテーブル</a>に出力するには、このチェックボックスをオンにしてください。このオプションは、以下のいずれかの条件に該当する場合に利用可能です。
+<ul><li> <b>グループ列</b>の数が2以下で、かつ<b>他の列を含める</b>で1つの列が選択されている場合、アンスタックされたデータはグループ化 (2元) テーブルに出力されます。</li>
+<li> <b>アンスタックされるデータ</b>の数が1、<b>グループ列</b>の数が1、かつ<b>他の列を含める</b>がチェックされていない場合、アンスタックされたデータはグループ化 (1元) テーブルに出力されます。</li>
+<li> <b>アンスタックされるデータ</b>の数が1、<b>グループ列</b>の数が3、かつ<b>他の列を含める</b>で1つの列が選択されている場合、アンスタックされたデータはグループ化 (2元) テーブルに出力されます。</li></ul>
+</td></tr>
+<tr>
 <td>グループ情報の出力先
 </td>
 <td>pos
@@ -192,7 +210,7 @@
 <dl><dd>グループ情報をユーザ定義パラメータ行に出力します。行の名前は<b>グループ情報名の引用元</b>で指定します。</dd></dl></li></ul>
 </td></tr>
 <tr>
-<td>グループ情報名の引用元
+<td>グループ情報名の引用元/<br />データセット識別子
 </td>
 <td>label
 </td>
@@ -203,17 +221,18 @@
 </td>
 <td> <center>&lt;unassigned&gt;</center>
 </td>
-<td>このドロップダウンリストは、<b>グループ情報の出力先</b>として<b>ユーザ定義パラメータ</b>が設定されている場合にのみ使用できます。グループ情報を格納するユーザ定義パラメータ行の名前付けに使用されます。ソースワークシートのグループ列のラベル行から名前を付けます。選択したラベル行には、ユーザ定義パラメータ行の名前用の文字列が必要で、ない場合はエラーメッセージが表示されます。ラベル行の指定については、<a class="external text" href="../../LabTalk/LabTalk/Column_Label_Row_Characters.html">列ラベル行文字</a>を参照してください。
+<td>このドロップダウンリストは、<b>グループ情報の出力先</b>として<b>ユーザ定義パラメータ</b>もしくは<b>データテーブルへの出力</b>が設定されている場合にのみ使用できます。
+<ul><li> <b>グループ情報の出力先</b>が<b>ユーザ定義パラメータ</b>に設定されている場合、<b>グループ情報名の引用元</b>は、グループ化情報を格納するためのユーザ定義パラメータ行の命名に使用されます。ソースワークシートのグループ列のラベル行から名前を付けます。選択したラベル行には、ユーザ定義パラメータ行の名前用の文字列が必要で、ない場合はエラーメッセージが表示されます。ラベル行の指定については、<a class="external text" href="../../LabTalk/LabTalk/Column_Label_Row_Characters.html">列ラベル行文字</a>を参照してください。</li>
+<li> <b>データテーブルへの出力</b>がチェックされている場合、<b>データセット識別子</b>を使用して、識別子を含む列ラベル行を指定します。 </li></ul>
 </td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">説明</span></h2>
+<p>このXファンクションは、グループ列でアンスタックするために使用されます。詳細は、ユーザガイドの<a class="external text" href="../../UserGuide/UserGuide/Unstacking_Worksheet_Columns.html">このページ</a> を参照して下さい。
+</p>
+<ul><li><a class="external text" href="../../UserGuide/UserGuide/Unstacking_Worksheet_Columns.html#How_to_Unstack_Columns">列をアンスタッキングするには</a></li>
+<li><a class="external text" href="../../UserGuide/UserGuide/Unstacking_Worksheet_Columns.html#Examples">サンプル</a></li></ul>
 <h2><a name="Related_X-Functions"></a><span class="mw-headline">関連するXファンクション</span></h2>
 <p><a href="../../XFunction/X-Function/Wstackcol.html" title="X-Function:Wstackcol">wstackcol</a>, <a href="../../XFunction/X-Function/Colsplit.html" title="X-Function:Colsplit">colsplit</a>
 </p>
-<h2><a name="More_Information"></a><span class="mw-headline">詳細な情報</span></h2>
-<p>詳細は、ユーザガイドの<a class="external text" href="../../UserGuide/UserGuide/Unstacking_Worksheet_Columns.html">このページ</a> を参照して下さい。
-</p>
-<dl><dd><ul><li>列をアンスタッキングするには</li>
-<li>サンプル</li></ul></dd></dl>
-
 
 
 

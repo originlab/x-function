@@ -1,0 +1,238 @@
+﻿<h1 class="firstHeading">colmirror</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Command_Line_Usage"><span class="tocnumber">3</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#X-Function_Execution_Options"><span class="tocnumber">4</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Variables"><span class="tocnumber">5</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Description"><span class="tocnumber">6</span> <span class="toctext">説明</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Related_X-Functions"><span class="tocnumber">7</span> <span class="toctext">関連のXファンクション</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p>ワークシート：類似シートからミラー列を作成
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>類似シートから列を収集してミラー列を作成します。
+</p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>
+1. colmirror irng:=[Book1]Sheet1!Col(1) orng:=[Book1]Sheet1!Col(2);
+</p><p>2. colmirror irng:=col(A) orng:=col(B) scope:=2 match:=1 unit:=1;
+</p><p>3. colmirror irng:=[Book1]Sheet1!Col(2) orng:=[Book2]Sheet1!Col(2) xcol:=1 bkrow:=1
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクションの実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />名
+</th>
+<th width="8%">変数<br />名
+</th>
+<th width="8%">I/O<br />と<br />データ型
+</th>
+<th width="8%">デフォルト<br />値
+</th>
+<th>説明
+</th></tr>
+<tr>
+<td>ソース列
+</td>
+<td>irng
+</td>
+<td>
+<p>入力
+</p><p>Range
+</p>
+</td>
+<td><center>&lt;active&gt;</center>
+</td>
+<td>ソース列を1列指定します。検索範囲内でこの<b>ソース列</b> に一致するすべての列が収集され、ミラーリングされて、<b>出力先列</b>に出力されます。
+</td></tr>
+<tr>
+<td>出力先列
+</td>
+<td>orng
+</td>
+<td>
+<p>出力
+</p><p>Range
+</p>
+</td>
+<td><center>[&lt;新規&gt;]&lt;新規&gt;!&lt;新規&gt;</center>
+</td>
+<td>ミラー列を出力する開始位置となるターゲット列を指定します。
+</td></tr>
+<tr>
+<td>X列を追加
+</td>
+<td>xcol
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td><center>0</center>
+</td>
+<td><b>ソース列</b>がY列の場合、このオプションを使用して、対応するX列も一緒にコピーするかどうかを制御できます。<i>使用できる値：</i>
+<ul><li><i>no:なし </i>{0}</li></ul>
+<dl><dd>X列をコピーしません。</dd></dl>
+<ul><li><i>this:共通X列 </i>{1}</li></ul>
+<dl><dd><b>ソース列</b>に対応するX列をコピーし、全てのミラー列の共通X列として使用します。出力は<i>XYYY...</i>という形になります。</dd></dl>
+<ul><li><i>sheet:各シートから </i>{2}</li></ul>
+<dl><dd>各ミラー列に対して、自身のX列をコピーします。出力は<i>XYXYXY...</i>という形になります。</dd></dl>
+</td></tr>
+<tr>
+<td>類似シートから
+</td>
+<td>sheets
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td><center>1</center>
+</td>
+<td>このチェックボックスをオンにすると、ソースシートと同じ列数のワークシートを検索し、以下の条件（<b>列ラベルが一致していること</b>、<b>単位が一致していること</b>、<b>列属性が一致していること</b>）を満たす列のみがミラー列のソースとして使用されます。
+<p>使用できる値： 0=false, 1=true.
+</p>
+</td></tr>
+<tr>
+<td>類似シートの検索先
+</td>
+<td>scope
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td><center>1</center>
+</td>
+<td>該当するワークシートの検索範囲を選択します。<i>使用できる値：</i>
+<ul><li><i>bk:アクティブブック </i>{0}</li>
+<li><i>fd:アクティブフォルダ </i>{1}</li>
+<li><i>sf:アクティブフォルダ(再帰的に適用) </i>{2}</li>
+<li><i>proj:プロジェクト</i>{3}</li></ul>
+</td></tr>
+<tr>
+<td>列ラベルが一致していること
+</td>
+<td>match
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td><center>1</center>
+</td>
+<td>このチェックボックスをオンにすると、<b>ソース列</b>と同じラベル行を持つ列が検索されます。<i>使用できる値：</i>
+<ul><li><i>no:なし</i>{0}</li></ul>
+<dl><dd>列インデックスでマッチします。 </dd></dl>
+<ul><li><i>ln:ロングネーム</i>{1}</li></ul>
+<dl><dd>ロングネームでマッチします。</dd></dl>
+<ul><li><i>cmt:コメント</i>{2} </li></ul>
+<dl><dd>列のコメントでマッチします。</dd></dl>
+</td></tr>
+<tr>
+<td>単位が一致していること
+</td>
+<td>unit
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td><center>1</center>
+</td>
+<td>このチェックボックスをオンにすると、<b>ソース列</b>と同じ単位を持つ列が検索されます。
+<p>使用できる値： 0=false, 1=true.
+</p>
+</td></tr>
+<tr>
+<td>列属性が一致していること
+</td>
+<td>desig
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td><center>0</center>
+</td>
+<td>このチェックボックスをオンにすると、<b>ソース列</b>と同じ列属性を持つ列が検索されます。
+<p>使用できる値： 0=false, 1=true.
+</p>
+</td></tr>
+<tr>
+<td>ソース列ラベルを使用
+</td>
+<td>label
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td><center>1</center>
+</td>
+<td>このチェックボックスをオンにすると、<b>ソース列</b>のラベル行がミラー列にコピーされます。
+<p>使用できる値： 0=false, 1=true.
+</p>
+</td></tr>
+<tr>
+<td>シート名のラベル行を追加
+</td>
+<td>shrow
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td><center>0</center>
+</td>
+<td>ソースワークシートを示すための「シート名」ラベル行を追加します。
+<p>使用できる値： 0=false, 1=true.
+</p>
+</td></tr>
+<tr>
+<td>ブック名のラベル行を追加
+</td>
+<td>bkrow
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td><center>0</center>
+</td>
+<td>ソースワークブックを示すための「ブック名」ラベル行を追加します。
+<p>使用できる値： 0=false, 1=true.
+</p>
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">説明</span></h2>
+<p>Origin 2026bで、元の列を参照する<a class="external text" href="../../UserGuide/UserGuide/Mirror_Column.html">ミラー列</a>が導入されました。このXファンクション関数 &quot;colmirror&quot; は、列ラベル行や列属性など、特定の条件に一致する複数のシートからミラー列を一括作成し、それらを1つのワークシートにまとめるために使用します。
+</p>
+<h2><a name="Related_X-Functions"></a><span class="mw-headline">関連するXファンクション</span></h2>
+<p><a href="../../XFunction/X-Function/Col2mirror.html" title="Xファンクション:Col2mirror">col2mirror</a>, <a href="../../XFunction/X-Function/Colcopy.html" title="X-Function:Colcopy">colcopy</a>, <a href="../../XFunction/X-Function/Col2mirror.html" title="Xファンクション:Col2mirror">col2mirror</a>
+</p>
+
+
+
+
+
+
+    

@@ -1,0 +1,293 @@
+﻿<h1 class="firstHeading">newtable</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>目次</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">メニュー情報</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">概要</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">追加の情報</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#X-Function_Execution_Options"><span class="tocnumber">5</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Variables"><span class="tocnumber">6</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Description"><span class="tocnumber">7</span> <span class="toctext">説明</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Related_X-Functions"><span class="tocnumber">8</span> <span class="toctext">関連するXファンクション</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">メニュー情報</span></h2>
+<p>ファイル：新規作成：ワークブック：新規データテーブル
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>テーブルの種類やその他の設定を選択して、新しいワークシートまたはデータテーブルを作成します。
+</p>
+<h2><a name="Additional_Information"></a><span class="mw-headline">追加の情報</span></h2>
+<p><b>必要なOriginのバージョン</b>: 2026b以降
+</p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<p><code>
+1. newtable type:=free xy:=XY* cols:=10;
+</p><p>2. newtable type:=x names:=&quot;Event;Group&quot; xt:=1 xname:=ID;
+</p><p>3. newtable type:=one names:=&quot;Event;Group&quot; xt:=1;
+</p><p>4. newtable names:=&quot;Event;Group&quot; xname:=ID;
+</p><p>5. newtable type:=con;
+</p><p>6. newtable type:=suv names:=&quot;Event;Group&quot; xt:=1 etime:=Months;
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクションの実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">変数</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">表示<br />名
+</th>
+<th width="8%">変数<br />名
+</th>
+<th width="8%">I/O<br />と<br />データ型
+</th>
+<th width="8%">デフォルト<br />値
+</th>
+<th>説明
+</th></tr>
+<tr>
+<td>テーブルの種類
+</td>
+<td>type
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>3</center>
+</td>
+<td> 新しく作成するシートのテーブルの種類を指定します。<i>オプションリスト</i>:
+<ul><li><i>free:自由形式(ワークシート) {0}</i> </li>
+<li><i>x:XY {1}</i> </li>
+<li><i>one:列 (1方向) {2}</i> </li>
+<li><i>two:グループ化(2方向) {3}</i> </li>
+<li><i>con:分割表 {4}</i> </li>
+<li><i>suv:生存表 {5}</i></li></ul>
+<p>テーブルの種類の詳細は<a class="external text" href="../../UserGuide/UserGuide/Life_Science_Mode.html#Data_Table">このページ</a>を参照してください。
+</p>
+</td></tr>
+<tr>
+<td>データ形式
+</td>
+<td>sum
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> データ形式を指定<b>データ型</b> = <b>XY</b> のときに使用可能です。<i>オプションリスト</i>:
+<ul><li><i>raw:素データ {0}</i> </li>
+<li><i>mean:サマリー (平均) {1}</i> </li>
+<li><i>median:サマリー (中央値) {2}</i></li></ul>
+</td></tr>
+<tr>
+<td>統計
+</td>
+<td>err
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> データとエラーの統計値を指定します。<b>データ形式</b> = <b>サマリー (平均)</b> または <b>サマリー (中央値)</b> のときに使用可能です。
+</td></tr>
+<tr>
+<td>列属性の設定
+</td>
+<td>xy
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center>XY</center>
+</td>
+<td> すべてのデータ列の列属性を指定します。例えば、XYを入力すると、列のプロット属性は&quot;XYXYXY&quot;の繰り返しパターンに設定されます。この文字列では、各文字が1つの列の属性に対応しています。以下をご覧ください。
+<p>&apos;X&apos; - X<br />
+&apos;Y&apos; - Y<br />
+&apos;Z&apos; - Z<br />
+&apos;E&apos; - Yエラー<br />
+&apos;L&apos; - ラベル<br />
+&apos;M&apos; - Xエラー<br />
+&apos;N&apos; - 無属性
+</p>
+</td></tr>
+<tr>
+<td>列の数
+</td>
+<td>cols
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td> 新しいワークシートの列数を指定します。<b>テーブルの種類</b> = <b>自由形式</b> のときに使用できます。
+</td></tr>
+<tr>
+<td>グループ数
+</td>
+<td>groups
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td> グループの数を指定します。<b>テーブルの種類</b> = <b>XY</b> または <b>グループ (2方向)</b>
+のときに使用できます。
+</td></tr>
+<tr>
+<td>グループ名（セミコロンで区切る）
+</td>
+<td>names
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td> <center></center>
+</td>
+<td>グループ名をセミコロン区切りで入力します。
+</td></tr>
+<tr>
+<td>行タイトル
+</td>
+<td>xt
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td>チェックすると、行ラベル用のテキスト列が追加されます。<i>オプションリスト</i>: 0=false, 1=true
+</td></tr>
+<tr>
+<td>Xエラー
+</td>
+<td>xerr
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td><center>0</center>
+</td>
+<td>チェックすると、X のエラーバー列を追加します。<b>テーブルの種類</b> = <b>XY</b> のときに利用可能です。<i>オプションリスト</i>: 0=false, 1=true
+</td></tr>
+<tr>
+<td>サブグループの数
+</td>
+<td>subgroups
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td>サブグループの数を指定します。
+</td></tr>
+<tr>
+<td>サブグループ名
+</td>
+<td>subnames
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td><center></center>
+</td>
+<td>サブグループの名前を入力します。
+</td></tr>
+<tr>
+<td>
+</td>
+<td>count
+</td>
+<td>
+<p>入力
+</p><p>int
+</p>
+</td>
+<td><center>2</center>
+</td>
+<td>&quot;</code>.
+</td></tr>
+<tr>
+<td>Xタイトル
+</td>
+<td>xname
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td><center></center>
+</td>
+<td>Xタイトルを入力します。
+</td></tr>
+<tr>
+<td>列カテゴリ
+</td>
+<td>bnames
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td><center>成功; 失敗</center>
+</td>
+<td>2つ目のカテゴリ変数のラベルをセミコロン区切りで入力します。<b>テーブルの種類</b> = <b>分割表</b> のときに使用できます。
+</td></tr>
+<tr>
+<td>経過時間の単位
+</td>
+<td>etime
+</td>
+<td>
+<p>入力
+</p><p>string
+</p>
+</td>
+<td><center>日</center>
+</td>
+<td>単位（月、年など）を変更します。
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">説明</span></h2>
+<p>このXファンクションは、<a class="external text" href="../../UserGuide/UserGuide/Creating_Child_Window.html#By_New_Workbook_dialog">Originクラシックワークシート</a>や<a class="external text" href="../../UserGuide/UserGuide/Life_Science_Mode.html#Data_Table">データテーブル</a>を作成するために使用されます。 
+</p>
+<h2><a name="Related_X-Functions"></a><span class="mw-headline">関連するXファンクション</span></h2>
+<p><a href="../../XFunction/X-Function/Newsheet.html" title="X-Function:Newsheet">newsheet</a>, <a href="../../XFunction/X-Function/Addsheet.html" title="X-Function:Addsheet">addsheet</a>, <a href="../../XFunction/X-Function/Newbook.html" title="X-Function:Newbook">newbook</a>
+</p>
+
+
+
+
+
+
+    
