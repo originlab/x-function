@@ -1,0 +1,290 @@
+<h1 class="firstHeading">2.2.23 newtable</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">Menu Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">Brief Information</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Additional_Information"><span class="tocnumber">3</span> <span class="toctext">Additional Information</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">Command Line Usage</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#X-Function_Execution_Options"><span class="tocnumber">5</span> <span class="toctext">X-Function Execution Options</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Variables"><span class="tocnumber">6</span> <span class="toctext">Variables</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Description"><span class="tocnumber">7</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Related_X-Functions"><span class="tocnumber">8</span> <span class="toctext">Related X-Functions</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">Menu Information</span></h2>
+<p>File: New: Worksheet: New Data Table
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">Brief Information</span></h2>
+<p>Create a new worksheet or data table by selecting a table type and other settings
+</p>
+<h2><a name="Additional_Information"></a><span class="mw-headline">Additional Information</span></h2>
+<p><b>Minimum Origin Version Required</b>: 2026b
+</p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">Command Line Usage</span></h2>
+<p><code>
+1. newtable type:=free xy:=XY* cols:=10;
+</p><p>2. newtable type:=x names:="Event;Group" xt:=1 xname:=ID;
+</p><p>3. newtable type:=one names:="Event;Group" xt:=1;
+</p><p>4. newtable names:="Event;Group" xname:=ID;
+</p><p>5. newtable type:=con;
+</p><p>6. newtable type:=suv names:="Event;Group" xt:=1 etime:=Months;
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">X-Function Execution Options</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">Please refer to the page for additional option switches when accessing the x-function from script</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">Variables</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">Display<br />Name
+</th>
+<th width="8%">Variable<br />Name
+</th>
+<th width="8%">I/O<br />and<br />Type
+</th>
+<th width="8%">Default<br />Value
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Table Type
+</td>
+<td>type
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>3</center>
+</td>
+<td> Specify the table type for the new created sheet. <i>Option list</i>:
+<ul><li><i>free:Free Form (Worksheet) {0}</i> </li>
+<li><i>x:XY {1}</i> </li>
+<li><i>one:Column (One Way) {2}</i> </li>
+<li><i>two:Grouped (Two Way) {3}</i> </li>
+<li><i>con:Contingency {4}</i> </li>
+<li><i>suv:Survival {5}</i></li></ul>
+<p>Refer to <a class="external text" href="../../UserGuide/UserGuide/Life_Science_Mode.html#Data_Table">this page</a> for more information on table type.
+</p>
+</td></tr>
+<tr>
+<td>Data Format
+</td>
+<td>sum
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> Specify data format. Available when <b>Data Type</b> = <b>XY</b>. <i>Option list</i>:
+<ul><li><i>raw:Raw Data {0}</i> </li>
+<li><i>mean:Summary (Mean) {1}</i> </li>
+<li><i>median:Summary (Median) {2}</i></li></ul>
+</td></tr>
+<tr>
+<td>Statistics
+</td>
+<td>err
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> Specify statistics value for data and error. Available when <b>Data Format</b> = <b>Summary (Mean)</b> or <b>Summary (Median)</b>.
+</td></tr>
+<tr>
+<td>Set Column Designatioins
+</td>
+<td>xy
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td> <center>XY</center>
+</td>
+<td> Specifies the column designations for all data columns. For example, if you enter XY, the plot designations of the columns will be set to the repeating pattern of "XYXYXY". In this string, each character corresponds to the designation of one column, as shown below:
+<p>'X' - X<br />
+'Y' - Y<br />
+'Z' - Z<br />
+'E' - Y Error <br />
+'L' - Label <br />
+'M' - X Error <br />
+'N' - Disregard
+</p>
+</td></tr>
+<tr>
+<td>Number of Columns
+</td>
+<td>cols
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td> Specify the number of columns for the new worksheet. Available for <b>Table Type</b> = <b>Free Form</b>.
+</td></tr>
+<tr>
+<td>Number of Groups
+</td>
+<td>groups
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td> Specify the number of groups. Available for <b>Table Type</b> = <b>XY</b> or <b>Grouped (Two Way)</b>.
+</td></tr>
+<tr>
+<td>Group Names (separated by semicolons)
+</td>
+<td>names
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td> <center></center>
+</td>
+<td>Enter semicolon-separated names for groups.
+</td></tr>
+<tr>
+<td>Row Title
+</td>
+<td>xt
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td>Check to add a Text column for row labels. <i>Option list</i>:  0=false, 1=true
+</td></tr>
+<tr>
+<td>X Error
+</td>
+<td>xerr
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td><center>0</center>
+</td>
+<td>Check to add an error bar column for X. Available for <b>Table Type</b> = <b>XY</b>. <i>Option list</i>: 0=false, 1=true
+</td></tr>
+<tr>
+<td>Number of Subgroup
+</td>
+<td>subgroups
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td>Specify the number of subgroup.
+</td></tr>
+<tr>
+<td>Subgroup Names
+</td>
+<td>subnames
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td><center></center>
+</td>
+<td>Enter the names of subgroups.
+</td></tr>
+<tr>
+<td>
+</td>
+<td>count
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td><center>2</center>
+</td>
+<td>"</code>.
+</td></tr>
+<tr>
+<td>X Title
+</td>
+<td>xname
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td><center></center>
+</td>
+<td>Enter the X title.
+</td></tr>
+<tr>
+<td>Column Categories
+</td>
+<td>bnames
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td><center>Success; Failure</center>
+</td>
+<td>Enter semicolon-separated labels for the second categorical variable. Available for <b>Table Type</b> = <b>Contingency</b>.
+</td></tr>
+<tr>
+<td>Elapsed Time in
+</td>
+<td>etime
+</td>
+<td>
+<p>Input
+</p><p>string
+</p>
+</td>
+<td><center>Days</center>
+</td>
+<td>Change the unit, Months, Years, etc.
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">Description</span></h2>
+<p>This X-Function is used to create new <a class="external text" href="../../UserGuide/UserGuide/Creating_Child_Window.html#By_New_Workbook_dialog">Origin classic worksheet</a> or <a class="external text" href="../../UserGuide/UserGuide/Life_Science_Mode.html#Data_Table">Data Table</a>. 
+</p>
+<h2><a name="Related_X-Functions"></a><span class="mw-headline">Related X-Functions</span></h2>
+<p><a href="../../XFunction/X-Function/Newsheet.html" title="X-Function:Newsheet">newsheet</a>, <a href="../../XFunction/X-Function/Addsheet.html" title="X-Function:Addsheet">addsheet</a>, <a href="../../XFunction/X-Function/Newbook.html" title="X-Function:Newbook">newbook</a>
+</p>
+
+
+
+
+

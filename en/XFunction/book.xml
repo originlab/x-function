@@ -113,12 +113,14 @@
           <page title="xy2roi" file="X-Function/Xy2roi.html" url="X-Function/ref/xy2roi" src="X-Function:Xy2roi"/>
         </page>
         <page title="X-Functions for Worksheet" file="Category/Worksheet.html" url="X-Function/ref/X-Functions-for-Worksheet" src="Category:Worksheet">
+          <page title="col2mirror" file="X-Function/Col2mirror.html" url="X-Function/ref/col2mirror" src="X-Function:Col2mirror"/>
           <page title="colcopy" file="X-Function/Colcopy.html" url="X-Function/ref/colcopy" src="X-Function:Colcopy"/>
           <page title="coldesig" file="X-Function/Coldesig.html" url="X-Function/ref/coldesig" src="X-Function:Coldesig"/>
           <page title="colhide" file="X-Function/Colhide.html" url="X-Function/ref/colhide" src="X-Function:Colhide"/>
           <page title="colint" file="X-Function/Colint.html" url="X-Function/ref/colint" src="X-Function:Colint"/>
           <page title="coljoinbydesig" file="X-Function/Coljoinbydesig.html" url="X-Function/ref/coljoinbydesig" src="X-Function:Coljoinbydesig"/>
           <page title="colmask" file="X-Function/Colmask.html" url="X-Function/ref/colmask" src="X-Function:Colmask"/>
+          <page title="colmirror" file="X-Function/Colmirror.html" url="X-Function/ref/colmirror" src="X-Function:Colmirror"/>
           <page title="colmove" file="X-Function/Colmove.html" url="X-Function/ref/colmove" src="X-Function:Colmove"/>
           <page title="colreverse" file="X-Function/Colreverse.html" url="X-Function/ref/colreverse" src="X-Function:Colreverse"/>
           <page title="colshowx" file="X-Function/Colshowx.html" url="X-Function/ref/colshowx" src="X-Function:Colshowx"/>
@@ -216,6 +218,7 @@
         <page title="ms2o" file="X-Function/Ms2o.html" url="X-Function/ref/ms2o" src="X-Function:Ms2o"/>
         <page title="newbook" file="X-Function/Newbook.html" url="X-Function/ref/newbook" src="X-Function:Newbook"/>
         <page title="newsheet" file="X-Function/Newsheet.html" url="X-Function/ref/newsheet" src="X-Function:Newsheet"/>
+        <page title="newtable" file="X-Function/Newtable.html" url="X-Function/ref/newtable" src="X-Function:Newtable"/>
         <page title="rank" file="X-Function/Rank.html" url="X-Function/ref/rank" src="X-Function:Rank"/>
         <page title="reduce_ex" file="X-Function/Reduce_ex.html" url="X-Function/ref/reduce_ex" src="X-Function:Reduce_ex"/>
         <page title="reducedup" file="X-Function/Reducedup.html" url="X-Function/ref/reducedup" src="X-Function:Reducedup"/>

@@ -1,4 +1,4 @@
-<h1 class="firstHeading">2.2.3.72 wsort</h1><p><br />
+<h1 class="firstHeading">2.2.3.74 wsort</h1><p><br />
 </p>
 <div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -118,8 +118,15 @@
 <td> <center>&lt;optional&gt;</center>
 </td>
 <td>
-<p>indices of columns used as sorting criteria. It is used when you want to sort worksheet by multiple columns 
+<p>Indices of columns used as sorting criteria. It is used when you want to sort worksheet by multiple columns 
 </p>
+<table class="Note">
+
+<tr>
+<td><b>Note:</b>: When <i><b>nestcols</b></i> is used,
+<ul><li> The <i><b>order</b></i> variable is need to be used at the same time and <i><b>order</b></i> variable size need to be set to match <i><b>nestcols</b></i> (refer to Sample1 as below)</li>
+<li> the variables <i><b>bycol</b></i>, <i><b>descending</b></i>, <i><b>sortnumeric</b></i> etc. cannot be used.</li></ul>
+</td></tr></table>
 </td></tr>
 <tr>
 <td>Sort Orders
@@ -134,8 +141,21 @@
 <td> <center>&lt;optional&gt;</center>
 </td>
 <td>
-<p>sorting order index, 0 descending, 1 ascending, 32 for categorical descending, 33 for categorical ascending. Its size should match the one of <b>Nested Sort Columns</b>.
+<p>sorting order index：
 </p>
+<ul><li> 0 descending </li>
+<li> 1 ascending </li>
+<li> 4 case sensitive</li>
+<li> 8 numeric suffix (sort by Numeric Suffix)</li>
+<li> 32 categorical descending</li>
+<li> 33 categorical ascending</li></ul>
+<table class="Note">
+
+<tr>
+<td><b>Note:</b>
+<ul><li> Its size should match the one of <b>Nested Sort Columns</b>. </li>
+<li> The <i><b>order</b></i> variable is a bit combination option. If need to sort by 1 (ascending) and 8 (numeric suffix) simultaneously, you can set it to 9 (1 &amp; 8), (refer to Sample2 as below)</li></ul>
+</td></tr></table>
 </td></tr>
 <tr>
 <td>Column From
@@ -237,7 +257,7 @@
 <p>This function is used to sort the worksheet by some column <i>bycol</i> (as index). Or nested sorted by some columns <i>nestcols</i>, then we can also set descending or ascending by each column order. We can specified the range(start row, end row, start column, end column or range variable irng) to sort. We can also sort by numeric suffix column(as index).
 </p>
 <h2><a name="Examples"></a><span class="mw-headline">Examples</span></h2>
-<ul><li> Code Sample</li></ul>
+<ul><li> <b>Code Sample1</b></li></ul>
 <pre class="lt" style="font-family:monospace;"><span style="color: #008000; font-style: regular;">/*
 This example uses the wsort X-Function to perform nested sorting. The data 
 will be reordered so that the height column is in descending order. If there 
@@ -256,6 +276,61 @@ impasc;
 dataset sbc <span style="color: #000080;">=</span> <span style="color: #000000;">&#123;</span><span style="color: #0000dd;">4</span>, <span style="color: #0000dd;">5</span><span style="color: #000000;">&#125;</span>; <span style="color: #008000;">//Select the columns for the primary sort and the secondary sort</span>
 dataset sodr<span style="color: #000080;">=</span> <span style="color: #000000;">&#123;</span><span style="color: #0000dd;">0</span>, <span style="color: #0000dd;">1</span><span style="color: #000000;">&#125;</span>; <span style="color: #008000;">//Select the sort orders: col(4)--descending, col(5)--ascending</span>
 wsort nestcols<span style="color: #000000;">:</span><span style="color: #000080;">=</span>sbc order<span style="color: #000000;">:</span><span style="color: #000080;">=</span>sodr; <span style="color: #008000;">//Perform the nested sorting</span></pre>
+<ul><li> <b>Code Sample2</b></li></ul>
+<p>Sort this table:
+</p>
+<table class="simple" style="width:350px">
+
+<tr>
+<td>2020.11.24
+</td>
+<td>Mr. Mercedes S1E7
+</td></tr>
+<tr>
+<td>2020.11.25
+</td>
+<td>Mr. Mercedes S1E10
+</td></tr>
+<tr>
+<td>2020.11.25
+</td>
+<td>Mr. Mercedes S1E9
+</td></tr>
+<tr>
+<td>2020.11.24
+</td>
+<td>Mr. Mercedes S1E8
+</td></tr></table>
+<p>To be:
+</p>
+<table class="simple" style="width:350px">
+
+<tr>
+<td>2020.11.24
+</td>
+<td>Mr. Mercedes S1E7
+</td></tr>
+<tr>
+<td>2020.11.24
+</td>
+<td>Mr. Mercedes S1E8
+</td></tr>
+<tr>
+<td>2020.11.25
+</td>
+<td>Mr. Mercedes S1E9
+</td></tr>
+<tr>
+<td>2020.11.25
+</td>
+<td>Mr. Mercedes S1E10
+</td></tr></table>
+<pre class="lt" style="font-family:monospace;"><span style="color: #008000;">//These two columns are in the Column 1 and 2 of the Worksheet</span>
+<span style="color: #008000;">//Active the Workbook and run the following script</span>
+
+dataset sbc <span style="color: #000080;">=</span> <span style="color: #000000;">&#123;</span><span style="color: #0000dd;">1</span>, <span style="color: #0000dd;">2</span><span style="color: #000000;">&#125;</span>; <span style="color: #008000;">//Select the columns for the primary sort and the secondary sort</span>
+dataset sodr<span style="color: #000080;">=</span> <span style="color: #000000;">&#123;</span><span style="color: #0000dd;">9</span>, <span style="color: #0000dd;">9</span><span style="color: #000000;">&#125;</span>; <span style="color: #008000;">//Select the sort orders: col(1)--ascending and numeric suffix combination , col(2)--ascending and numeric suffix combination </span>
+wsort nestcols<span style="color: #000000;">:</span><span style="color: #000080;">=</span>sbc order<span style="color: #000000;">:</span><span style="color: #000080;">=</span>sodr;</pre>
 <hr class='keywordshr'><p><span class='keywords'>Keywords:</span><span class='keywordsInput'>nested sort</span></p>
 
 

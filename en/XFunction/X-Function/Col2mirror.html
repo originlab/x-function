@@ -1,0 +1,139 @@
+<h1 class="firstHeading">2.2.3.1 col2mirror</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">Menu Information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">Brief Information</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Command_Line_Usage"><span class="tocnumber">3</span> <span class="toctext">Command Line Usage</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#X-Function_Execution_Options"><span class="tocnumber">4</span> <span class="toctext">X-Function Execution Options</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Variables"><span class="tocnumber">5</span> <span class="toctext">Variables</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Description"><span class="tocnumber">6</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Related_X-Functions"><span class="tocnumber">7</span> <span class="toctext">Related X-Functions</span></a></li>
+</ul>
+</div>
+
+<h2><a name="Menu_Information"></a><span class="mw-headline">Menu Information</span></h2>
+<p>Worksheet: Convert to Mirror Columns
+</p>
+<h2><a name="Brief_Information"></a><span class="mw-headline">Brief Information</span></h2>
+<p>Convert source referencing column(s) to mirror column(s)
+</p>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">Command Line Usage</span></h2>
+<p><code>
+1. col2mirror scv:=0 colcpy:=1;
+</p><p>2.   col2mirror colcpy:=1 label:=1  -u;
+</p><p>3.  col2mirror scope:=1;
+</code>
+</p>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">X-Function Execution Options</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">Please refer to the page for additional option switches when accessing the x-function from script</a>
+</p>
+<h2><a name="Variables"></a><span class="mw-headline">Variables</span></h2>
+<table class="xfvar">
+<tr>
+<th width="8%">Display<br />Name
+</th>
+<th width="8%">Variable<br />Name
+</th>
+<th width="8%">I/O<br />and<br />Type
+</th>
+<th width="8%">Default<br />Value
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Column Formula
+</td>
+<td>scv
+</td>
+<td>
+<p>Input
+</p><p>int 
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td>Specify whether to convert column(s) filled by column formula that refer to other column(s) (via <a class="external text" href="../../UserGuide/UserGuide/Quick_Start_SetColumnValues.html"><b>Set Column Values</b> or <b>F(x)</b></a>).
+<p>Allowed values: 0=false, 1=true.
+</p>
+</td></tr>
+<tr>
+<td> Column Copy Output
+</td>
+<td>colcpy
+</td>
+<td>
+<p>Input
+</p><p>int 
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td>Specify whether to convert column(s) created by <b>Worksheet: <a class="external text" href="../../UserGuide/UserGuide/Copy_Columns_to_New_Destination.html">Copy Column to</a></b>.
+<p>Allowed values: 0=false, 1=true.
+</p>
+</td></tr>
+<tr>
+<td>Convert Scope
+</td>
+<td>scope
+</td>
+<td>
+<p>Input
+</p><p>int 
+</p>
+</td>
+<td> <center>2</center>
+</td>
+<td>Specify the search and conversion scope. Available options:
+<ul><li><i>sh:Active Sheet </i>{0}</li>
+<li><i>bk:Active Book </i>{1}</li>
+<li><i>fd:Active Folder </i>{2}</li>
+<li><i>sf:Active Folder (Recursive) </i>{3}</li>
+<li><i>proj:Project</i>{4}</li></ul>
+</td></tr>
+<tr>
+<td>Use Source Column Labels
+</td>
+<td>label
+</td>
+<td>
+<p>Input
+</p><p>int 
+</p>
+</td>
+<td> <center>1</center>
+</td>
+<td>When Column Formula is selected, check this checkbox to copy label rows from the source column. For <b>Column Copy Output</b>, whether to use the source column labels is controlled by whether and which label row(s) are checked under <b>Copy Labels</b> branch in the <b><a class="external text" href="../../UserGuide/UserGuide/Copy_Columns_to_New_Destination.html">Copy Column to</a></b> dialog.
+<p>Allowed values: 0=false, 1=true
+</p>
+</td></tr>
+<tr>
+<td>Output List of Converted Columns
+</td>
+<td>dump
+</td>
+<td>
+<p>Input
+</p><p>int 
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td>Specify whether to output a list of converted columns. Available options:
+<ul><li><i>none:None </i>{0}</li>
+<li><i>msg:To Message Log </i>{1}</li>
+<li><i>note:To Notes Window </i>{2}</li>
+<li><i>pad:To Notepad </i>{3}</li></ul>
+</td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">Description</span></h2>
+<p>Origin 2026b introduces <a class="external text" href="../../UserGuide/UserGuide/Mirror_Column.html">Mirror Column</a>, which references a source column. For linking columns created in older versions, whether by column formula (simple reference, no calculation involved) or the <b>Copy Column to</b> dialog, you can use this X-Function "col2mirror" to scan the specified scope and convert these linking columns to mirror columns.
+</p>
+<h2><a name="Related_X-Functions"></a><span class="mw-headline">Related X-Functions</span></h2>
+<p><a href="../../XFunction/X-Function/Colcopy.html" title="X-Function:Colcopy">colcopy</a>, <a href="../../XFunction/X-Function/Colmirror.html" title="X-Function:Colmirror">colmirror</a>, <a href="../../XFunction/X-Function/Colmove.html" title="X-Function:Colmove">colmove</a>, <a href="../../XFunction/X-Function/Wselcol.html" title="X-Function:Wselcol">wselcol</a>, <a href="../../XFunction/X-Function/Colswap.html" title="X-Function:Colswap">colswap</a>
+</p>
+
+
+
+
+

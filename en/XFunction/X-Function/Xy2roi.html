@@ -20,8 +20,9 @@
 </p>
 <h2><a name="Command_Line_Usage"></a><span class="mw-headline">Command Line Usage</span></h2>
 <p><code>
-xy2roi iy:=[Book1]Sheet1!(A,B);
-</code>
+1. xy2roi iy:=[Book1]Sheet1!(A,B);
+</p><p>2. xy2roi iy:=[Book1]Sheet1!(A,B) index:=[Book1]Sheet1!3 name:=[Book1]Sheet1!4 group:=[Book1]Sheet1!11;
+</p><p></code>
 </p>
 <h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">X-Function Execution Options</span></h2>
 <p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">Please refer to the page for additional option switches when accessing the x-function from script</a>
@@ -58,7 +59,7 @@ xy2roi iy:=[Book1]Sheet1!(A,B);
 <tr>
 <td>ROI Coordinates
 </td>
-<td>index
+<td>iy
 </td>
 <td>
 <p>Input
@@ -68,20 +69,20 @@ xy2roi iy:=[Book1]Sheet1!(A,B);
 <td> <center> </center>
 </td>
 <td>
-<p>Specifies ROI Coordinates from worksheet XY range.
+<p>Specifies the XY worksheet range for ROI boundary coordinates.
 </p>
 </td></tr>
 <tr>
 <td>ROI Index
 </td>
-<td>iy
+<td>index
 </td>
 <td>
 <p>Input
 </p><p>Range
 </p>
 </td>
-<td> <center> </center>
+<td> <center>&lt;unassigned&gt;</center>
 </td>
 <td>
 <p>Specifies ROI Index.
@@ -97,22 +98,38 @@ xy2roi iy:=[Book1]Sheet1!(A,B);
 </p><p>Range
 </p>
 </td>
-<td> <center> </center>
+<td> <center>&lt;optional&gt;</center>
 </td>
 <td>
-<p>Specifies ROI Name.
+<p>Optional. Specifies ROI Name. <br />Once specified, the name will be used to identifiy ROI in the <b>Intensity Profile</b> output.
+</p>
+</td></tr>
+<tr>
+<td>ROI Group
+</td>
+<td>group
+</td>
+<td>
+<p>Input 
+</p><p>Range
+</p>
+</td>
+<td><center>&lt;optional&gt;</center>
+</td>
+<td>
+<p>Optional. Specifies ROI group column. <br />Once specified, the group info will be used to identifiy ROI in the <b>Intensity Profile</b> output.
 </p>
 </td></tr></table>
 <p><br />
 </p>
 <h2><a name="Description"></a><span class="mw-headline">Description</span></h2>
-<p>You can use this X-Function to import the Worksheet XY data for defining the ROI.
+<p>This X-Function is used to use the Worksheet XY data for defining the ROI. Refer to <a class="external text" href="../../UserGuide/UserGuide/NetCDF_Manipulating.html#Intensity_Profile">this page</a>] for more info.
 </p>
 <h2><a name="Related_X-Functions"></a><span class="mw-headline">Related X-Functions</span></h2>
 <p><a href="../../XFunction/X-Function/Mdim.html" title="X-Function:Mdim">mdim</a>, <a href="../../XFunction/X-Function/Mexpand.html" title="X-Function:Mexpand">mexpand</a>, <a href="../../XFunction/X-Function/Mproperty.html" title="X-Function:Mproperty">mproperty</a>, <a href="../../XFunction/X-Function/Mreplace.html" title="X-Function:Mreplace">mreplace</a>, <a href="../../XFunction/X-Function/Mrotate90.html" title="X-Function:Mrotate90">mrotate90</a>, <a href="../../XFunction/X-Function/Msetvalue.html" title="X-Function:Msetvalue">msetvalue</a>, <a href="../../XFunction/X-Function/Mflip.html" title="X-Function:Mflip">mflip</a>, <a href="../../XFunction/X-Function/Mtranspose.html" title="X-Function:Mtranspose">mtranspose</a>
 , <a href="../../XFunction/X-Function/Msmooth.html" title="X-Function:Msmooth">msmooth</a>
 </p>
-<hr class='keywordshr'><p><span class='keywords'>Keywords:</span><span class='keywordsInput'>ROI</span></p>
+<hr class='keywordshr'><p><span class='keywords'>Keywords:</span><span class='keywordsInput'>ROI, NetCDF</span></p>
 
 
 

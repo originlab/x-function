@@ -1,4 +1,4 @@
-<h1 class="firstHeading">2.2.3.78 wunstackcol</h1><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<h1 class="firstHeading">2.2.3.80 wunstackcol</h1><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="#Menu_Information"><span class="tocnumber">1</span> <span class="toctext">Menu Information</span></a></li>
 <li class="toclevel-1 tocsection-2"><a href="#Brief_Information"><span class="tocnumber">2</span> <span class="toctext">Brief Information</span></a></li>
@@ -6,8 +6,8 @@
 <li class="toclevel-1 tocsection-4"><a href="#Command_Line_Usage"><span class="tocnumber">4</span> <span class="toctext">Command Line Usage</span></a></li>
 <li class="toclevel-1 tocsection-5"><a href="#X-Function_Execution_Options"><span class="tocnumber">5</span> <span class="toctext">X-Function Execution Options</span></a></li>
 <li class="toclevel-1 tocsection-6"><a href="#Variables"><span class="tocnumber">6</span> <span class="toctext">Variables</span></a></li>
-<li class="toclevel-1 tocsection-7"><a href="#Related_X-Functions"><span class="tocnumber">7</span> <span class="toctext">Related X-Functions</span></a></li>
-<li class="toclevel-1 tocsection-8"><a href="#More_Information"><span class="tocnumber">8</span> <span class="toctext">More Information</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Description"><span class="tocnumber">7</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Related_X-Functions"><span class="tocnumber">8</span> <span class="toctext">Related X-Functions</span></a></li>
 </ul>
 </div>
 
@@ -18,13 +18,14 @@
 <p>Unstack data using group columns
 </p>
 <h2><a name="Additional_Information"></a><span class="mw-headline">Additional Information</span></h2>
-<p><b>Minimum Origin Version Required</b>: 8.1 SR0, updated in 8.5.1
+<p><b>Minimum Origin Version Required</b>: 8.1 SR0
 </p>
 <h2><a name="Command_Line_Usage"></a><span class="mw-headline">Command Line Usage</span></h2>
 <p><code>
 1. wunstackcol irng1:=2 irng2:=1 missing:=1;
 </p><p>2. wunstackcol irng1:=col(2) irng2:=col(1) nonstack:=1 other:=col(3);
 </p><p>3. wunstackcol -r 2 irng1:=(3:5) irng2:=col(2) sort:=data pos:=udl label:=L;
+</p><p>4. wunstackcol irng1:=[Book1]body!D"height":E"weight" irng2:=[Book1]body!C"gender" nonstack:=1 other:=[Book1]body!A"name" owStructured:=1 label:=L;
 </code>
 </p>
 <h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">X-Function Execution Options</span></h2>
@@ -168,6 +169,23 @@
 <td> Specify where to store the output unstacked results.
 </td></tr>
 <tr>
+<td>Output to Data Table
+</td>
+<td>owStructured
+</td>
+<td>
+<p>Input
+</p><p>int
+</p>
+</td>
+<td> <center>0</center>
+</td>
+<td> Check this checkbox to output the unstacked results to a <a class="external text" href="../../UserGuide/UserGuide/Life_Science_Mode.html#Data_Table">Data Table</a>. This option is available for one of the following conditions:
+<ul><li> number of <b>Group Column(s)</b> &lt;= 2, and <b>Include Other Column(s)</b> has 1 column selected, the unstacked data will be output to a Grouped (Two-Way) table;</li>
+<li> number of <b>Data to be Unstacked</b> = 1 , number of <b>Group Column(s)</b> = 1, and <b>Include Other Column(s)</b> is unchecked, the unstacked data will be output to a Column (One-Way) table;</li>
+<li> number of <b>Data to be Unstacked</b> = 1, number of <b>Group Column(s)</b> = 3, and <b>Include Other Column(s)</b> has 1 column selected, the unstacked data will be output to a Grouped (Two-Way) table.</li></ul>
+</td></tr>
+<tr>
 <td>Put Grouping Info. to
 </td>
 <td>pos
@@ -192,7 +210,7 @@
 <dl><dd>Put the grouping information to the user defined parameter row, this row's name is specified by <b>From Group Columns</b>.</dd></dl></li></ul>
 </td></tr>
 <tr>
-<td>From Group Columns
+<td>From Group Columns/<br />Dataset Identifier
 </td>
 <td>label
 </td>
@@ -203,17 +221,18 @@
 </td>
 <td> <center>&lt;unassigned&gt;</center>
 </td>
-<td>This drop-down list is only available when <b>Put Group Info. to</b> is set as <b>User Defined Parameters</b>. It is used to name the user defined parameter row for storing grouping information. The name is from the label row of the Group column in the source worksheet. The selected label row must contain a string for naming the user defined parameter row, or there will be an error message. Please refer to <a class="external text" href="../../LabTalk/LabTalk/Column_Label_Row_Characters.html">Column Label Row Characters</a> for the single character to specify a label row.
+<td>This drop-down list is only available when <b>Put Group Info. to</b> is set as <b>User Defined Parameters</b>, or <b>Output to Data Table</b> is checked.
+<ul><li> When <b>Put Group Info. to</b> is set as <b>User Defined Parameters</b>, <b>From Group Columns</b> is used to name the user defined parameter row for storing grouping information. The name is from the label row of the Group column in the source worksheet. The selected label row must contain a string for naming the user defined parameter row, or there will be an error message. Please refer to <a class="external text" href="../../LabTalk/LabTalk/Column_Label_Row_Characters.html">Column Label Row Characters</a> for the single character to specify a label row.</li>
+<li> When <b>Output to Data Table</b> is checked, <b>Dataset Indentifier</b> is used to specify the column label row containing the indentifier. </li></ul>
 </td></tr></table>
+<h2><a name="Description"></a><span class="mw-headline">Description</span></h2>
+<p>This X-Function is used to unstack columns by group columns. Please refer to <a class="external text" href="../../UserGuide/UserGuide/Unstacking_Worksheet_Columns.html">this page</a> in the User Guide for more information.
+</p>
+<ul><li><a class="external text" href="../../UserGuide/UserGuide/Unstacking_Worksheet_Columns.html#How_to_Unstack_Columns">How to Unstack Columns</a></li>
+<li><a class="external text" href="../../UserGuide/UserGuide/Unstacking_Worksheet_Columns.html#Examples">Example</a></li></ul>
 <h2><a name="Related_X-Functions"></a><span class="mw-headline">Related X-Functions</span></h2>
 <p><a href="../../XFunction/X-Function/Wstackcol.html" title="X-Function:Wstackcol">wstackcol</a>, <a href="../../XFunction/X-Function/Colsplit.html" title="X-Function:Colsplit">colsplit</a>
 </p>
-<h2><a name="More_Information"></a><span class="mw-headline">More Information</span></h2>
-<p>Please refer to <a class="external text" href="../../UserGuide/UserGuide/Unstacking_Worksheet_Columns.html">this page</a> in the User Guide for more information.
-</p>
-<dl><dd><ul><li>How to Unstack Columns</li>
-<li>Example</li></ul></dd></dl>
-
 
 
 

@@ -82,6 +82,7 @@
 <li> NormalityTest: Normality Test</li>
 <li> ANOVAOneWay: One-Way ANOVA</li>
 <li> ANOVATwoWay: Two-Way ANOVA</li>
+<li> ANOVAThreeWay: Three-Way ANOVA</li>
 <li> ANOVAOneWayRM: One-Way Repeated Measures ANOVA</li>
 <li> ANOVATwoWayRM: Two-Way Repeated Measures ANOVA</li>
 <li> FitLinear: Fit Linear</li>
@@ -300,6 +301,10 @@ xop execute<span style="color: #000000;">:</span><span style="color: #000080;">=
 <span style="color: #008000;">// It is an attribute in LT and needs to access by a special node &quot;.Use&quot;.</span>
 
 onewayGUI.<span style="color: #000080;">GUI</span>.<span style="color: #000080;">InputData</span>.<span style="color: #000080;">Use</span> <span style="color: #000080;">=</span> <span style="color: #0000dd;">1</span>; <span style="color: #008000;">//0 for Indexed, 1 for Raw</span>
+
+xop execute<span style="color: #000000;">:</span><span style="color: #000080;">=</span>update iotrgui<span style="color: #000000;">:</span><span style="color: #000080;">=</span>onewayGUI;
+
+onewayGUI.<span style="color: #000080;">GUI</span>.<span style="color: #000080;">InputData</span>.<span style="color: #000080;">Factor0</span>.<span style="color: #000080;">Levels</span>.<span style="color: #000080;">Use</span><span style="color: #000080;">=</span><span style="color: #0000dd;">1</span>; <span style="color: #008000;">//1 for 3 levels, 0-offset</span>
 
 xop execute<span style="color: #000000;">:</span><span style="color: #000080;">=</span>update iotrgui<span style="color: #000000;">:</span><span style="color: #000080;">=</span>onewayGUI;
 
