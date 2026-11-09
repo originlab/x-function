@@ -1,28 +1,34 @@
-﻿<h1 class="firstheading">wsort</h1><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>内容</h2></div>
+﻿<h1 class="firstHeading">wsort</h1><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>目次</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="#Brief_Information"><span class="tocnumber">1</span> <span class="toctext">概要</span></a></li>
 <li class="toclevel-1 tocsection-2"><a href="#Additional_Information"><span class="tocnumber">2</span> <span class="toctext">追加の情報</span></a></li>
 <li class="toclevel-1 tocsection-3"><a href="#Command_Line_Usage"><span class="tocnumber">3</span> <span class="toctext">コマンドラインでの使用法</span></a></li>
-<li class="toclevel-1 tocsection-4"><a href="#Variables"><span class="tocnumber">4</span> <span class="toctext">変数</span></a></li>
-<li class="toclevel-1 tocsection-5"><a href="#Description"><span class="tocnumber">5</span> <span class="toctext">説明</span></a></li>
-<li class="toclevel-1 tocsection-6"><a href="#Examples"><span class="tocnumber">6</span> <span class="toctext">サンプル</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#X-Function_Execution_Options"><span class="tocnumber">4</span> <span class="toctext">Xファンクションの実行オプション</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Variables"><span class="tocnumber">5</span> <span class="toctext">変数</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Description"><span class="tocnumber">6</span> <span class="toctext">説明</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Examples"><span class="tocnumber">7</span> <span class="toctext">サンプル</span></a></li>
 </ul>
-</td></tr></table>
-<h2><a name="Brief_Information"></a><span class="mw-headline"> 概要 </span></h2>
-<p>ワークシート全体または選択した列をソートします
+</div>
+
+<h2><a name="Brief_Information"></a><span class="mw-headline">概要</span></h2>
+<p>選択した列を基準にワークシートを並べ替えます。
 </p>
-<h2><a name="Additional_Information"></a><span class="mw-headline"> 追加の情報 </span></h2>
-<p>Xファンクションは Auto GetNダイアログ用にデザインされていません。
+<h2><a name="Additional_Information"></a><span class="mw-headline">追加の情報</span></h2>
+<p>XファンクションはAuto GetNダイアログとして設計されていません。
 </p>
-<h2><a name="Command_Line_Usage"></a><span class="mw-headline"> コマンドラインでの使用法 </span></h2>
-<p><code>
-</p><p>1. wsort descending:=1; 
-</p><p>2. wsort descending:=1 bycol:=2 c1:=1 c2:=3; 
-</p><p>3. wsort bycol:=1 irng:=(2[5]:3[8],5[5]:6[8]);
-</p><p>4. wsort bycol:=1 irng:=(1:2,4:end);
-</p><p></code>
+<h2><a name="Command_Line_Usage"></a><span class="mw-headline">コマンドラインでの使用法</span></h2>
+<pre>
+1. wsort descending:=1; 
+2. wsort descending:=1 bycol:=2 c1:=1 c2:=3; 
+3. wsort bycol:=1 irng:=(2[5]:3[8],5[5]:6[8]);
+4. wsort bycol:=1 irng:=(1:2,4:end);
+</pre>
+<h2><a name="X-Function_Execution_Options"></a><span class="mw-headline">Xファンクションの実行オプション</span></h2>
+<p><a class="external text" href="../../LabTalk/LabTalk/X-Function_Execution_Options.html">スクリプトからXファンクションにアクセスする場合、追加のオプションスイッチについてのページを参照してください。</a>
 </p>
-<h2><a name="Variables"></a><span class="mw-headline"> 変数 </span></h2>
+<h2><a name="Variables"></a><span class="mw-headline">変数</span></h2>
 <table class="xfvar">
 <tr>
 <th width="8%">表示<br />名
@@ -36,7 +42,7 @@
 <th>説明
 </th></tr>
 <tr>
-<td>ソートするワークシート
+<td>並べ替えるワークシート
 </td>
 <td>w
 </td>
@@ -48,11 +54,11 @@
 <td> <center>&lt;active&gt;</center>
 </td>
 <td>
-<p>ソートするワークシートを指定
+<p>並べ替えるワークシートを指定
 </p>
 </td></tr>
 <tr>
-<td>列でソート
+<td>並べ替え基準列
 </td>
 <td>bycol
 </td>
@@ -64,7 +70,7 @@
 <td> <center>1</center>
 </td>
 <td>
-<p>列データをソートの基準として指定します。ワークシートを一つの列でソートしたいときに使用します。
+<p>並べ替えの基準として使用する列データを指定します。1つの列を基準にワークシートを並べ替える場合に使用します。
 </p>
 </td></tr>
 <tr>
@@ -80,11 +86,11 @@
 <td> <center>0</center>
 </td>
 <td>
-<p>降順または昇順ソートするか指定します。
+<p>降順または昇順での並べ替えを指定します。0=昇順、1=降順、2=カテゴリ昇順、3=カテゴリ降順
 </p>
 </td></tr>
 <tr>
-<td>数字の接尾でソート
+<td>数値接尾辞で並べ替え
 </td>
 <td>sortnumeric
 </td>
@@ -96,11 +102,11 @@
 <td> <center>0</center>
 </td>
 <td>
-<p>数字の接尾でソートするか指定します。
+<p>数値接尾辞を基準に並べ替えるかどうかを指定します。
 </p>
 </td></tr>
 <tr>
-<td>ソート列のネスト
+<td>ネストソート列
 </td>
 <td>nestcols
 </td>
@@ -112,11 +118,18 @@
 <td> <center>&lt;optional&gt;</center>
 </td>
 <td>
-<p>ソートの基準で使われる列のインデックス。ワークシートを複数の列でソートしたいときに使用します。 
+<p>並べ替え基準として使用する列のインデックスです。複数の列を基準にワークシートを並べ替える場合に使用します。 
 </p>
+<table class="Note">
+
+<tr>
+<td><b>Note:</b>: <i><b>nestcols</b></i> を使用する場合
+<ul><li> <i><b>order</b></i> 変数も同時に使用する必要があり、<i><b>order</b></i> のサイズは <i><b>nestcols</b></i> と一致させる必要があります（下記のSample1を参照）。</li>
+<li> <i><b>bycol</b></i>, <i><b>descending</b></i>, <i><b>sortnumeric</b></i> などの変数は使用できません。</li></ul>
+</td></tr></table>
 </td></tr>
 <tr>
-<td>ソートの順序
+<td>並べ替え順序
 </td>
 <td>order
 </td>
@@ -128,8 +141,21 @@
 <td> <center>&lt;optional&gt;</center>
 </td>
 <td>
-<p>ソートの順序のインデックス(0は昇順、1は降順)です。大きさは、<B>ソート列のネスト</B>に合致している必要があります。
+<p>並べ替え順序のインデックス:
 </p>
+<ul><li> 0 降順 </li>
+<li> 1 昇順 </li>
+<li> 4 大文字と小文字を区別</li>
+<li> 8 数値接尾辞（数値接尾辞を基準に並べ替え）</li>
+<li> 32 カテゴリ降順</li>
+<li> 33 カテゴリ昇順</li></ul>
+<table class="Note">
+
+<tr>
+<td><b>Note:</b>
+<ul><li> サイズは <b>ネストソート列</b> と一致させる必要があります。 </li>
+<li> <i><b>order</b></i>変数はビットの組み合わせによるオプションです。たとえば、1（昇順）と8（数値接尾辞）を同時に使用する場合は、9（1 &amp; 8）に設定できます（下記のSample2を参照）。</li></ul>
+</td></tr></table>
 </td></tr>
 <tr>
 <td>開始列
@@ -144,7 +170,7 @@
 <td> <center>1</center>
 </td>
 <td>
-<p>ソートのために選択された列の開始インデックス 
+<p>並べ替え対象として選択する列の開始インデックスです。 
 </p>
 </td></tr>
 <tr>
@@ -160,7 +186,7 @@
 <td> <center>0</center>
 </td>
 <td>
-<p>ソートのために選択された列の終了インデックス
+<p>並べ替え対象として選択する列の終了インデックスです。
 </p>
 </td></tr>
 <tr>
@@ -176,7 +202,7 @@
 <td> <center>1</center>
 </td>
 <td>
-<p>ソートのために選択された行の開始インデックス
+<p>並べ替え対象として選択する行の開始インデックスです。
 </p>
 </td></tr>
 <tr>
@@ -192,11 +218,11 @@
 <td> <center>0</center>
 </td>
 <td>
-<p>ソートのために選択された行の終了インデックス
+<p>並べ替え対象として選択する行の終了インデックスです。
 </p>
 </td></tr>
 <tr>
-<td>欠損値を最大値にする
+<td>欠損値を最大値として扱う
 </td>
 <td>missing
 </td>
@@ -208,11 +234,11 @@
 <td> <center>0</center>
 </td>
 <td>
-<p>欠損値を最大にするかどうかを指定します。
+<p>欠損値を最大値として扱うかどうかを指定します。
 </p>
 </td></tr>
 <tr>
-<td>ソートする範囲
+<td>並べ替え範囲
 </td>
 <td>irng
 </td>
@@ -224,15 +250,88 @@
 <td> <center>&lt;optional&gt;</center>
 </td>
 <td>
-<p>ソートする範囲を指定します。不連続な範囲を指定できます。有効な値を入力すると、c1, c2, r1, r2 は無視されます。
+<p>並べ替える範囲を指定します。範囲は非連続でもかまいません。有効な値が指定されている場合、c1、c2、r1、r2は無視されます。
 </p>
 </td></tr></table>
-<h2><a name="Description"></a><span class="mw-headline"> 説明 </span></h2>
-<p>この関数は、ワークシートを<I>bycol</I> (インデックスとして)列でソートします。または、いくつかの列<I>nestcols</I>でネストしたソートを行い、各列の順番で昇順または降順を設定することもできます。ソートする範囲(開始行、終了行、開始列、終了列または範囲変数 irng)を指定することができます。また、数値の接尾列(インデックスとして)ソートすることもできます。
+<h2><a name="Description"></a><span class="mw-headline">説明</span></h2>
+<p>この関数は、列インデックスとして指定した<i>bycol</i> を基準にワークシートを並べ替えるために使用します。また、<i>nestcols</i> で複数の列を指定してネストソートを行い、各列について降順または昇順を設定することもできます。並べ替え対象の範囲は、開始行、終了行、開始列、終了列、または範囲変数 irng を使用して指定できます。また、数値接尾辞を基準に列を並べ替えることもできます。
 </p>
 <h2><a name="Examples"></a><span class="mw-headline">サンプル</span></h2>
-<p>他のサンプルについては、XFスクリプトダイアログ(F11を押す)をご覧下さい。
+<ul><li> <b>コードサンプル1</b></li></ul>
+<pre class="lt" style="font-family:monospace;"><span style="color: #008000; font-style: regular;">/*
+この例では、wsort Xファンクションを使用してネストソートを実行します。データは、まずheight列が降順になるように並べ替えられます。同じheightを持つ行が複数ある場合、それらの行はweight列を基準に昇順で並べ替えられます。
+1.Originのブックにサンプルデータをインポート
+2.wsort Xファンクションを使用してデータを並べ替え
+*/</span>
+<span style="color: #008000;">//新しいワークブックを作成</span>
+newbook result<span style="color: #000000;">:</span><span style="color: #000080;">=</span>bkname<span style="color: #000080;">$</span>;	
+<span style="color: #008000;">//ファイルをインポート</span>
+path<span style="color: #000080;">$</span> <span style="color: #000080;">=</span> system.<span style="color: #000080;">path</span>.<span style="color: #000080;">program</span><span style="color: #000080;">$</span> <span style="color: #000080;">+</span> <span style="color: #ff00ff;">&quot;Samples\Statistics\&quot;</span>;
+fname<span style="color: #000080;">$</span> <span style="color: #000080;">=</span> path<span style="color: #000080;">$</span> <span style="color: #000080;">+</span> <span style="color: #ff00ff;">&quot;body.dat&quot;</span>;
+impasc;
+
+dataset sbc <span style="color: #000080;">=</span> <span style="color: #000000;">{</span><span style="color: #0000dd;">4</span>, <span style="color: #0000dd;">5</span><span style="color: #000000;">}</span>; <span style="color: #008000;">//第1、第2の並べ替え基準列を選択</span>
+dataset sodr<span style="color: #000080;">=</span> <span style="color: #000000;">{</span><span style="color: #0000dd;">0</span>, <span style="color: #0000dd;">1</span><span style="color: #000000;">}</span>; <span style="color: #008000;">//並べ替え順序を指定: col(4)--降順、col(5)--昇順</span>
+wsort nestcols<span style="color: #000000;">:</span><span style="color: #000080;">=</span>sbc order<span style="color: #000000;">:</span><span style="color: #000080;">=</span>sodr; <span style="color: #008000;">//ネストソートを実行</span></pre>
+<ul><li> <b>コードサンプル2</b></li></ul>
+<p>次の表を並べ替え、
 </p>
+<table class="simple" style="width:350px">
+
+<tr>
+<td>2020.11.24
+</td>
+<td>Mr. Mercedes S1E7
+</td></tr>
+<tr>
+<td>2020.11.25
+</td>
+<td>Mr. Mercedes S1E10
+</td></tr>
+<tr>
+<td>2020.11.25
+</td>
+<td>Mr. Mercedes S1E9
+</td></tr>
+<tr>
+<td>2020.11.24
+</td>
+<td>Mr. Mercedes S1E8
+</td></tr></table>
+<p>次のようにします。
+</p>
+<table class="simple" style="width:350px">
+
+<tr>
+<td>2020.11.24
+</td>
+<td>Mr. Mercedes S1E7
+</td></tr>
+<tr>
+<td>2020.11.24
+</td>
+<td>Mr. Mercedes S1E8
+</td></tr>
+<tr>
+<td>2020.11.25
+</td>
+<td>Mr. Mercedes S1E9
+</td></tr>
+<tr>
+<td>2020.11.25
+</td>
+<td>Mr. Mercedes S1E10
+</td></tr></table>
+<pre class="lt" style="font-family:monospace;"><span style="color: #008000;">//これら2つの列はワークシートの1列目と2列目です</span>
+<span style="color: #008000;">//ワークブックをアクティブにして、以下のスクリプトを実行します</span>
+
+dataset sbc <span style="color: #000080;">=</span> <span style="color: #000000;">{</span><span style="color: #0000dd;">1</span>, <span style="color: #0000dd;">2</span><span style="color: #000000;">}</span>; <span style="color: #008000;">//第1、第2の並べ替え基準列を選択</span>
+dataset sodr<span style="color: #000080;">=</span> <span style="color: #000000;">{</span><span style="color: #0000dd;">9</span>, <span style="color: #0000dd;">9</span><span style="color: #000000;">}</span>; <span style="color: #008000;">//並べ替え順序を指定: col(1)--昇順と数値接尾辞の組み合わせ , col(2)--昇順と数値接尾辞の組み合わせ</span>
+wsort nestcols<span style="color: #000000;">:</span><span style="color: #000080;">=</span>sbc order<span style="color: #000000;">:</span><span style="color: #000080;">=</span>sodr;</pre>
+<hr class='keywordshr'><p><span class='keywords'>キーワード:</span><span class='keywordsInput'>ネストソート</span></p>
+
+
+
 
 
 
