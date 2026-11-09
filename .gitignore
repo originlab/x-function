@@ -1,6 +1,10 @@
 *.hhc
 *.hhk
 
+de/**/images/*/math-*.png
+ja/**/images/*/math-*.png
+zh/**/images/*/math-*.png
+
 *.[Ll][Oo][Gg]
 *.[Bb][Aa][Kk]
 *.fpj
